@@ -1,0 +1,49 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@context": "http://schema.org",
+      "@type": "Product",
+      "name": "Amuletti-riipus Aurinkoleijona pronssi",
+      "image": "https://www.kalevala.fi/cdn/shop/products/Amulettiriipusaurinkoleijonapronssi327031360-542949_large.jpg%3Fv=1709845250",
+      "aggregateRating": {
+        "@context": "https://schema.org",
+        "@type": "AggregateRating",
+        "ratingValue": 4.8,
+        "reviewCount": 40
+      },
+      "offers": {
+        "@context": "https://schema.org",
+        "@type": "Offer",
+        "availability": "https://schema.org/InStock",
+        "price": 80.5,
+        "priceCurrency": "EUR"
+      }
+    },
+    {
+      "@context": "http://schema.org/",
+      "@type": "Product",
+      "@id": "/products/amuletti-riipus-aurinkoleijona-pronssi#product",
+      "name": "Amuletti-riipus Aurinkoleijona pronssi",
+      "description": "Leijona, el\u00E4inten kuningas, on voiman ja mahdin symboli. Uljas aurinkoleijona,jonka tuuhea harja levi\u00E4\u00E4 kuin auringon s\u00E4teet, koristi alkujaan pienenpy\u00F6re\u00E4n pyh\u00E4inj\u00E4\u00E4nn\u00F6srasian kantta, vartioiden ylv\u00E4\u00E4n\u00E4 rasian arvokastasis\u00E4lt\u00F6\u00E4. Aurinkoleijona tuo viestin ajasta, jolloin kristillisen Euroopanvaikutteet v\u00E4littyiv\u00E4t It\u00E4meren saarten kautta suomalaisten keskuuteen. Pue yllesi Aurinkoleijona saat leijonan voiman ja rohkeuden.\nKlassikon uusi tulkinta. Kullanhohtoinen pronssinen Aurinkoleijona-amuletti ilahduttaa kaikkia pienten, keveiden korujen yst\u00E4vi\u00E4, joita puhuttelevat kiehtovat yksityiskohdat, vahvat tarinat ja kaukaa menneisyydest\u00E4 kumpuavat uskomukset. K\u00E4yt\u00E4 pitk\u00E4n\u00E4, lyhyen\u00E4 tai jotain silt\u00E4 v\u00E4lilt\u00E4, kenties kahta tai kolmea Amuletti-riipusta samanaikaisesti.\u00A0Helan halkaisija 20 mm.\u00A0Taustapuoli keskelt\u00E4 aavistuksen kovera. Kullatussa pronssiketjussa s\u00E4\u00E4dett\u00E4v\u00E4 pituus 40/45/50 cm. Korun mukana toimitetaan my\u00F6s jatkopala, jolla ketjusta voi tehd\u00E4 55- tai 60-senttisen. Ketjussa ja jatkopalassa jousirengaslukko. Riipus on saatavilla my\u00F6s hopeisena.",
+      "image": "https://www.kalevala.fi/cdn/shop/products/Amulettiriipusaurinkoleijonapronssi327031360-542949.jpg?v=1709845250\u0026width=1920",
+      "url": "https://www.kalevala.fi/products/amuletti-riipus-aurinkoleijona-pronssi",
+      "brand": {
+        "@context": "https://schema.org",
+        "@type": "Brand",
+        "name": "Originals"
+      },
+      "category": "Kaulakorut",
+      "offers": {
+        "@context": "https://schema.org",
+        "@type": "Offer",
+        "@id": "/products/amuletti-riipus-aurinkoleijona-pronssi?variant=39701748219950#offer",
+        "url": "https://www.kalevala.fi/products/amuletti-riipus-aurinkoleijona-pronssi?variant=39701748219950",
+        "availability": "https://schema.org/InStock",
+        "price": "80.50",
+        "priceCurrency": "EUR"
+      },
+      "sku": "327031360"
+    }
+  ]
+}

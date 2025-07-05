@@ -1,0 +1,812 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "TP-LINK Deco X50-5G Dual Band 5G/4G/3G -modeemi ja WiFi6 -tukiasema",
+      "image": [
+        "https://cdn.verk.net/kuvastin/w:576/h:576/rt:fit/q:80/sh:0.5/plain/images/31/2_865561-501x836.jpeg",
+        "https://cdn.verk.net/kuvastin/w:576/h:576/rt:fit/q:80/sh:0.5/plain/images/80/2_865561-497x793.jpeg",
+        "https://cdn.verk.net/kuvastin/w:576/h:576/rt:fit/q:80/sh:0.5/plain/images/34/2_865561-784x863.jpeg",
+        "https://cdn.verk.net/kuvastin/w:576/h:576/rt:fit/q:80/sh:0.5/plain/images/60/2_865561-498x847.jpeg",
+        "https://cdn.verk.net/kuvastin/w:576/h:576/rt:fit/q:80/sh:0.5/plain/images/72/2_865561-922x882.jpeg",
+        "https://cdn.verk.net/kuvastin/w:576/h:576/rt:fit/q:80/sh:0.5/plain/images/75/2_865561-733x934.jpeg",
+        "https://cdn.verk.net/kuvastin/w:576/h:576/rt:fit/q:80/sh:0.5/plain/images/81/2_865561-1000x855.jpeg",
+        "https://cdn.verk.net/kuvastin/w:576/h:576/rt:fit/q:80/sh:0.5/plain/images/84/2_865561-936x758.jpeg",
+        "https://cdn.verk.net/kuvastin/w:576/h:576/rt:fit/q:80/sh:0.5/plain/images/87/2_865561-1000x1000.jpeg",
+        "https://cdn.verk.net/kuvastin/w:576/h:576/rt:fit/q:80/sh:0.5/plain/images/90/2_865561-882x816.jpeg"
+      ],
+      "description": "Sano hyvästi hitaalle netille ja pätkivälle WiFi verkolle. Deco X50-5G on monipuolinen ja huippunopea 5G/4G/LTE/3G -modeemi-WiFi 6 -reititin joka huolehtii, että käytössäsi on aina nopein mahdollinen verkko. Viimeisimmillä verkkoteknologioilla (WiFi 6 -langattomalla lähiverkolla ja 5G-mobiiliverkkoyhteydellä) surffaat huippuvauhtia joko langattomasti tai 2.5 gigabit ethernet-portin avulla. Deco X50-5G on suunniteltu takaamaan jatkuva internetyhteys. Toimii kaikkien operaattorien SIM-korteilla. WiFi verkon laajentaminen on helppoa Deco -reitittimillä. Deco X50-5G modeemilla luot huippunopean ja kattavan verkon kotiin tai toimistoon. Laite sopii nopeutensa ansioista erinomaisesti pelaamiseen, streamaukseen sekä tiedostojen jakamiseen. Laite toimii itsenäisenä 5G, 4G, LTE, 3G -modeemina tai se voidaan liittää osaksi Deco WiFi Mesh järjestelmää. Laite on suoraan yhtensopiva kaikkien Deco WiFi Mesh järjestelmien kanssa. Uuden sukupolven huippunopea 802.11ax WiFi -järjestelmä tarjoaa jopa 3000 Mbps nopeudet viiveettömään pelaamiseen, sulavaan 4K UHD -videon toistoon ja äärimmäisen nopeaan tiedostojen jakamiseen. Verkkoon liitettyjen henkilökohtaisten ja IoT-laitteiden lisääntynyt määrä on johtanut verkon yleiseen kuormittumiseen, joka koettelee jo nykyisen WiFi-standardin rajoja. Viimeisin standardi, 802.11ax, jota kutsutaan nykyään nimellä WiFi 6, tarjoaa tulevaisuuden vaatimukset täyttävän teknologian, paremman verkon hyötysuhteen, nopeammat WiFi-yhteydet, paremman kattavuuden sekä pidemmän akunkeston verkkoon liitetyille laitteille, mikä puolestaan parantaa verkonkäyttökokemusta huomattavasti. Helppo käyttöönotto. Laita SIM-kortti laitteeseen ja käynnistä se. Anna Decon huolehtia asennuksesta. Decon asentaminen on helppoa. Lataa Android- tai iOS-sovellus ja anna Decon löytää täydelliset paikat tukiasemille. Verkon hallinta onnistuu ilman tietokonetta esim. Tabletilla, Android- tai iOS-sovelluksella. Selkeän käyttöliittymän avulla aloittelevakin käyttäjä pystyy helposti määrittämään kaikki verkon asetukset ja seuraamaan laitteen tilaa. Ominaisuudet: Operaattorivapaa. Toimii kaikkien Eurooppalaisten operaattoreiden SIM-korteilla. Toimii 5G/4G/LTE ja 3G verkoissa 5G -latausnopeus jopa 3.4 Gbps ja lähetysnopeus 900 Mbps* 4G LTE latausnopeus jopa 300 Mbps ja lähetysnopeus 50 Mbps* 5G N1/N3/N5/N7/N8/N20/N28/N38/N40/N41/N77/N78 4G FDD-LTE: B1/B3/B5/B7/B8/B20/B28 4G TDD-LTE: B38/B40/B41/B42/B43 3G: B1/B5/B8 WiFi AX nopeus jopa 574 Mbps 2.4 GHz:n taajuudella ja jopa 2402 Mbps 5.0 GHz:n taajuudella Dual-band - molemmat taajuudet voivat olla samanaikaisesti käytössä, jolloin WiFi nopeus on jopa 3000 Mbps. Täysin yhteensopiva 802.11b/g/n/ac/ax standardien kanssa. WiFi verkko kattaa jopa 230 m2 tilan Jopa 150 yhtäaikaista WiFi käyttäjää. Neljä sisäistä LTE/5G antennia, kaksi sisäistä WiFi antennia ja kaksi LTE/5G ulkoisen antennin liitäntää. Liitännät: 1 x 2.5 Gigabit LAN/WAN ethernet ja 2 x Gigabit LAN/WAN ethernet porttia, 2 x SMA ulkoisen LTE/5G antennin liitäntää (SMA Uros) tuote 911437 Laitteseeen sopii SMA RP uros/SMA naaras muunnos adapterilla tuote 911437 yleisimmät ulkoiset MiMo antennit. Esim. Bluecloud MiMo 5G/4G/3G/2G -kaksoisantenni, Bluecloud 5G/4G/3G -pöytäantenni tai Iskra P-60MIMO suuntaava GSM/3G/4G/5G/LTE/WiFi MiMo -antenni Ethernet WAN - LAN-portteja voidaan käyttää WAN-porttina jolloin laite toimii langattomana reitittimenä. Turvallinen ja vakaa, tukee 64/128-bittistä WPA3, WPA2-PSK, WPA-PSK -suojausta Ilmainen TP-Link HomeShield Basic huolehtii verkkosi turvallisuudesta ja mahdollistaa yhteyksien aikataulutuksen ja hallinnan. Lisätietoja HomeShiledistä löytyy täältä . Wi-Fi Protected Setup (WPS) -toiminto mahdollistaa langattoman verkon salauksen ja laitteiden liittämisen napin painalluksella. Dynamic DNS -tuki Palomuuri suojaa verkkoa. Quality of Service -toiminto antaa enemmän kaistaa nopeutta vaativille toiminnoille kuten peleille, VoiP-puheluille ja videoille. IPv6-tuki: IPv6 on uusi verkkoprokolla joka tulevaisuudessa korvaa tällä hetkellä kaikkien laitteiden käyttämän IPv4-protokollan. Verkkolaitteen IPv6 tuki siis mahdollistaa laitteen toimivuuden tulevan tekniikan kanssa. Helppo asennus ja hallinta TP-Link Deco App Android tai IOS mobiilisovelluksella Google Home ja Amazon Alexa -yhteensopiva Automaattiset ohjelmistopäivitykset Deco -sovelluksella SIM-kortin tyyppi: NanoSIM Mitat: 210.5 × 130 × 123mm Myyntipaketin sisältö: Deco X50-5G modeemi, virtalähde, ethernet-kaapeli, pikaohje * Teoreettinen maksiminopeus. Todellinen nopeus riippuu käytettävästä verkosta",
+      "brand": {
+        "@type": "Brand",
+        "name": "TP-LINK",
+        "url": "https://www.tp-link.com/fi/"
+      },
+      "sku": "865561",
+      "mpn": [
+        "DECO X50-5G(1-PACK)"
+      ],
+      "gtin13": [
+        "4897098687949"
+      ],
+      "offers": [
+        {
+          "@type": "Offer",
+          "url": "https://www.verkkokauppa.com/fi/product/865561/TP-LINK-Deco-X50-5G-Dual-Band-5G-4G-3G-modeemi-ja-WiFi6-tuki",
+          "priceCurrency": "EUR",
+          "price": "299.99",
+          "availability": "InStock",
+          "priceValidUntil": "2025-07-20T23:30:00+03:00",
+          "hasMerchantReturnPolicy": {
+            "@type": "MerchantReturnPolicy",
+            "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+            "applicableCountry": "FI",
+            "merchantReturnDays": 32,
+            "inStoreReturnsOffered": "https://schema.org/True",
+            "refundType": "https://schema.org/FullRefund",
+            "merchantReturnLink": "https://asiakaspalvelu.verkkokauppa.com/hc/fi/articles/360015747219-Palautusohjeet",
+            "returnLabelSource": {
+              "@type": "ReturnLabelSourceEnumeration",
+              "url": "https://cdn-a.verkkokauppa.com/files/61921/0bbea/c1b85/18a2d/5f65.pdf"
+            },
+            "returnFees": "https://schema.org/FreeReturn",
+            "returnMethod": [
+              "https://schema.org/ReturnByMail",
+              "https://schema.org/ReturnInStore"
+            ]
+          },
+          "shippingDetails": {
+            "@type": "OfferShippingDetails",
+            "shippingDestination": {
+              "@type": "DefinedRegion",
+              "addressCountry": "FI"
+            },
+            "shippingRate": {
+              "@type": "MonetaryAmount",
+              "value": 4.99,
+              "currency": "EUR"
+            },
+            "deliveryTime": {
+              "@type": "ShippingDeliveryTime",
+              "handlingTime": {
+                "@type": "QuantitativeValue",
+                "minValue": 0,
+                "maxValue": 1,
+                "unitCode": "DAY"
+              },
+              "transitTime": {
+                "@type": "QuantitativeValue",
+                "minValue": 3,
+                "maxValue": 5,
+                "unitCode": "DAY"
+              }
+            }
+          }
+        },
+        {
+          "@type": "Offer",
+          "url": "https://www.verkkokauppa.com/fi/product/900719/TP-LINK-Deco-X50-5G-modeemi-X50-Outdoor-WiFi-6-Mesh-jarjeste",
+          "priceCurrency": "EUR",
+          "price": "429.99",
+          "availability": "InStock",
+          "hasMerchantReturnPolicy": {
+            "@type": "MerchantReturnPolicy",
+            "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+            "applicableCountry": "FI",
+            "merchantReturnDays": 32,
+            "inStoreReturnsOffered": "https://schema.org/True",
+            "refundType": "https://schema.org/FullRefund",
+            "merchantReturnLink": "https://asiakaspalvelu.verkkokauppa.com/hc/fi/articles/360015747219-Palautusohjeet",
+            "returnLabelSource": {
+              "@type": "ReturnLabelSourceEnumeration",
+              "url": "https://cdn-a.verkkokauppa.com/files/61921/0bbea/c1b85/18a2d/5f65.pdf"
+            },
+            "returnFees": "https://schema.org/FreeReturn",
+            "returnMethod": [
+              "https://schema.org/ReturnByMail",
+              "https://schema.org/ReturnInStore"
+            ]
+          },
+          "itemOffered": {
+            "@context": "https://schema.org",
+            "@type": "Product",
+            "name": "TP-LINK Deco X50-5G-modeemi + X50 Outdoor WiFi 6 -Mesh-järjestelmä sisä- ja ulkokäyttöön",
+            "image": [
+              "https://cdn.verk.net/kuvastin/w:576/h:576/rt:fit/q:80/sh:0.5/plain/images/39/2_900719-1182x633.jpg",
+              "https://cdn.verk.net/kuvastin/w:576/h:576/rt:fit/q:80/sh:0.5/plain/images/42/2_900719-497x793.jpeg",
+              "https://cdn.verk.net/kuvastin/w:576/h:576/rt:fit/q:80/sh:0.5/plain/images/45/2_900719-500x837.jpeg",
+              "https://cdn.verk.net/kuvastin/w:576/h:576/rt:fit/q:80/sh:0.5/plain/images/48/2_900719-1000x1000.jpeg",
+              "https://cdn.verk.net/kuvastin/w:576/h:576/rt:fit/q:80/sh:0.5/plain/images/51/2_900719-922x882.jpeg",
+              "https://cdn.verk.net/kuvastin/w:576/h:576/rt:fit/q:80/sh:0.5/plain/images/57/2_900719-733x934.jpeg",
+              "https://cdn.verk.net/kuvastin/w:576/h:576/rt:fit/q:80/sh:0.5/plain/images/60/2_900719-1000x853.jpeg",
+              "https://cdn.verk.net/kuvastin/w:576/h:576/rt:fit/q:80/sh:0.5/plain/images/54/2_900719-936x756.jpeg",
+              "https://cdn.verk.net/kuvastin/w:576/h:576/rt:fit/q:80/sh:0.5/plain/images/63/2_900719-1000x1000.jpeg",
+              "https://cdn.verk.net/kuvastin/w:576/h:576/rt:fit/q:80/sh:0.5/plain/images/69/2_900719-421x881.jpeg",
+              "https://cdn.verk.net/kuvastin/w:576/h:576/rt:fit/q:80/sh:0.5/plain/images/72/2_900719-1000x935.jpeg",
+              "https://cdn.verk.net/kuvastin/w:576/h:576/rt:fit/q:80/sh:0.5/plain/images/75/2_900719-1000x1000.jpeg",
+              "https://cdn.verk.net/kuvastin/w:576/h:576/rt:fit/q:80/sh:0.5/plain/images/78/2_900719-960x960.jpeg",
+              "https://cdn.verk.net/kuvastin/w:576/h:576/rt:fit/q:80/sh:0.5/plain/images/81/2_900719-944x832.jpeg",
+              "https://cdn.verk.net/kuvastin/w:576/h:576/rt:fit/q:80/sh:0.5/plain/images/66/2_900719-882x816.jpeg",
+              "https://cdn.verk.net/kuvastin/w:576/h:576/rt:fit/q:80/sh:0.5/plain/images/84/2_900719-705x767.jpeg"
+            ],
+            "description": "Täydellinen paketti mökille, kotiin tai toimistoon. Paketti sisältää huippunopean Deco X50 5G-modeemin ja Deco X50 Outdoor WiFi 6 ulkotukiaseman. Sano hyvästi hitaalle netille ja pätkivälle WiFi verkolle sisä -ja ulkotiloissa. Deco X50-5G-modeemi + X50 Outdoor WiFi 6 -Mesh-järjestelmällä sisä- ja ulkokäyttöön luot huippunopean ja kattavan verkon sisä -ja ulkotiloihin mökille, kotiin tai toimistoon. Järjestelmä sopii nopeutensa ansioista erinomaisesti pelaamiseen, streamaukseen sekä tiedostojen jakamiseen. Järjestelmä on suoraan yhtensopiva kaikkien Deco WiFi Mesh järjestelmien kanssa. TP-LINK Deco X50-5G-modeemi + X50 Outdoor WiFi 6 -Mesh-järjestelmä on nopea ja kattava Wi-Fi-ratkaisu. Järjestelmä tukee jopa 150 yhtä aikaista käyttäjää. Verkon laajentaminen on helppoa Deco -reitittimillä. Järjestelmä käyttää yhtä verkon nimeä ja vaihtaa yhteyttä tukiasemien välillä saumattomasti. Suunniteltu takaamaan jatkuva internetyhteys. Deco X50-5G toimii kaikkien operaattorien SIM-korteilla. Helppo käyttöönotto. Asenna Deco X50-5G modeemi sisätiloihin ja Deco X50 outdoor WiFi 6 tukiasema siisätiloihin tai ulos laajentamaan verkon kantamaa. Laita SIM-kortti laitteeseen ja käynnistä se. Anna Decon huolehtia asennuksesta. Decon asentaminen on helppoa. Lataa Android- tai iOS-sovellus ja anna Decon löytää täydelliset paikat tukiasemille. Verkon hallinta onnistuu ilman tietokonetta esim. Tabletilla, Android- tai iOS-sovelluksella. Selkeän käyttöliittymän avulla aloittelevakin käyttäjä pystyy helposti määrittämään kaikki verkon asetukset ja seuraamaan laitteen tilaa. Deco X50-5G ominaisuudet: Operaattorivapaa. Toimii kaikkien Eurooppalaisten operaattoreiden SIM-korteilla. Toimii 5G/4G/LTE ja 3G verkoissa 5G -latausnopeus jopa 3.4 Gbps ja lähetysnopeus 900 Mbps* 4G LTE latausnopeus jopa 300 Mbps 5G N1/N3/N5/N7/N8/N20/N28/N38/N40/N41/N77/N78 4G FDD-LTE: B1/B3/B5/B7/B8/B20/B28 4G TDD-LTE: B38/B40/B41/B42/B43 3G: B1/B5/B8 WiFi AX nopeus jopa 574 Mbps 2.4 GHz:n taajuudella ja jopa 2402 Mbps 5.0 GHz:n taajuudella Dual-band - molemmat taajuudet voivat olla samanaikaisesti käytössä, jolloin WiFi nopeus on jopa 3000 Mbps. Täysin yhteensopiva 802.11b/g/n/ac/ax standardien kanssa. WiFi verkko kattaa jopa 230 m2 tilan Jopa 150 yhtäaikaista WiFi käyttäjää. Neljä sisäistä LTE/5G antennia, kaksi sisäistä WiFi antennia ja kaksi LTE/5G ulkoisen antennin liitäntää. Liitännät: 1 x 2.5 Gigabit LAN/WAN ethernet ja 2 x Gigabit LAN/WAN ethernet porttia, 2 x SMA ulkoisen LTE/5G antennin liitäntää (SMA Uros) Yleisimpien ulkoisten antennien kanssa tarvitaan muunnos adapteri SMA RP uros/SMA naaras tuote 911437 Ethernet WAN - LAN-portteja voidaan käyttää WAN-porttina jolloin laite toimii langattomana reitittimenä. Turvallinen ja vakaa, tukee 64/128-bittistä WPA3, WPA2-PSK, WPA-PSK -suojausta Ilmainen TP-Link HomeShield Basic huolehtii verkkosi turvallisuudesta ja mahdollistaa yhteyksien aikataulutuksen ja hallinnan. Lisätietoja HomeShiledistä löytyy täältä . Wi-Fi Protected Setup (WPS) -toiminto mahdollistaa langattoman verkon salauksen ja laitteiden liittämisen napin painalluksella. Dynamic DNS -tuki Palomuuri suojaa verkkoa. Quality of Service -toiminto antaa enemmän kaistaa nopeutta vaativille toiminnoille kuten peleille, VoiP-puheluille ja videoille. IPv6-tuki: IPv6 on uusi verkkoprokolla joka tulevaisuudessa korvaa tällä hetkellä kaikkien laitteiden käyttämän IPv4-protokollan. Verkkolaitteen IPv6 tuki siis mahdollistaa laitteen toimivuuden tulevan tekniikan kanssa. Helppo asennus ja hallinta TP-Link Deco App Android tai IOS mobiilisovelluksella Google Home ja Amazon Alexa -yhteensopiva Automaattiset ohjelmistopäivitykset Deco -sovelluksella SIM-kortin tyyppi: NanoSIM Mitat: 210.5 × 130 × 123mm Myyntipaketin sisältö: Deco X50-5G modeemi, virtalähde, ethernet-kaapeli, pikaohje * Teoreettinen maksiminopeus. Todellinen nopeus riippuu käytettävästä verkosta Deco X50 Outdoor ominaisuudet: Suojattu vedeltä ja pölyltä. IP65 -luokiteltu WiFi 6 nopeus jopa 574 Mbps 2.4 GHz:n taajuudella ja jopa 2402 Mbps 5.0 GHz:n taajuudella Dual-band - kaksi samanaikaisesti käytössä olevaa siirtokaistaa kahdella eri taajuudella (2.4GHz ja 5GHz), jolloin yhdistetty langaton nopeus on jopa 3 Gbps Jopa 150 yhtäaikaista WiFi käyttäjää. Yhteensopiva kaikkien TP-Link Deco mallien kanssa Älykäs AI-mesh oppii ja optimoi verkkoa automaattisesti. Lisätietoa TP-Link AI-Mesh tekniikasta Kaksi Gigabit ethernet porttia (PoE ja WAN/LAN portit) Jopa kaksi vierasverkkoa (2.4 GHz x 1 ja 5 GHz x 1) Gigabitin langallisessa verkossa suuretkin tiedostot siirtyvät nopeasti koneiden välillä. TP-Link HomeShiledT basic tarjoaa kattavan turvallisuusratkaisun laitteellesi Turvallinen ja vakaa, tukee 64/128-bittistä WPA3, WPA2-PSK, WPA-PSK -suojausta Quality of Service -toiminto antaa enemmän kaistaa nopeutta vaativille toiminnoille kuten peleille, VoiP-puheluille ja videoille. IPv6-tuki: IPv6 on uusi verkkoprokolla joka tulevaisuudessa korvaa tällä hetkellä kaikkien laitteiden käyttämän IPv4-prot...",
+            "brand": {
+              "@type": "Brand",
+              "name": "TP-LINK",
+              "url": "https://www.tp-link.com/fi/"
+            },
+            "sku": "900719",
+            "mpn": [
+              "Deco X50-5G + Deco X50 Outdoor"
+            ],
+            "offers": [
+              {
+                "@type": "Offer",
+                "url": "https://www.verkkokauppa.com/fi/product/900719/TP-LINK-Deco-X50-5G-modeemi-X50-Outdoor-WiFi-6-Mesh-jarjeste",
+                "priceCurrency": "EUR",
+                "price": "429.99",
+                "availability": "InStock",
+                "hasMerchantReturnPolicy": {
+                  "@type": "MerchantReturnPolicy",
+                  "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+                  "applicableCountry": "FI",
+                  "merchantReturnDays": 32,
+                  "inStoreReturnsOffered": "https://schema.org/True",
+                  "refundType": "https://schema.org/FullRefund",
+                  "merchantReturnLink": "https://asiakaspalvelu.verkkokauppa.com/hc/fi/articles/360015747219-Palautusohjeet",
+                  "returnLabelSource": {
+                    "@type": "ReturnLabelSourceEnumeration",
+                    "url": "https://cdn-a.verkkokauppa.com/files/61921/0bbea/c1b85/18a2d/5f65.pdf"
+                  },
+                  "returnFees": "https://schema.org/FreeReturn",
+                  "returnMethod": [
+                    "https://schema.org/ReturnByMail",
+                    "https://schema.org/ReturnInStore"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "@type": "Offer",
+          "url": "https://www.verkkokauppa.com/fi/product/884254/TP-LINK-Deco-X50-5G-Dual-Band-5G-4G-3G-modeemi-X50-WiFi6-tuk",
+          "priceCurrency": "EUR",
+          "price": "399.99",
+          "availability": "InStock",
+          "hasMerchantReturnPolicy": {
+            "@type": "MerchantReturnPolicy",
+            "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+            "applicableCountry": "FI",
+            "merchantReturnDays": 32,
+            "inStoreReturnsOffered": "https://schema.org/True",
+            "refundType": "https://schema.org/FullRefund",
+            "merchantReturnLink": "https://asiakaspalvelu.verkkokauppa.com/hc/fi/articles/360015747219-Palautusohjeet",
+            "returnLabelSource": {
+              "@type": "ReturnLabelSourceEnumeration",
+              "url": "https://cdn-a.verkkokauppa.com/files/61921/0bbea/c1b85/18a2d/5f65.pdf"
+            },
+            "returnFees": "https://schema.org/FreeReturn",
+            "returnMethod": [
+              "https://schema.org/ReturnByMail",
+              "https://schema.org/ReturnInStore"
+            ]
+          },
+          "itemOffered": {
+            "@context": "https://schema.org",
+            "@type": "Product",
+            "name": "TP-LINK Deco X50-5G Dual Band 5G/4G/3G -modeemi + X50 WiFi6 -tukiasema",
+            "image": [
+              "https://cdn.verk.net/kuvastin/w:576/h:576/rt:fit/q:80/sh:0.5/plain/images/69/2_884254-1271x628.jpg",
+              "https://cdn.verk.net/kuvastin/w:576/h:576/rt:fit/q:80/sh:0.5/plain/images/72/2_884254-497x793.jpeg",
+              "https://cdn.verk.net/kuvastin/w:576/h:576/rt:fit/q:80/sh:0.5/plain/images/75/2_884254-500x837.jpeg",
+              "https://cdn.verk.net/kuvastin/w:576/h:576/rt:fit/q:80/sh:0.5/plain/images/78/2_884254-1000x1000.jpeg",
+              "https://cdn.verk.net/kuvastin/w:576/h:576/rt:fit/q:80/sh:0.5/plain/images/81/2_884254-922x882.jpeg",
+              "https://cdn.verk.net/kuvastin/w:576/h:576/rt:fit/q:80/sh:0.5/plain/images/84/2_884254-733x934.jpeg",
+              "https://cdn.verk.net/kuvastin/w:576/h:576/rt:fit/q:80/sh:0.5/plain/images/96/2_884254-616x787.jpeg",
+              "https://cdn.verk.net/kuvastin/w:576/h:576/rt:fit/q:80/sh:0.5/plain/images/99/2_884254-750x682.jpeg",
+              "https://cdn.verk.net/kuvastin/w:576/h:576/rt:fit/q:80/sh:0.5/plain/images/87/2_884254-1000x853.jpeg",
+              "https://cdn.verk.net/kuvastin/w:576/h:576/rt:fit/q:80/sh:0.5/plain/images/90/2_884254-936x756.jpeg",
+              "https://cdn.verk.net/kuvastin/w:576/h:576/rt:fit/q:80/sh:0.5/plain/images/93/2_884254-1000x1000.jpeg"
+            ],
+            "description": "Sano hyvästi hitaalle netille ja pätkivälle WiFi verkolle. Täydellinen paketti mökille, kotiin tai toimistoon. Paketti sisältää huippunopean Deco X50 5G -modeemin ja Deco X50 WiFi 6 -tukiaseman. Deco X50-5G + Deco X50 WiFi 6 -Mesh-järjestelmällä luot huippunopean ja kattavan verkon mökille, kotiin tai toimistoon. Järjestelmä sopii nopeutensa ansioista erinomaisesti pelaamiseen, streamaukseen sekä tiedostojen jakamiseen. Järjestelmä on suoraan yhtensopiva kaikkien Deco WiFi Mesh järjestelmien kanssa. TP-LINK Deco X50-5G + X50 WiFi 6 -Mesh-järjestelmä on nopea ja kattava Wi-Fi-ratkaisu. Järjestelmä tukee jopa 150 yhtä aikaista käyttäjää. Verkon laajentaminen on helppoa Deco -reitittimillä. Järjestelmä käyttää yhtä verkon nimeä ja vaihtaa yhteyttä tukiasemien välillä saumattomasti. Suunniteltu takaamaan jatkuva internetyhteys. Deco X50-5G toimii kaikkien operaattorien SIM-korteilla. Helppo käyttöönotto. Laita SIM-kortti laitteeseen ja käynnistä se. Anna Decon huolehtia asennuksesta. Decon asentaminen on helppoa. Lataa Android- tai iOS-sovellus ja anna Decon löytää täydelliset paikat tukiasemille. Verkon hallinta onnistuu ilman tietokonetta esim. Tabletilla, Android- tai iOS-sovelluksella. Selkeän käyttöliittymän avulla aloittelevakin käyttäjä pystyy helposti määrittämään kaikki verkon asetukset ja seuraamaan laitteen tilaa. Deco X50-5G ominaisuudet: Operaattorivapaa. Toimii kaikkien Eurooppalaisten operaattoreiden SIM-korteilla. Toimii 5G/4G/LTE ja 3G verkoissa 5G -latausnopeus jopa 3.4 Gbps ja lähetysnopeus 900 Mbps* 4G LTE latausnopeus jopa 300 Mbps* 5G N1/N3/N5/N7/N8/N20/N28/N38/N40/N41/N77/N78 4G FDD-LTE: B1/B3/B5/B7/B8/B20/B28 4G TDD-LTE: B38/B40/B41/B42/B43 3G: B1/B5/B8 WiFi AX nopeus jopa 574 Mbps 2.4 GHz:n taajuudella ja jopa 2402 Mbps 5.0 GHz:n taajuudella Dual-band - molemmat taajuudet voivat olla samanaikaisesti käytössä, jolloin WiFi nopeus on jopa 3000 Mbps. Täysin yhteensopiva 802.11b/g/n/ac/ax standardien kanssa. WiFi verkko kattaa jopa 230 m2 tilan Jopa 150 yhtäaikaista WiFi käyttäjää. Neljä sisäistä LTE/5G antennia, kaksi sisäistä WiFi antennia ja kaksi LTE/5G ulkoisen antennin liitäntää. Liitännät: 1 x 2.5 Gigabit LAN/WAN ethernet ja 2 x Gigabit LAN/WAN ethernet porttia, 2 x SMA ulkoisen LTE/5G antennin liitäntää (SMA Uros) Yleisimpien ulkoisten antennien kanssa tarvitaan muunnos adapteri SMA RP uros/SMA naaras tuote 911437 Ethernet WAN - LAN-portteja voidaan käyttää WAN-porttina jolloin laite toimii langattomana reitittimenä. Turvallinen ja vakaa, tukee 64/128-bittistä WPA3, WPA2-PSK, WPA-PSK -suojausta ilmainen TP-Link HomeShield Basic huolehtii verkkosi turvallisuudesta ja mahdollistaa yhteyksien aikataulutuksen ja hallinnan. Lisätietoja HomeShiledistä löytyy täältä . Wi-Fi Protected Setup (WPS) -toiminto mahdollistaa langattoman verkon salauksen ja laitteiden liittämisen napin painalluksella. Dynamic DNS -tuki Palomuuri suojaa verkkoa. Quality of Service -toiminto antaa enemmän kaistaa nopeutta vaativille toiminnoille kuten peleille, VoiP-puheluille ja videoille. IPv6-tuki: IPv6 on uusi verkkoprokolla joka tulevaisuudessa korvaa tällä hetkellä kaikkien laitteiden käyttämän IPv4-protokollan. Verkkolaitteen IPv6 tuki siis mahdollistaa laitteen toimivuuden tulevan tekniikan kanssa. Helppo asennus ja hallinta TP-Link Deco App Android tai IOS mobiilisovelluksella Google Home ja Amazon Alexa -yhteensopiva Automaattiset ohjelmistopäivitykset Deco -sovelluksella SIM-kortin tyyppi: NanoSIM Mitat: 210.5 × 130 × 123mm Myyntipaketin sisältö: Deco X50-5G modeemi, virtalähde, ethernet-kaapeli, pikaohje * Teoreettinen maksiminopeus. Todellinen nopeus riippuu käytettävästä verkosta Deco X50 ominaisuudet: WiFi nopeus jopa 574 Mbps 2,4 GHz:n taajuudella ja jopa 2402 Mbps nopeus 5,0 GHz:n taajuudella, jolloin yhdistetty langaton nopeus on jopa 3000 Mbps. Langattomat standardit: WiFi IEEE 802.11 ax/ac/n/a 5 GHz, IEEE 802.11 b/g/n 2.4 GHz, Bluetooth 4.2 Kaksi tehokasta sisäistä antennia mahdollistaa erittäin nopean ja kattavan verkon Jopa 150 yhtäaikaista WiFi käyttäjää. Älykäs AI-mesh oppii ja optimoi verkkoa automaattisesti Kolme Gigabit ethernet porttia Gigabitin langallisessa verkossa suuretkin tiedostot siirtyvät nopeasti koneiden välillä. Nopeuden mukana kasvaa myös verkon kattavuus ja toimintaluotettavuus. Helppo ja nopea käyttöönoton Android tai IOS TP-Link Deco -sovelluksella. TP-Link HomeShiledT basic tarjoaa kattavan turvallisuusratkaisun laitteellesi Turvallinen ja vakaa, tukee 64/128-bittistä WPA3, WPA2-PSK, WPA-PSK -suojausta Auto path selection, AP steering ja beamforming huolehtii, että käytössä on paras yhteys joka huoneessa Quality of Service -toiminto antaa enemmän kaistaa nopeutta vaativille toiminnoille kuten peleille, VoiP-puheluille ja videoille. IPv6-tuki: IPv6 on uusi verkkoprokolla joka tulevaisuudessa korvaa tällä hetkellä kaikkien laitteiden käyttämän IPv4-protokollan. Verkkolaitteen IPv6 tuki siis mahdollistaa laitteen toimivuuden tulevan tekniikan kanssa. Amazon Alexa -yhteens...",
+            "brand": {
+              "@type": "Brand",
+              "name": "TP-LINK",
+              "url": "https://www.tp-link.com/fi/"
+            },
+            "sku": "884254",
+            "mpn": [],
+            "offers": [
+              {
+                "@type": "Offer",
+                "url": "https://www.verkkokauppa.com/fi/product/884254/TP-LINK-Deco-X50-5G-Dual-Band-5G-4G-3G-modeemi-X50-WiFi6-tuk",
+                "priceCurrency": "EUR",
+                "price": "399.99",
+                "availability": "InStock",
+                "hasMerchantReturnPolicy": {
+                  "@type": "MerchantReturnPolicy",
+                  "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+                  "applicableCountry": "FI",
+                  "merchantReturnDays": 32,
+                  "inStoreReturnsOffered": "https://schema.org/True",
+                  "refundType": "https://schema.org/FullRefund",
+                  "merchantReturnLink": "https://asiakaspalvelu.verkkokauppa.com/hc/fi/articles/360015747219-Palautusohjeet",
+                  "returnLabelSource": {
+                    "@type": "ReturnLabelSourceEnumeration",
+                    "url": "https://cdn-a.verkkokauppa.com/files/61921/0bbea/c1b85/18a2d/5f65.pdf"
+                  },
+                  "returnFees": "https://schema.org/FreeReturn",
+                  "returnMethod": [
+                    "https://schema.org/ReturnByMail",
+                    "https://schema.org/ReturnInStore"
+                  ]
+                }
+              }
+            ],
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": 3,
+              "reviewCount": 2,
+              "url": "/fi/product/884254/TP-LINK-Deco-X50-5G-Dual-Band-5G-4G-3G-modeemi-X50-WiFi6-tuk/reviews"
+            },
+            "review": []
+          }
+        }
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": 4.2062,
+        "reviewCount": 97,
+        "url": "/fi/product/865561/TP-LINK-Deco-X50-5G-Dual-Band-5G-4G-3G-modeemi-ja-WiFi6-tuki/reviews"
+      },
+      "review": [
+        {
+          "@type": "Review",
+          "name": "Paljon parannusta entiseen",
+          "reviewBody": "Loistavasti on toiminut tämä modeemi syrjäseudulla, nopeus kolminkertaistui verrattuna vanhaan Huawei.hin, jopa ilman lisäantennia, tämä 4G verkossa, 5G en ole kokeillut kun ei vielä tarvetta vaihtaa liittymää. 4G verkossa toimii todella vakaasti, parhaimmillaan antaa max nopeuden jopa yli (liittymä 100meganen). Deco app.i todella hyvä ja kattavasti näyttää kaiken mitä itse tarvitsen esim signaalin vahvuus ym,  ja modeemiin päivitys onnistui hienosti, päivitys tulikin heti kun käynnistin. Vielä kun sai alennettuun hintaan niin mielestäni hinta ja laatu suhde on erinomainen",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": 5
+          },
+          "datePublished": "2024-07-17T16:07:57+03:00",
+          "author": {
+            "@type": "Person",
+            "name": "Kartsa"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Verkkokauppa.com"
+          }
+        },
+        {
+          "@type": "Review",
+          "name": "Pelaa",
+          "reviewBody": "No nyt tuli kyllä yllätys, vanha laadukas 5G modeemi antoi 20mbit nopeuksia, riippumatta operaattorista, tämä heti heittämällä 300Mbit. Täällä viidakossa en olisi ikinä uskonut näihin nopeuksiin. Tästä ilosta olisi voinut maksaa paljon enemmänkin.",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": 5
+          },
+          "datePublished": "2023-09-29T23:37:53+03:00",
+          "author": {
+            "@type": "Person",
+            "name": "tapsak"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Verkkokauppa.com"
+          }
+        },
+        {
+          "@type": "Review",
+          "name": "Mobiilipakko",
+          "reviewBody": "Omalla asuinalueella ei ole vaihtoehtoa käyttää mitään muuta, kuin mobiiliverkkoa. Ostin kyseisen reitittimen vanhemman ZTE:n tilalle ja nopeudet nousivat 60mbps > 140mbps. Yhteys on paljon vakaampi nyt jo, pelkkää purkkia käyttäen, mutta käytössä edelleen 4G. Tulevaisuudessa testiin 5G ja ulkoantenni.",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": 5
+          },
+          "datePublished": "2024-08-19T11:02:58+03:00",
+          "author": {
+            "@type": "Person",
+            "name": "Jokin"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Verkkokauppa.com"
+          }
+        },
+        {
+          "@type": "Review",
+          "name": "Helppo käyttöönotto ja wifi-verkko parani",
+          "reviewBody": "Asumme alueella, jossa langaton verkko operaattorien puolelta on melko heikko muutenkin. Deco löysi kuitenkin vanhaa reititintä huomattavasti paremmin verkon ja wifi kantaa koko 120m2 talon joka nurkkaan vaikka reititin on sijoitettu talon toiselle seinustalle.",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": 5
+          },
+          "datePublished": "2023-11-01T16:00:35+02:00",
+          "author": {
+            "@type": "Person",
+            "name": "Tyytyväinen"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Verkkokauppa.com"
+          }
+        },
+        {
+          "@type": "Review",
+          "name": "Helppokäyttöinen, nopea ja vakaa 5G reititin",
+          "reviewBody": "Ostin käyttöön kaksi kerroksiseen 100m2 omakotitaloon ja riittää tarjoamaan Wifin koko rakennukseen. Toiminnot selkeitä ja helppo ottaa käyttöön. Lisäksi asetuksia löytyy vaativampaankin tarkoitukseen. Lisäantennipaikat on tarjolla mutta sisäiset antennit erinomaiset sillä ulkoisilla antenneilla tuli huonompi 5G signaali. Vanhalla modeemilla oli toisin päin. Mahdollistaa vakaan, nopean ja edullisen verkkoyhteyden 4K elokuviin ja etätyöskentelyyn.",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": 5
+          },
+          "datePublished": "2024-06-14T23:56:05+03:00",
+          "author": {
+            "@type": "Person",
+            "name": "Etätyössä"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Verkkokauppa.com"
+          }
+        },
+        {
+          "@type": "Review",
+          "name": "Deco",
+          "reviewBody": "Hyvä modeemi reititin. Toimii myös pelkästään reititimenä hyvin, ilman 5g:tä.  Ainoa - ..joutuu tietoturva jutuista maksaa 40 vuosi jos haluu sellaiset...",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": 5
+          },
+          "datePublished": "2024-02-20T15:10:23+02:00",
+          "author": {
+            "@type": "Person",
+            "name": "Mä vaan"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Verkkokauppa.com"
+          }
+        },
+        {
+          "@type": "Review",
+          "name": "Toimii niinkuin pitääkin",
+          "reviewBody": "Käyttöönotto oli helppoa, vaikkakin itse kaipaan sitä, että pääsisin asettamaan kaikki asetukset. \nHyvä nopeus 5G -verkossa. 10 päivää käyttöönotosta, eikä yhteys ole pätkinyt.",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": 5
+          },
+          "datePublished": "2024-11-21T16:29:29+02:00",
+          "author": {
+            "@type": "Person",
+            "name": "Jartsa"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Verkkokauppa.com"
+          }
+        },
+        {
+          "@type": "Review",
+          "name": "Helppo ja tehokas!",
+          "reviewBody": "Tämä on jo toinen TP-linkin mobiilireititin, jonka olen hankkinut. Aikaisemmassa myös toinen Deko sisäverkkoa muodostamassa, tämä Deko omanaan pienemmässä asunnossa. \nTodella helppo käyttöönotto. SIM-kortti purkin pohjaan, Decon sovellus puhelimeen ja yhteys pystyyn. \nHyvät tehot ja vakauskin pelikäyttöön riittävä. Kohteessa tosin masto lähellä, joten signaali on vahva. \nKerran on Deco mennyt "
+          "tilttiin\", mutta hoitui helposti puhelimen appin ja Decon sammuttamisen avulla. Verkko nousi näppärästi takaisin.\\nHinta on melko kova, mutta toisaalta olen ollut toimintaan tosi tyytyväinen.\"",
+          ,
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": 5
+          },
+          "datePublished": "2024-03-10T20:57:04+02:00",
+          "author": {
+            "@type": "Person",
+            "name": "Jenspa"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Verkkokauppa.com"
+          }
+        },
+        {
+          "@type": "Review",
+          "name": "Deko",
+          "reviewBody": "Helppo asentaa, ei vaadi erikoisia kommervenkkejä. Eri laitteet helppo liittää verkkoon langattomasti ja etenkin verkkojohdolla.",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": 5
+          },
+          "datePublished": "2024-08-18T10:20:47+03:00",
+          "author": {
+            "@type": "Person",
+            "name": "Peejii"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Verkkokauppa.com"
+          }
+        },
+        {
+          "@type": "Review",
+          "name": "Loistava 5G reititin",
+          "reviewBody": "Vanha Huawei vaihtui tähän ja 4G verkon nopeus viisinkertaistui.",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": 5
+          },
+          "datePublished": "2024-04-17T15:40:04+03:00",
+          "author": {
+            "@type": "Person",
+            "name": "Zlatanovic"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Verkkokauppa.com"
+          }
+        },
+        {
+          "@type": "Review",
+          "name": "5G modeemi",
+          "reviewBody": "Tuote on erinomainen kun sen saa asennettua ja päivitettyä\nTämän hintaluokan tuotteessa voisi olla asiallinen asennusohje",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": 5
+          },
+          "datePublished": "2024-11-04T17:36:23+02:00",
+          "author": {
+            "@type": "Person",
+            "name": "Tokelau"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Verkkokauppa.com"
+          }
+        },
+        {
+          "@type": "Review",
+          "name": "Hyvin toimiva yksikkö",
+          "reviewBody": "Ei moitteen sijaa. Kortti sisään ja toimii heti. Itsellä download 600megaa ilman ulkoisia antenneja. Käytän mesh-verkkona muiden Decojen kanssa. Helppo käyttöliittymä",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": 5
+          },
+          "datePublished": "2023-08-16T17:39:59+03:00",
+          "author": {
+            "@type": "Person",
+            "name": "Vihi"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Verkkokauppa.com"
+          }
+        },
+        {
+          "@type": "Review",
+          "name": "Huippulaite!",
+          "reviewBody": "Helppo käyttöönotto Deco apilla. Nopeudet yli 500Mbps entiseen, jopa alle 50 Mbps/s verrattuna. Hyvä vastine rahalle",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": 5
+          },
+          "datePublished": "2024-04-11T13:44:08+03:00",
+          "author": {
+            "@type": "Person",
+            "name": "RiPo"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Verkkokauppa.com"
+          }
+        },
+        {
+          "@type": "Review",
+          "name": "Reititin",
+          "reviewBody": "Erittäin laadukas  toimii hienosti tekee sen minkä lupaa ei katkeile yhteys  suosittelen",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": 5
+          },
+          "datePublished": "2024-03-28T16:24:42+02:00",
+          "author": {
+            "@type": "Person",
+            "name": "Veikk"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Verkkokauppa.com"
+          }
+        },
+        {
+          "@type": "Review",
+          "name": "Huippuvauhtia myös 4G verkkoihin",
+          "reviewBody": "Hyvin toimiva 5G modeemi ja myös hyvä valinta 4G-verkkoon haja-asutusalueelle. Tukee ulkoisia antenniliityntöjä myös 700/800 MHz (B20/B28) taajuuksille. Garrier aggregation  jopa 5:een carrieriin, ja myös DL CA tuettu. Mökin netin vauhti nousi 20 Mbit/s :sta 230 Mbit/s: een. Deco appi toimii hyvin myös ulkoverkosta ja SW- päivityksiä tulee useampi vuodessa. Taajuus- ja tukiasemalukko toimii hyvin, joten voi valita Carrien aggregaatioon juuri sen carrierin mistä saa parhaamman nopuden. WiFin peitto erinomainen.",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": 5
+          },
+          "datePublished": "2024-12-28T16:55:42+02:00",
+          "author": {
+            "@type": "Person",
+            "name": "Kassu"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Verkkokauppa.com"
+          }
+        },
+        {
+          "@type": "Review",
+          "name": "Toimii",
+          "reviewBody": "Toimii, sehän tässä tärkeintä. Ei mitään negatiivista sanottavaa.",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": 5
+          },
+          "datePublished": "2024-02-14T16:15:21+02:00",
+          "author": {
+            "@type": "Person",
+            "name": "JLaw"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Verkkokauppa.com"
+          }
+        },
+        {
+          "@type": "Review",
+          "name": "Tp Link Deco x50-5G",
+          "reviewBody": "Laite toimii speksien mukaisesti. Erityisen hyödyllistä ulkoa-antennien liittämismahdollisuus, jolloin 5G toimii reuna-alueilla. Hyvä hallintaohjelmisto puhelimeen.",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": 5
+          },
+          "datePublished": "2024-05-30T09:41:56+03:00",
+          "author": {
+            "@type": "Person",
+            "name": "Emoj"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Verkkokauppa.com"
+          }
+        },
+        {
+          "@type": "Review",
+          "name": "Laadukas reititin",
+          "reviewBody": "Ostin tämän vanhan 4G reitittimen tilalle ja yllätyin positiivisesti kun yhteysnopeus nousi 50-60Mbit/s vs vanha reititin samalla liittymällä. Toimii hienosti toisten Decojen kanssa ja siksi tähän päädyinkin. Ja tässä tulee antenniadapterit mukana eli yleisimmät uros sma-liittimet käyvät myös tähän ilman lisäosia.",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": 5
+          },
+          "datePublished": "2025-04-27T20:42:16+03:00",
+          "author": {
+            "@type": "Person",
+            "name": "Antti"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Verkkokauppa.com"
+          }
+        },
+        {
+          "@type": "Review",
+          "name": "5 G käyttöön",
+          "reviewBody": "Hienosti toimii! Asennukseen tarvittiin vähän apuja.",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": 5
+          },
+          "datePublished": "2024-05-24T08:55:07+03:00",
+          "author": {
+            "@type": "Person",
+            "name": "Anja"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Verkkokauppa.com"
+          }
+        },
+        {
+          "@type": "Review",
+          "name": "Hyvin on toiminut",
+          "reviewBody": "Toistaiseksi on toiminut hyvin eikä ongelmia ole ollut. Käyttöönotto sujui hyvin vaikka olisinkin pärjännyt aivan hyvin ilman uutta äppiä puhelimella. Nopeudet ovat olleet parempia kuin aiemmalla iänikuisella modeemilla. Hintahan olisi voinut olla halvempi mutta varmasti juuri tuon äpin ja Deco-ympäristön mahdollisuus tuo lisähintaa.",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": 5
+          },
+          "datePublished": "2024-04-16T14:43:22+03:00",
+          "author": {
+            "@type": "Person",
+            "name": "Esa"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Verkkokauppa.com"
+          }
+        },
+        {
+          "@type": "Review",
+          "name": "Tämä ostos kannattaa",
+          "reviewBody": "Kallis verrattuna \"tavallisiin\" modeemeihin mutta tämä on kaikkea muuta. Lataa apin, töpseli ja 5G simkortti paikalleen ja jonkun minuutin kulutta nauttii jopa yli 300 MB/s nopeuksista! SUOSITTELEN!",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": 5
+          },
+          "datePublished": "2024-03-09T09:48:50+02:00",
+          "author": {
+            "@type": "Person",
+            "name": "Kapo"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Verkkokauppa.com"
+          }
+        },
+        {
+          "@type": "Review",
+          "name": "Nopeutta roimasti lisää",
+          "reviewBody": "Pitkään vaivannut netin hitaus ei ollutkaan erillisantenneista ym. kiinni, modeemin vaihto ratkaisi kaikki ongelmat.",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": 5
+          },
+          "datePublished": "2023-12-13T12:50:06+02:00",
+          "author": {
+            "@type": "Person",
+            "name": "JOL"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Verkkokauppa.com"
+          }
+        },
+        {
+          "@type": "Review",
+          "name": "Toimii!",
+          "reviewBody": "Netin nopeus 10x heti kun vaihdoin 9v vanhan 4g modeemin uuteen. Helppo asentaa ja hallinnoida. Ja eritysesti halusin tämän koska toimii Mobiilidatan kautta, sekä voi skaalata Mesh asemilla toiseen kerrokseen, toistaiseksi pärjätty yhdellä yksiköllä.",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": 5
+          },
+          "datePublished": "2024-03-28T17:49:59+02:00",
+          "author": {
+            "@type": "Person",
+            "name": "Vicente"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Verkkokauppa.com"
+          }
+        },
+        {
+          "@type": "Review",
+          "name": "MESHtari",
+          "reviewBody": "5G MESH-kotiverkon luoja, tyylikästä boksia kehtaa pitää näkyvillä sisustuselementtinäkin, laajentimien asennus helppoa.... kotiverkkojen Ferrari.",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": 5
+          },
+          "datePublished": "2024-03-25T08:51:51+02:00",
+          "author": {
+            "@type": "Person",
+            "name": "PikkuPekka"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Verkkokauppa.com"
+          }
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@id": "https://www.verkkokauppa.com",
+            "name": "Etusivu"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@id": "/fi/catalog/tietotekniikka",
+            "name": "Tietotekniikka"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@id": "/fi/catalog/verkkolaitteet",
+            "name": "Verkkolaitteet"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "item": {
+            "@id": "/fi/catalog/modeemit",
+            "name": "Modeemit"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "item": {
+            "@id": "/fi/catalog/mobiililaajakaista",
+            "name": "Mobiililaajakaista"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "item": {
+            "@id": "/fi/catalog/5g-modeemit-ja-reitittimet",
+            "name": "5G-modeemit ja -reitittimet"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "item": {
+            "@id": "/fi/product/865561/TP-LINK-Deco-X50-5G-Dual-Band-5G-4G-3G-modeemi-ja-WiFi6-tuki",
+            "name": "Tuote 865561"
+          }
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "url": "https://www.verkkokauppa.com/",
+      "name": "Verkkokauppa.com",
+      "legalName": "Verkkokauppa.com Oyj",
+      "vatID": "1456344-5",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Tyynenmerenkatu 11",
+        "addressLocality": "Helsinki",
+        "addressCountry": "FI",
+        "addressRegion": "Uusimaa",
+        "postalCode": "00220"
+      },
+      "telephone": "010-309-55550",
+      "numberOfEmployees": {
+        "@type": "QuantitativeValue",
+        "value": 750
+      },
+      "founder": "Samuli Seppälä",
+      "foundingDate": "1992",
+      "logo": "/assets/static/vk-logo.png",
+      "image": "https://cdn.verk.net/files/5a7d9/d96aa/71dd6/2053a/8f74.svg",
+      "slogan": "Todennäköisesti aina halvempi!",
+      "hasMerchantReturnPolicy": {
+        "@type": "MerchantReturnPolicy",
+        "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+        "merchantReturnDays": 32
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "010-309-55550",
+        "contactType": "customer service",
+        "email": "asiakaspalvelu@verkkokauppa.com"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "url": "https://www.verkkokauppa.com/",
+      "name": "Verkkokauppa.com",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://www.verkkokauppa.com/fi/search?query={query}",
+        "query-input": "required maxlength=75 name=query"
+      }
+    }
+  ]
+}

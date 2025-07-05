@@ -1,0 +1,53 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "url": "https://www.verkkokauppa.com/",
+      "name": "Verkkokauppa.com",
+      "legalName": "Verkkokauppa.com Oyj",
+      "vatID": "1456344-5",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Tyynenmerenkatu 11",
+        "addressLocality": "Helsinki",
+        "addressCountry": "FI",
+        "addressRegion": "Uusimaa",
+        "postalCode": "00220"
+      },
+      "telephone": "010-309-55550",
+      "numberOfEmployees": {
+        "@type": "QuantitativeValue",
+        "value": 750
+      },
+      "founder": "Samuli Seppälä",
+      "foundingDate": "1992",
+      "logo": "/assets/static/vk-logo.png",
+      "image": "https://cdn.verk.net/files/5a7d9/d96aa/71dd6/2053a/8f74.svg",
+      "slogan": "Todennäköisesti aina halvempi!",
+      "hasMerchantReturnPolicy": {
+        "@type": "MerchantReturnPolicy",
+        "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+        "merchantReturnDays": 32
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "010-309-55550",
+        "contactType": "customer service",
+        "email": "asiakaspalvelu@verkkokauppa.com"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "url": "https://www.verkkokauppa.com/",
+      "name": "Verkkokauppa.com",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://www.verkkokauppa.com/fi/search?query={query}",
+        "query-input": "required maxlength=75 name=query"
+      }
+    }
+  ]
+}
