@@ -3,6 +3,14 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
     <Nullable>enable</Nullable>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageReadmeFile>readme.md</PackageReadmeFile>
+    <Version>1.0.0-alpha.1</Version>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Company>Denomica Oy</Company>
+    <Copyright>Copyright © 2025 Denomica Oy</Copyright>
+    <RepositoryUrl>https://github.com/Denomica/Denomica.JsonLD.Extensions</RepositoryUrl>
+    <PackageTags>JSON-LD</PackageTags>
   </PropertyGroup>
 
 	<ItemGroup>
@@ -13,5 +21,12 @@
 		<PackageReference Include="System.Net.Http" Version="4.3.4" />
 		<PackageReference Include="System.Text.Json" Version="9.0.0" />
 		<PackageReference Include="System.Text.RegularExpressions" Version="4.3.1" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Update="readme.md">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
+	  </None>
 	</ItemGroup>
 </Project>
