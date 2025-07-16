@@ -88,19 +88,19 @@ namespace Denomica.JsonLD.Extensions
         }
 
         /// <summary>
-        /// Asynchronously retrieves JSON-LD objects of the specified type from the given HTML document.
+        /// Asynchronously retrieves JSON-LD objects from the specified HTML document that match the given types.
         /// </summary>
-        /// <remarks>This method filters JSON-LD objects within the HTML document based on their type. The
-        /// type comparison is performed using schema.org conventions. If no objects match the specified type, the
-        /// returned stream will be empty.</remarks>
-        /// <param name="document">The HTML document to search for JSON-LD objects.</param>
-        /// <param name="type">The type of JSON-LD objects to filter by, typically corresponding to a schema.org type.</param>
-        /// <returns>An asynchronous stream of <see cref="JsonElement"/> objects that match the specified type.</returns>
-        public static async IAsyncEnumerable<JsonElement> GetJsonLDObjectsAsync(this HtmlDocument document, string type)
+        /// <remarks>This method filters JSON-LD objects based on the specified types using the Schema.org
+        /// vocabulary.  It yields each matching object as it is found, allowing for efficient processing of large
+        /// documents.</remarks>
+        /// <param name="document">The HTML document from which to extract JSON-LD objects.</param>
+        /// <param name="types">An array of type names to filter the JSON-LD objects. Only objects matching these types will be returned.</param>
+        /// <returns>An asynchronous stream of <see cref="JsonElement"/> objects representing the filtered JSON-LD data.</returns>
+        public static async IAsyncEnumerable<JsonElement> GetJsonLDObjectsAsync(this HtmlDocument document, params string[] types)
         {
-            await foreach (var obj in document.GetJsonLDObjectsAsync())
+            await foreach(var obj in document.GetJsonLDObjectsAsync())
             {
-                if (obj.IsSchemaOrgObjectType(type))
+                if(obj.IsSchemaOrgObjectType(types))
                 {
                     yield return obj;
                 }
@@ -135,21 +135,19 @@ namespace Denomica.JsonLD.Extensions
         }
 
         /// <summary>
-        /// Asynchronously retrieves JSON-LD objects of the specified type from the given <see cref="JsonElement"/>.
+        /// Asynchronously retrieves JSON-LD objects of specified types from the given JSON element.
         /// </summary>
-        /// <remarks>This method filters JSON-LD objects based on their "@type" property. It uses
-        /// asynchronous enumeration to allow processing large JSON structures efficiently without loading all objects
-        /// into memory.</remarks>
-        /// <param name="element">The <see cref="JsonElement"/> to search for JSON-LD objects.</param>
-        /// <param name="type">The type of JSON-LD objects to filter by. This should match the value of the "@type" property in the JSON-LD
-        /// object.</param>
-        /// <returns>An asynchronous stream of <see cref="JsonElement"/> instances representing the JSON-LD objects of the
-        /// specified type.</returns>
-        public static async IAsyncEnumerable<JsonElement> GetJsonLDObjectsAsync(this JsonElement element, string type)
+        /// <remarks>This method filters JSON-LD objects based on the provided types and yields them
+        /// asynchronously.  It is useful for processing large JSON documents where only specific types of JSON-LD
+        /// objects are needed.</remarks>
+        /// <param name="element">The JSON element to search for JSON-LD objects.</param>
+        /// <param name="types">An array of type names to filter the JSON-LD objects. Only objects matching these types are returned.</param>
+        /// <returns>An asynchronous stream of <see cref="JsonElement"/> objects that match the specified types.</returns>
+        public static async IAsyncEnumerable<JsonElement> GetJsonLDObjectsAsync(this JsonElement element, params string[] types)
         {
             await foreach (var obj in element.GetJsonLDObjectsAsync())
             {
-                if (obj.IsSchemaOrgObjectType(type))
+                if (obj.IsSchemaOrgObjectType(types))
                 {
                     yield return obj;
                 }
@@ -157,50 +155,22 @@ namespace Denomica.JsonLD.Extensions
         }
 
         /// <summary>
-        /// Determines whether the specified <see cref="JsonElement"/> contains a property with the given name.
+        /// Determines whether the specified <see cref="JsonElement"/> is of any of the given Schema.org object types.
         /// </summary>
-        /// <param name="element">The <see cref="JsonElement"/> to inspect.</param>
-        /// <param name="propertyName">The name of the property to check for. This value is case-sensitive.</param>
-        /// <returns><see langword="true"/> if the <see cref="JsonElement"/> contains a property with the specified name; 
-        /// otherwise, <see langword="false"/>.</returns>
-        public static bool HasProperty(this JsonElement element, string propertyName)
+        /// <remarks>This method iterates over the provided types and checks if the <paramref
+        /// name="element"/> matches any of them using the <c>IsSchemaOrgObjectType</c> method.</remarks>
+        /// <param name="element">The <see cref="JsonElement"/> to check.</param>
+        /// <param name="types">An array of Schema.org object type names to check against.</param>
+        /// <returns><see langword="true"/> if the <paramref name="element"/> matches any of the specified types; otherwise, <see
+        /// langword="false"/>.</returns>
+        public static bool IsSchemaOrgObjectType(this JsonElement element, params string[] types)
         {
-            return element.TryGetProperty(propertyName, out _);
-        }
-
-        /// <summary>
-        /// Determines whether the specified <see cref="JsonElement"/> represents a Schema.org element.
-        /// </summary>
-        /// <remarks>This method checks for the presence of the "@context" property in the JSON element
-        /// and verifies  that its value matches the Schema.org context URI.</remarks>
-        /// <param name="element">The <see cref="JsonElement"/> to evaluate.</param>
-        /// <returns><see langword="true"/> if the <paramref name="element"/> contains a property named "@context"  with the
-        /// value "https://schema.org"; otherwise, <see langword="false"/>.</returns>
-        public static bool IsSchemaOrgElement(this JsonElement element)
-        {
-            if(element.HasProperty("@context") && element.TryGetProperty("@context", out var context) && context.ValueKind == JsonValueKind.String)
+            foreach(var type in types)
             {
-                var text = context.GetString()?.ToLower();
-                return text == "http://schema.org" || text == "http://schema.org/" || text == "https://schema.org" || text == "https://schema.org/";
-            }
-            return false;
-        }
-
-        /// <summary>
-        /// Determines whether the specified <see cref="JsonElement"/> represents a Schema.org object of the given type.
-        /// </summary>
-        /// <remarks>This method checks if the <paramref name="element"/> contains a Schema.org type
-        /// definition and compares it to the specified type. The comparison is case-insensitive.</remarks>
-        /// <param name="element">The <see cref="JsonElement"/> to evaluate. Must represent a valid Schema.org element.</param>
-        /// <param name="type">The type to check against, as a case-insensitive string.</param>
-        /// <returns><see langword="true"/> if the <paramref name="element"/> is a Schema.org object and its type matches the
-        /// specified <paramref name="type"/>; otherwise, <see langword="false"/>.</returns>
-        public static bool IsSchemaOrgObjectType(this JsonElement element, string type)
-        {
-            if(element.IsSchemaOrgElement() && element.TryGetProperty("@type", out var typeObj) && typeObj.ValueKind == JsonValueKind.String)
-            {
-                var text = typeObj.GetString();
-                return string.Equals(text, type, StringComparison.OrdinalIgnoreCase);
+                if(element.IsSchemaOrgObjectType(type))
+                {
+                    return true;
+                }
             }
 
             return false;
@@ -229,6 +199,58 @@ namespace Denomica.JsonLD.Extensions
             return result;
         }
 
+
+
+        /// <summary>
+        /// Determines whether the specified <see cref="JsonElement"/> contains a property with the given name.
+        /// </summary>
+        /// <param name="element">The <see cref="JsonElement"/> to inspect.</param>
+        /// <param name="propertyName">The name of the property to check for. This value is case-sensitive.</param>
+        /// <returns><see langword="true"/> if the <see cref="JsonElement"/> contains a property with the specified name; 
+        /// otherwise, <see langword="false"/>.</returns>
+        private static bool HasProperty(this JsonElement element, string propertyName)
+        {
+            return element.TryGetProperty(propertyName, out _);
+        }
+
+        /// <summary>
+        /// Determines whether the specified <see cref="JsonElement"/> represents a Schema.org element.
+        /// </summary>
+        /// <remarks>This method checks for the presence of the "@context" property in the JSON element
+        /// and verifies  that its value matches the Schema.org context URI.</remarks>
+        /// <param name="element">The <see cref="JsonElement"/> to evaluate.</param>
+        /// <returns><see langword="true"/> if the <paramref name="element"/> contains a property named "@context"  with the
+        /// value "https://schema.org"; otherwise, <see langword="false"/>.</returns>
+        private static bool IsSchemaOrgElement(this JsonElement element)
+        {
+            if (element.HasProperty("@context") && element.TryGetProperty("@context", out var context) && context.ValueKind == JsonValueKind.String)
+            {
+                var text = context.GetString()?.ToLower();
+                return text == "http://schema.org" || text == "http://schema.org/" || text == "https://schema.org" || text == "https://schema.org/";
+            }
+            return false;
+        }
+
+        /// <summary>
+        /// Determines whether the specified <see cref="JsonElement"/> represents a Schema.org object of the given type.
+        /// </summary>
+        /// <remarks>This method checks if the <paramref name="element"/> contains a Schema.org type
+        /// definition and compares it to the specified type. The comparison is case-insensitive.</remarks>
+        /// <param name="element">The <see cref="JsonElement"/> to evaluate. Must represent a valid Schema.org element.</param>
+        /// <param name="type">The type to check against, as a case-insensitive string.</param>
+        /// <returns><see langword="true"/> if the <paramref name="element"/> is a Schema.org object and its type matches the
+        /// specified <paramref name="type"/>; otherwise, <see langword="false"/>.</returns>
+        private static bool IsSchemaOrgObjectType(this JsonElement element, string type)
+        {
+            if (element.IsSchemaOrgElement() && element.TryGetProperty("@type", out var typeObj) && typeObj.ValueKind == JsonValueKind.String)
+            {
+                var text = typeObj.GetString();
+                return string.Equals(text, type, StringComparison.OrdinalIgnoreCase);
+            }
+
+            return false;
+        }
+
         /// <summary>
         /// Attempts to retrieve the "@graph" property as a JSON array from a Schema.org-compliant <see
         /// cref="JsonElement"/>.
@@ -243,7 +265,7 @@ namespace Denomica.JsonLD.Extensions
         /// an array, this will be <see langword="null"/>.</param>
         /// <returns><see langword="true"/> if the "@graph" property exists and is a JSON array; otherwise, <see
         /// langword="false"/>.</returns>
-        public static bool TryGetSchemaOrgGraphArray(this JsonElement element, out JsonElement graphArray)
+        private static bool TryGetSchemaOrgGraphArray(this JsonElement element, out JsonElement graphArray)
         {
             graphArray = default;
             if(element.IsSchemaOrgElement() && element.TryGetProperty("@graph", out var graph) && graph.ValueKind == JsonValueKind.Array)
