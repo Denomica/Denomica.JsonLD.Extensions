@@ -118,9 +118,20 @@ namespace Denomica.JsonLD.Extensions
         /// <returns>An asynchronous stream of <see cref="JsonElement"/> instances representing JSON-LD objects.</returns>
         public static async IAsyncEnumerable<JsonElement> GetJsonLDObjectsAsync(this JsonElement element)
         {
+
             if (element.TryGetSchemaOrgGraphArray(out JsonElement graph))
             {
                 foreach (var item in graph.EnumerateArray())
+                {
+                    await foreach (var obj in item.GetJsonLDObjectsAsync())
+                    {
+                        yield return obj;
+                    }
+                }
+            }
+            else if(element.ValueKind == JsonValueKind.Array)
+            {
+                foreach(var item in element.EnumerateArray())
                 {
                     await foreach (var obj in item.GetJsonLDObjectsAsync())
                     {
@@ -210,7 +221,7 @@ namespace Denomica.JsonLD.Extensions
         /// otherwise, <see langword="false"/>.</returns>
         private static bool HasProperty(this JsonElement element, string propertyName)
         {
-            return element.TryGetProperty(propertyName, out _);
+            return element.ValueKind == JsonValueKind.Object && element.TryGetProperty(propertyName, out _);
         }
 
         /// <summary>

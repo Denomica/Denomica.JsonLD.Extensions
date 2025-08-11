@@ -9,10 +9,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Resources\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Denomica.JsonLD.Extensions\Denomica.JsonLD.Extensions.csproj" />
   </ItemGroup>
 

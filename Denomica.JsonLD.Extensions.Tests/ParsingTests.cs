@@ -1,4 +1,5 @@
 ﻿using Denomica.JsonLD.Extensions;
+using System.Text.Json;
 
 namespace Denomica.JsonLD.Extensions.Tests
 {
@@ -30,6 +31,14 @@ namespace Denomica.JsonLD.Extensions.Tests
         {
             var objects = await Properties.Resources.HTMLPage001.CreateHtmlDocument().GetJsonLDObjectsAsync("Organization").ToListAsync();
             Assert.AreEqual(1, objects.Count);
+        }
+
+        [TestMethod]
+        public async Task Parse04()
+        {
+            var jsonElem = JsonDocument.Parse(Properties.Resources.JSONLD004).RootElement;
+            var objects = await jsonElem.GetJsonLDObjectsAsync().ToListAsync();
+            Assert.AreEqual(4, objects.Count);
         }
     }
 }

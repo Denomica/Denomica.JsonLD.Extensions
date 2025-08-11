@@ -141,5 +141,26 @@ namespace Denomica.JsonLD.Extensions.Tests.Properties {
                 return ResourceManager.GetString("JSONLD003", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to [
+        ///  {
+        ///    &quot;@context&quot;: &quot;https://schema.org&quot;,
+        ///    &quot;@type&quot;: &quot;ProductGroup&quot;,
+        ///    &quot;productGroupID&quot;: &quot;234&quot;,
+        ///    &quot;name&quot;: &quot;US ALICE taisteluvyö, ylijäämä - Varusteleka.com&quot;,
+        ///    &quot;description&quot;: &quot;Käytettyjä jenkkiarmeijan ALICE-tetsarivöitä. Aitoon ALICE-tavaraan voi luottaa - hyvä käyttää ja kestää varmasti. Katso saatavuus ja hanki omasi!&quot;,
+        ///    &quot;sku&quot;: &quot;234&quot;,
+        ///    &quot;gtin&quot;: &quot;x&quot;,
+        ///    &quot;mpn&quot;: &quot;us-alicepbk&quot;,
+        ///    &quot;url&quot;: &quot;https://www.varusteleka.com/fi/product/us-alice-taisteluvyo-ylijaama/234&quot;,
+        ///    &quot;brand&quot;: {
+        ///   [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string JSONLD004 {
+            get {
+                return ResourceManager.GetString("JSONLD004", resourceCulture);
+            }
+        }
     }
 }
