@@ -162,5 +162,25 @@ namespace Denomica.JsonLD.Extensions.Tests.Properties {
                 return ResourceManager.GetString("JSONLD004", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to [
+        ///  {
+        ///    &quot;@context&quot;: &quot;https://schema.org&quot;,
+        ///    &quot;@type&quot;: &quot;ProductGroup&quot;,
+        ///    &quot;productGroupID&quot;: &quot;989&quot;,
+        ///    &quot;name&quot;: &quot;BW talvihattu, Flecktarn, ylijäämä - Varusteleka.com&quot;,
+        ///    &quot;description&quot;: &quot;Bundeswehrin talvihattua pitää joko siksi, että se on tosi hyvä talvipäähine, tai siksi, että se on niin älyttömän ruma. Toimii erinomaisesti kypärän alla. Hank&quot;,
+        ///    &quot;sku&quot;: &quot;989&quot;,
+        ///    &quot;gtin&quot;: &quot;91210121&quot;,
+        ///    &quot;mpn&quot;: &quot;bw-fldmtzewi&quot;,
+        ///    &quot;url&quot;: &quot;https://www.varusteleka.com/fi/product/bw-talvihattu-flecktarn-ylijaama/989&quot;,
+        /// [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string JSONLD005 {
+            get {
+                return ResourceManager.GetString("JSONLD005", resourceCulture);
+            }
+        }
     }
 }

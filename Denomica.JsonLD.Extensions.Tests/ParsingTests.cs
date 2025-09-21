@@ -40,5 +40,16 @@ namespace Denomica.JsonLD.Extensions.Tests
             var objects = await jsonElem.GetJsonLDObjectsAsync().ToListAsync();
             Assert.AreEqual(4, objects.Count);
         }
+
+        [TestMethod]
+        public async Task Parse05()
+        {
+            var jsonElem = JsonDocument.Parse(Properties.Resources.JSONLD005).RootElement;
+            var products = await jsonElem.GetJsonLDObjectsAsync("Product").ToListAsync();
+            Assert.AreEqual(0, products.Count);
+
+            var gprs = await jsonElem.GetJsonLDObjectsAsync("ProductGroup").ToListAsync();
+            Assert.AreEqual(1, gprs.Count);
+        }
     }
 }

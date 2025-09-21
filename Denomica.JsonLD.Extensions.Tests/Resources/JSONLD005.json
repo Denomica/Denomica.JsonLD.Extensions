@@ -1,0 +1,315 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "ProductGroup",
+    "productGroupID": "989",
+    "name": "BW talvihattu, Flecktarn, ylijäämä - Varusteleka.com",
+    "description": "Bundeswehrin talvihattua pitää joko siksi, että se on tosi hyvä talvipäähine, tai siksi, että se on niin älyttömän ruma. Toimii erinomaisesti kypärän alla. Hank",
+    "sku": "989",
+    "gtin": "91210121",
+    "mpn": "bw-fldmtzewi",
+    "url": "https://www.varusteleka.com/fi/product/bw-talvihattu-flecktarn-ylijaama/989",
+    "brand": {
+      "@type": "Brand",
+      "name": "Saksa"
+    },
+    "image": "https://www.varusteleka.com/pictures/0/1/original/666585b98be598eb.webp",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": 4.78125,
+      "reviewCount": 32,
+      "bestRating": 5
+    },
+    "offers": {
+      "@type": "AggregateOffer",
+      "lowPrice": "9.99",
+      "highPrice": "9.99",
+      "availability": "https://schema.org/OutOfStock",
+      "itemCondition": "https://schema.org/UsedCondition",
+      "priceCurrency": "EUR",
+      "priceSpecification": {
+        "@type": "PriceSpecification",
+        "valueAddedTaxIncluded": true,
+        "priceCurrency": "EUR",
+        "minPrice": "9.99",
+        "maxPrice": "9.99"
+      },
+      "url": "https://www.varusteleka.com/fi/product/bw-talvihattu-flecktarn-ylijaama/989"
+    },
+    "hasVariant": [
+      {
+        "@type": "Product",
+        "name": "BW talvihattu, Flecktarn, ylijäämä, 58",
+        "description": "58 cm",
+        "sku": "983",
+        "gtin": "91210121",
+        "mpn": "bw-fldmtzewi/58",
+        "inProductGroupWithID": "989",
+        "image": "https://www.varusteleka.com/pictures/0/1/original/666585b98be598eb.webp",
+        "brand": {
+          "@type": "Brand",
+          "name": "Saksa"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "9.99",
+          "availability": "https://schema.org/OutOfStock",
+          "itemCondition": "https://schema.org/UsedCondition",
+          "priceCurrency": "EUR",
+          "priceSpecification": {
+            "@type": "PriceSpecification",
+            "valueAddedTaxIncluded": true,
+            "priceCurrency": "EUR",
+            "price": "9.99"
+          },
+          "url": "https://www.varusteleka.com/fi/product/bw-talvihattu-flecktarn-ylijaama/989"
+        }
+      },
+      {
+        "@type": "Product",
+        "name": "BW talvihattu, Flecktarn, ylijäämä, 59",
+        "description": "59 cm",
+        "sku": "984",
+        "gtin": "91210121",
+        "mpn": "bw-fldmtzewi/59",
+        "inProductGroupWithID": "989",
+        "image": "https://www.varusteleka.com/pictures/0/1/original/666585b98be598eb.webp",
+        "brand": {
+          "@type": "Brand",
+          "name": "Saksa"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "9.99",
+          "availability": "https://schema.org/OutOfStock",
+          "itemCondition": "https://schema.org/UsedCondition",
+          "priceCurrency": "EUR",
+          "priceSpecification": {
+            "@type": "PriceSpecification",
+            "valueAddedTaxIncluded": true,
+            "priceCurrency": "EUR",
+            "price": "9.99"
+          },
+          "url": "https://www.varusteleka.com/fi/product/bw-talvihattu-flecktarn-ylijaama/989"
+        }
+      },
+      {
+        "@type": "Product",
+        "name": "BW talvihattu, Flecktarn, ylijäämä, 60",
+        "description": "60 cm",
+        "sku": "985",
+        "gtin": "91210121",
+        "mpn": "bw-fldmtzewi/60",
+        "inProductGroupWithID": "989",
+        "image": "https://www.varusteleka.com/pictures/0/1/original/666585b98be598eb.webp",
+        "brand": {
+          "@type": "Brand",
+          "name": "Saksa"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "9.99",
+          "availability": "https://schema.org/OutOfStock",
+          "itemCondition": "https://schema.org/UsedCondition",
+          "priceCurrency": "EUR",
+          "priceSpecification": {
+            "@type": "PriceSpecification",
+            "valueAddedTaxIncluded": true,
+            "priceCurrency": "EUR",
+            "price": "9.99"
+          },
+          "url": "https://www.varusteleka.com/fi/product/bw-talvihattu-flecktarn-ylijaama/989"
+        }
+      },
+      {
+        "@type": "Product",
+        "name": "BW talvihattu, Flecktarn, ylijäämä, 61",
+        "description": "61 cm",
+        "sku": "986",
+        "gtin": "91210121",
+        "mpn": "bw-fldmtzewi/61",
+        "inProductGroupWithID": "989",
+        "image": "https://www.varusteleka.com/pictures/0/1/original/666585b98be598eb.webp",
+        "brand": {
+          "@type": "Brand",
+          "name": "Saksa"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "9.99",
+          "availability": "https://schema.org/OutOfStock",
+          "itemCondition": "https://schema.org/UsedCondition",
+          "priceCurrency": "EUR",
+          "priceSpecification": {
+            "@type": "PriceSpecification",
+            "valueAddedTaxIncluded": true,
+            "priceCurrency": "EUR",
+            "price": "9.99"
+          },
+          "url": "https://www.varusteleka.com/fi/product/bw-talvihattu-flecktarn-ylijaama/989"
+        }
+      },
+      {
+        "@type": "Product",
+        "name": "BW talvihattu, Flecktarn, ylijäämä, 62",
+        "description": "62 cm",
+        "sku": "987",
+        "gtin": "91210121",
+        "mpn": "bw-fldmtzewi/62",
+        "inProductGroupWithID": "989",
+        "image": "https://www.varusteleka.com/pictures/0/1/original/666585b98be598eb.webp",
+        "brand": {
+          "@type": "Brand",
+          "name": "Saksa"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "9.99",
+          "availability": "https://schema.org/OutOfStock",
+          "itemCondition": "https://schema.org/UsedCondition",
+          "priceCurrency": "EUR",
+          "priceSpecification": {
+            "@type": "PriceSpecification",
+            "valueAddedTaxIncluded": true,
+            "priceCurrency": "EUR",
+            "price": "9.99"
+          },
+          "url": "https://www.varusteleka.com/fi/product/bw-talvihattu-flecktarn-ylijaama/989"
+        }
+      },
+      {
+        "@type": "Product",
+        "name": "BW talvihattu, Flecktarn, ylijäämä, 63",
+        "description": "63 cm",
+        "sku": "988",
+        "gtin": "91210121",
+        "mpn": "bw-fldmtzewi/63",
+        "inProductGroupWithID": "989",
+        "image": "https://www.varusteleka.com/pictures/0/1/original/666585b98be598eb.webp",
+        "brand": {
+          "@type": "Brand",
+          "name": "Saksa"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "9.99",
+          "availability": "https://schema.org/OutOfStock",
+          "itemCondition": "https://schema.org/UsedCondition",
+          "priceCurrency": "EUR",
+          "priceSpecification": {
+            "@type": "PriceSpecification",
+            "valueAddedTaxIncluded": true,
+            "priceCurrency": "EUR",
+            "price": "9.99"
+          },
+          "url": "https://www.varusteleka.com/fi/product/bw-talvihattu-flecktarn-ylijaama/989"
+        }
+      },
+      {
+        "@type": "Product",
+        "name": "BW talvihattu, Flecktarn, ylijäämä, 64",
+        "description": "64 cm",
+        "sku": "5577",
+        "gtin": "91210121",
+        "mpn": "bw-fldmtzewi/64",
+        "inProductGroupWithID": "989",
+        "image": "https://www.varusteleka.com/pictures/0/1/original/666585b98be598eb.webp",
+        "brand": {
+          "@type": "Brand",
+          "name": "Saksa"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "9.99",
+          "availability": "https://schema.org/OutOfStock",
+          "itemCondition": "https://schema.org/UsedCondition",
+          "priceCurrency": "EUR",
+          "priceSpecification": {
+            "@type": "PriceSpecification",
+            "valueAddedTaxIncluded": true,
+            "priceCurrency": "EUR",
+            "price": "9.99"
+          },
+          "url": "https://www.varusteleka.com/fi/product/bw-talvihattu-flecktarn-ylijaama/989"
+        }
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Varusteleka.com",
+    "url": "https://www.varusteleka.com"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Varusteleka.com",
+    "url": "https://www.varusteleka.com",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://www.varusteleka.com/search?q={query}",
+      "query-input": {
+        "type": "PropertyValueSpecification",
+        "valueRequired": true,
+        "valueName": "query"
+      }
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 0,
+        "item": {
+          "@type": "WebPage",
+          "@id": "https://www.varusteleka.com/fi",
+          "name": "Etusivu",
+          "url": "https://www.varusteleka.com/fi"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@type": "WebPage",
+          "@id": "https://www.varusteleka.com/fi/category/pukeutuminen/2993",
+          "name": "Pukeutuminen",
+          "url": "https://www.varusteleka.com/fi/category/pukeutuminen/2993"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "item": {
+          "@type": "WebPage",
+          "@id": "https://www.varusteleka.com/fi/category/asusteet/619",
+          "name": "Asusteet",
+          "url": "https://www.varusteleka.com/fi/category/asusteet/619"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@type": "WebPage",
+          "@id": "https://www.varusteleka.com/fi/category/paahineet/1097",
+          "name": "Päähineet",
+          "url": "https://www.varusteleka.com/fi/category/paahineet/1097"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "item": {
+          "@type": "WebPage",
+          "@id": "https://www.varusteleka.com/fi/category/talvihatut-ja-karvalakit/1096",
+          "name": "Talvihatut ja karvalakit",
+          "url": "https://www.varusteleka.com/fi/category/talvihatut-ja-karvalakit/1096"
+        }
+      }
+    ]
+  }
+]
