@@ -5,12 +5,13 @@
     <Nullable>enable</Nullable>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageReadmeFile>readme.md</PackageReadmeFile>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Company>Denomica Oy</Company>
     <Copyright>Copyright © 2025 Denomica Oy</Copyright>
     <RepositoryUrl>https://github.com/Denomica/Denomica.JsonLD.Extensions</RepositoryUrl>
     <PackageTags>JSON-LD</PackageTags>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
   </PropertyGroup>
 
 	<ItemGroup>
