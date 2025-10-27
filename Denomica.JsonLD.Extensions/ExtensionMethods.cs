@@ -4,6 +4,7 @@ using HtmlAgilityPack.CssSelectors.NetCore;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text.Json;
 using System.Threading.Tasks;
 
@@ -268,36 +269,21 @@ namespace Denomica.JsonLD.Extensions
         /// specified <paramref name="type"/>; otherwise, <see langword="false"/>.</returns>
         private static bool IsSchemaOrgObjectType(this JsonElement element, string type)
         {
-            if (element.IsSchemaOrgElement() && element.TryGetProperty("@type", out var typeObj) && typeObj.ValueKind == JsonValueKind.String)
+            if (element.IsSchemaOrgElement() && element.TryGetProperty("@type", out var typeObj))
             {
-                var text = typeObj.GetString();
-                return string.Equals(text, type, StringComparison.OrdinalIgnoreCase);
-            }
-
-            return false;
-        }
-
-        /// <summary>
-        /// Attempts to retrieve the "@graph" property as a JSON array from a Schema.org-compliant <see
-        /// cref="JsonElement"/>.
-        /// </summary>
-        /// <remarks>This method checks whether the provided <paramref name="element"/> is a
-        /// Schema.org-compliant JSON object and contains a "@graph" property with a value of type <see
-        /// cref="JsonValueKind.Array"/>. If these conditions are met, the method sets <paramref name="graphArray"/> to
-        /// the "@graph" property and returns <see langword="true"/>. The <paramref name="graphArray"/> represents a JSON array.</remarks>
-        /// <param name="element">The <see cref="JsonElement"/> to inspect. Must represent a Schema.org-compliant JSON object.</param>
-        /// <param name="graphArray">When this method returns <see langword="true"/>, contains the "@graph" property as a <see
-        /// cref="JsonElement"/> with a <see cref="JsonValueKind.Array"/> value. If the property is not found or is not
-        /// an array, this will be <see langword="null"/>.</param>
-        /// <returns><see langword="true"/> if the "@graph" property exists and is a JSON array; otherwise, <see
-        /// langword="false"/>.</returns>
-        private static bool TryGetSchemaOrgGraphArray(this JsonElement element, out JsonElement graphArray)
-        {
-            graphArray = default;
-            if(element.IsSchemaOrgElement() && element.TryGetProperty("@graph", out var graph) && graph.ValueKind == JsonValueKind.Array)
-            {
-                graphArray = graph;
-                return true;
+                if(typeObj.ValueKind == JsonValueKind.String)
+                {
+                    var text = typeObj.GetString();
+                    return string.Equals(text, type, StringComparison.OrdinalIgnoreCase);
+                }
+                else if(typeObj.ValueKind == JsonValueKind.Array)
+                {
+                    var arr = typeObj.EnumerateStringArray();
+                    if(arr.Contains(type, StringComparer.OrdinalIgnoreCase))
+                    {
+                        return true;
+                    }
+                }
             }
 
             return false;
@@ -341,5 +327,18 @@ namespace Denomica.JsonLD.Extensions
             return element;
         }
 
+        private static IEnumerable<string> EnumerateStringArray(this JsonElement element)
+        {
+            if(element.ValueKind == JsonValueKind.Array)
+            {
+                foreach(var item in element.EnumerateArray())
+                {
+                    if(item.ValueKind == JsonValueKind.String)
+                    {
+                        yield return item.GetString() ?? string.Empty;
+                    }
+                }
+            }
+        }
     }
 }

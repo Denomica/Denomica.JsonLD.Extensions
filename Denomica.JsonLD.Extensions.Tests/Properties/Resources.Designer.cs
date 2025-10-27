@@ -97,6 +97,30 @@ namespace Denomica.JsonLD.Extensions.Tests.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 
+        ///&lt;!DOCTYPE html&gt;
+        ///&lt;html lang=&quot;en&quot;&gt;
+        ///
+        ///&lt;head&gt;
+        ///    &lt;script type=&quot;application/ld+json&quot;&gt;
+        ///        {
+        ///          &quot;@context&quot;: &quot;https://schema.org&quot;,
+        ///          &quot;@type&quot;: [ &quot;Person&quot;, &quot;Organization&quot; ],
+        ///          &quot;@id&quot;: &quot;https://mikaberglund.com/#/schema/person/0538367110d2e025c20e2faad3c312cb&quot;,
+        ///          &quot;name&quot;: &quot;Mika Berglund&quot;,
+        ///          &quot;image&quot;: {
+        ///            &quot;@type&quot;: &quot;ImageObject&quot;,
+        ///            &quot;inLanguage&quot;: &quot;en-GB&quot;,
+        ///            &quot;@id&quot;: &quot;https://mikaberglund.com/#/schema/person/image/&quot;,
+        ///            &quot;url&quot;: &quot;h [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string HTMLPage003 {
+            get {
+                return ResourceManager.GetString("HTMLPage003", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to {
         ///  &quot;@context&quot;: &quot;https://schema.org&quot;,
         ///  &quot;@graph&quot;: [
@@ -222,6 +246,26 @@ namespace Denomica.JsonLD.Extensions.Tests.Properties {
         internal static string JSONLD006 {
             get {
                 return ResourceManager.GetString("JSONLD006", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {
+        ///  &quot;@context&quot;: &quot;https://schema.org&quot;,
+        ///  &quot;@type&quot;: [ &quot;Person&quot;, &quot;Organization&quot; ],
+        ///  &quot;@id&quot;: &quot;https://mikaberglund.com/#/schema/person/0538367110d2e025c20e2faad3c312cb&quot;,
+        ///  &quot;name&quot;: &quot;Mika Berglund&quot;,
+        ///  &quot;image&quot;: {
+        ///    &quot;@type&quot;: &quot;ImageObject&quot;,
+        ///    &quot;inLanguage&quot;: &quot;en-GB&quot;,
+        ///    &quot;@id&quot;: &quot;https://mikaberglund.com/#/schema/person/image/&quot;,
+        ///    &quot;url&quot;: &quot;https://mikaberglund.com/wp-content/uploads/2020/08/Mika14b-1024.jpg&quot;,
+        ///    &quot;contentUrl&quot;: &quot;https://mikaberglund.com/wp-content/uploads/2020/08/Mika14b-1024.jpg&quot;,
+        ///    &quot;w [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string JSONLD007 {
+            get {
+                return ResourceManager.GetString("JSONLD007", resourceCulture);
             }
         }
     }

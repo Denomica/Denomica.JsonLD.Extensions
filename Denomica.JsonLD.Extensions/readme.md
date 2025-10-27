@@ -7,6 +7,7 @@ This library faciliates working with JSON-LD data in .NET applications.
 ### v1.0.2
 
 - Fixed JSON-LD graph handling. Now when enumerating objects in a JSON-LD graph, the returned objects will inherit the `@context` of the graph if they do not have their own context defined.
+- Added support for `schema.org` objects that define multiple values in the `@type` attribute.
 
 ### v1.0.1
 
