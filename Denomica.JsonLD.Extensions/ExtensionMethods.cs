@@ -1,4 +1,5 @@
-﻿using HtmlAgilityPack;
+﻿using Denomica.Text.Json;
+using HtmlAgilityPack;
 using HtmlAgilityPack.CssSelectors.NetCore;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,10 @@ namespace Denomica.JsonLD.Extensions
 {
     public static class ExtensionMethods
     {
+
+        private const string DefaultContext = "https://schema.org";
+
+
         /// <summary>
         /// Creates an <see cref="HtmlDocument"/> instance by parsing the specified HTML string.
         /// </summary>
@@ -118,10 +123,16 @@ namespace Denomica.JsonLD.Extensions
         /// <returns>An asynchronous stream of <see cref="JsonElement"/> instances representing JSON-LD objects.</returns>
         public static async IAsyncEnumerable<JsonElement> GetJsonLDObjectsAsync(this JsonElement element)
         {
-
-            if (element.TryGetSchemaOrgGraphArray(out JsonElement graph))
+            if(element.IsJsonLdGraphElement())
             {
-                foreach (var item in graph.EnumerateArray())
+                foreach(var obj in element.EnumerateGraph())
+                {
+                    yield return obj;
+                }
+            }
+            else if (element.ValueKind == JsonValueKind.Array)
+            {
+                foreach (var item in element.EnumerateArray())
                 {
                     await foreach (var obj in item.GetJsonLDObjectsAsync())
                     {
@@ -129,17 +140,7 @@ namespace Denomica.JsonLD.Extensions
                     }
                 }
             }
-            else if(element.ValueKind == JsonValueKind.Array)
-            {
-                foreach(var item in element.EnumerateArray())
-                {
-                    await foreach (var obj in item.GetJsonLDObjectsAsync())
-                    {
-                        yield return obj;
-                    }
-                }
-            }
-            else if (element.TryGetProperty("@type", out var objType) && objType.ValueKind == JsonValueKind.String)
+            else if(element.ValueKind == JsonValueKind.Object && element.IsSchemaOrgElement())
             {
                 yield return element;
             }
@@ -225,6 +226,20 @@ namespace Denomica.JsonLD.Extensions
         }
 
         /// <summary>
+        /// Returns <see langword="true"/> if the current <see cref="JsonElement"/> represents a JSON-LD graph element.
+        /// </summary>
+        private static bool IsJsonLdGraphElement(this JsonElement element)
+        {
+            return 
+                element.IsSchemaOrgElement()
+                && element.TryGetProperty("@graph", out JsonElement graph)
+                && (
+                    graph.ValueKind == JsonValueKind.Array
+                    || graph.ValueKind == JsonValueKind.Object
+                );
+        }
+
+        /// <summary>
         /// Determines whether the specified <see cref="JsonElement"/> represents a Schema.org element.
         /// </summary>
         /// <remarks>This method checks for the presence of the "@context" property in the JSON element
@@ -237,7 +252,7 @@ namespace Denomica.JsonLD.Extensions
             if (element.HasProperty("@context") && element.TryGetProperty("@context", out var context) && context.ValueKind == JsonValueKind.String)
             {
                 var text = context.GetString()?.ToLower();
-                return text == "http://schema.org" || text == "http://schema.org/" || text == "https://schema.org" || text == "https://schema.org/";
+                return text == DefaultContext || text == "https://schema.org/" || text == "http://schema.org" || text == "http://schema.org/";
             }
             return false;
         }
@@ -286,6 +301,44 @@ namespace Denomica.JsonLD.Extensions
             }
 
             return false;
+        }
+
+        /// <summary>
+        /// Assumes that the given element contains a JSON-LD graph and enumerates its items.
+        /// </summary>
+        private static IEnumerable<JsonElement> EnumerateGraph(this JsonElement element)
+        {
+            if(element.IsSchemaOrgElement() && element.TryGetProperty("@graph", out JsonElement graph))
+            {
+                var contextUri = element.GetProperty("@context").GetString() ?? DefaultContext;
+
+                if(graph.ValueKind == JsonValueKind.Array)
+                {
+                    foreach(var item in graph.EnumerateArray())
+                    {
+                        yield return item.EnsureContextAttribute(contextUri);
+                    }
+                }
+                else if(graph.ValueKind == JsonValueKind.Object)
+                {
+                    yield return graph.EnsureContextAttribute(contextUri);
+                }
+            }
+
+            yield break;
+        }
+
+        private static JsonElement EnsureContextAttribute(this JsonElement element, string contextValue)
+        {
+            if(!element.TryGetProperty("@context", out var context))
+            {
+                var d = element.ToJsonDictionary();
+                d["@context"] = contextValue;
+
+                return d.Deserialize<JsonElement>();
+            }
+
+            return element;
         }
 
     }

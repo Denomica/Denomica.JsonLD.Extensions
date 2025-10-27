@@ -1,0 +1,2140 @@
+﻿
+<!DOCTYPE html>
+<html lang="en-GB">
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="profile" href="http://gmpg.org/xfn/11">
+    <link rel="pingback" href="https://mikaberglund.com/xmlrpc.php">
+    <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+    <style>
+        img:is([sizes="auto" i], [sizes^="auto," i]) {
+            contain-intrinsic-size: 3000px 1500px
+        }
+    </style>
+
+    <!-- This site is optimized with the Yoast SEO plugin v26.2 - https://yoast.com/wordpress/plugins/seo/ -->
+    <title>Cosmos DB Vector Search - An Introduction - MikaBerglund.com</title>
+    <meta name="description" content="Explore Azure Cosmos DB as a vector database and generate embeddings with Azure AI Foundry&#039;s LLMs for powerful text search and analysis." />
+    <link rel="canonical" href="https://mikaberglund.com/cosmos-db-vector-search-an-introduction/" />
+    <meta property="og:locale" content="en_GB" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Cosmos DB Vector Search - An Introduction - MikaBerglund.com" />
+    <meta property="og:description" content="Explore Azure Cosmos DB as a vector database and generate embeddings with Azure AI Foundry&#039;s LLMs for powerful text search and analysis." />
+    <meta property="og:url" content="https://mikaberglund.com/cosmos-db-vector-search-an-introduction/" />
+    <meta property="og:site_name" content="MikaBerglund.com" />
+    <meta property="article:publisher" content="https://www.facebook.com/mikaberglund" />
+    <meta property="article:author" content="https://www.facebook.com/mikaberglund" />
+    <meta property="article:published_time" content="2025-02-22T11:55:31+00:00" />
+    <meta property="article:modified_time" content="2025-04-01T04:47:47+00:00" />
+    <meta property="og:image" content="https://mikaberglund.com/wp-content/uploads/2025/02/cosmos-db-vector-search.jpg" />
+    <meta property="og:image:width" content="1792" />
+    <meta property="og:image:height" content="1024" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta name="author" content="Mika Berglund" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:creator" content="@MikaBerglund" />
+    <meta name="twitter:site" content="@MikaBerglund" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="Mika Berglund" />
+    <meta name="twitter:label2" content="Estimated reading time" />
+    <meta name="twitter:data2" content="15 minutes" />
+    <script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://mikaberglund.com/cosmos-db-vector-search-an-introduction/#article","isPartOf":{"@id":"https://mikaberglund.com/cosmos-db-vector-search-an-introduction/"},"author":{"name":"Mika Berglund","@id":"https://mikaberglund.com/#/schema/person/0538367110d2e025c20e2faad3c312cb"},"headline":"Cosmos DB Vector Search &#8211; An Introduction","datePublished":"2025-02-22T11:55:31+00:00","dateModified":"2025-04-01T04:47:47+00:00","mainEntityOfPage":{"@id":"https://mikaberglund.com/cosmos-db-vector-search-an-introduction/"},"wordCount":3189,"commentCount":0,"publisher":{"@id":"https://mikaberglund.com/#/schema/person/0538367110d2e025c20e2faad3c312cb"},"image":{"@id":"https://mikaberglund.com/cosmos-db-vector-search-an-introduction/#primaryimage"},"thumbnailUrl":"https://mikaberglund.com/wp-content/uploads/2025/02/cosmos-db-vector-search.jpg","keywords":["Azure AI Foundry","Azure Cosmos DB","Cosmos DB","Embedding Models","RAG","Similarity Search","Vector Embeddings","Vector Search"],"articleSection":["AI","Azure AI","Cosmos DB","Vector Embeddings"],"inLanguage":"en-GB","potentialAction":[{"@type":"CommentAction","name":"Comment","target":["https://mikaberglund.com/cosmos-db-vector-search-an-introduction/#respond"]}]},{"@type":"WebPage","@id":"https://mikaberglund.com/cosmos-db-vector-search-an-introduction/","url":"https://mikaberglund.com/cosmos-db-vector-search-an-introduction/","name":"Cosmos DB Vector Search - An Introduction - MikaBerglund.com","isPartOf":{"@id":"https://mikaberglund.com/#website"},"primaryImageOfPage":{"@id":"https://mikaberglund.com/cosmos-db-vector-search-an-introduction/#primaryimage"},"image":{"@id":"https://mikaberglund.com/cosmos-db-vector-search-an-introduction/#primaryimage"},"thumbnailUrl":"https://mikaberglund.com/wp-content/uploads/2025/02/cosmos-db-vector-search.jpg","datePublished":"2025-02-22T11:55:31+00:00","dateModified":"2025-04-01T04:47:47+00:00","description":"Explore Azure Cosmos DB as a vector database and generate embeddings with Azure AI Foundry's LLMs for powerful text search and analysis.","breadcrumb":{"@id":"https://mikaberglund.com/cosmos-db-vector-search-an-introduction/#breadcrumb"},"inLanguage":"en-GB","potentialAction":[{"@type":"ReadAction","target":["https://mikaberglund.com/cosmos-db-vector-search-an-introduction/"]}]},{"@type":"ImageObject","inLanguage":"en-GB","@id":"https://mikaberglund.com/cosmos-db-vector-search-an-introduction/#primaryimage","url":"https://mikaberglund.com/wp-content/uploads/2025/02/cosmos-db-vector-search.jpg","contentUrl":"https://mikaberglund.com/wp-content/uploads/2025/02/cosmos-db-vector-search.jpg","width":1792,"height":1024},{"@type":"BreadcrumbList","@id":"https://mikaberglund.com/cosmos-db-vector-search-an-introduction/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://mikaberglund.com/"},{"@type":"ListItem","position":2,"name":"Cosmos DB Vector Search &#8211; An Introduction"}]},{"@type":"WebSite","@id":"https://mikaberglund.com/#website","url":"https://mikaberglund.com/","name":"MikaBerglund.com","description":"Designing and Developing Solutions for Microsoft Cloud","publisher":{"@id":"https://mikaberglund.com/#/schema/person/0538367110d2e025c20e2faad3c312cb"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://mikaberglund.com/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"en-GB"},{"@type":["Person","Organization"],"@id":"https://mikaberglund.com/#/schema/person/0538367110d2e025c20e2faad3c312cb","name":"Mika Berglund","image":{"@type":"ImageObject","inLanguage":"en-GB","@id":"https://mikaberglund.com/#/schema/person/image/","url":"https://mikaberglund.com/wp-content/uploads/2020/08/Mika14b-1024.jpg","contentUrl":"https://mikaberglund.com/wp-content/uploads/2020/08/Mika14b-1024.jpg","width":1024,"height":1024,"caption":"Mika Berglund"},"logo":{"@id":"https://mikaberglund.com/#/schema/person/image/"},"sameAs":["https://www.facebook.com/mikaberglund","https://www.linkedin.com/in/mikaberglund/","https://x.com/MikaBerglund","https://www.youtube.com/channel/UCfOF1aIOdZskejallCfaqeg"]}]}</script>
+    <!-- / Yoast SEO plugin. -->
+
+
+    <link rel='dns-prefetch' href='//www.googletagmanager.com' />
+    <link rel='dns-prefetch' href='//maxcdn.bootstrapcdn.com' />
+    <link rel='dns-prefetch' href='//fonts.googleapis.com' />
+    <link rel='dns-prefetch' href='//pagead2.googlesyndication.com' />
+    <link rel="alternate" type="application/rss+xml" title="MikaBerglund.com &raquo; Feed" href="https://mikaberglund.com/feed/" />
+    <link rel="alternate" type="application/rss+xml" title="MikaBerglund.com &raquo; Comments Feed" href="https://mikaberglund.com/comments/feed/" />
+    <link rel="alternate" type="application/rss+xml" title="MikaBerglund.com &raquo; Cosmos DB Vector Search &#8211; An Introduction Comments Feed" href="https://mikaberglund.com/cosmos-db-vector-search-an-introduction/feed/" />
+    <script type="text/javascript">
+/* <![CDATA[ */
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16.0.1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16.0.1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/mikaberglund.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.8.3"}};
+/*! This file is auto-generated */
+!function(s,n){var o,i,e;function c(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function p(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data),a=(e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0),new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data));return t.every(function(e,t){return e===a[t]})}function u(e,t){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);for(var n=e.getImageData(16,16,1,1),a=0;a<n.data.length;a++)if(0!==n.data[a])return!1;return!0}function f(e,t,n,a){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\udde8\ud83c\uddf6","\ud83c\udde8\u200b\ud83c\uddf6")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!a(e,"\ud83e\udedf")}return!1}function g(e,t,n,a){var r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):s.createElement("canvas"),o=r.getContext("2d",{willReadFrequently:!0}),i=(o.textBaseline="top",o.font="600 32px Arial",{});return e.forEach(function(e){i[e]=t(o,e,n,a)}),i}function t(e){var t=s.createElement("script");t.src=e,t.defer=!0,s.head.appendChild(t)}"undefined"!=typeof Promise&&(o="wpEmojiSettingsSupports",i=["flag","emoji"],n.supports={everything:!0,everythingExceptFlag:!0},e=new Promise(function(e){s.addEventListener("DOMContentLoaded",e,{once:!0})}),new Promise(function(t){var n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+g.toString()+"("+[JSON.stringify(i),f.toString(),p.toString(),u.toString()].join(",")+"));",a=new Blob([e],{type:"text/javascript"}),r=new Worker(URL.createObjectURL(a),{name:"wpTestEmojiSupports"});return void(r.onmessage=function(e){c(n=e.data),r.terminate(),t(n)})}catch(e){}c(n=g(i,f,p,u))}t(n)}).then(function(e){for(var t in e)n.supports[t]=e[t],n.supports.everything=n.supports.everything&&n.supports[t],"flag"!==t&&(n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&n.supports[t]);n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&!n.supports.flag,n.DOMReady=!1,n.readyCallback=function(){n.DOMReady=!0}}).then(function(){return e}).then(function(){var e;n.supports.everything||(n.readyCallback(),(e=n.source||{}).concatemoji?t(e.concatemoji):e.wpemoji&&e.twemoji&&(t(e.twemoji),t(e.wpemoji)))}))}((window,document),window._wpemojiSettings);
+/* ]]> */
+    </script>
+    <style id='wp-emoji-styles-inline-css' type='text/css'>
+
+        img.wp-smiley, img.emoji {
+            display: inline !important;
+            border: none !important;
+            box-shadow: none !important;
+            height: 1em !important;
+            width: 1em !important;
+            margin: 0 0.07em !important;
+            vertical-align: -0.1em !important;
+            background: none !important;
+            padding: 0 !important;
+        }
+    </style>
+    <link rel='stylesheet' id='wp-block-library-css' href='https://mikaberglund.com/wp-includes/css/dist/block-library/style.min.css?ver=6.8.3' type='text/css' media='all' />
+    <style id='classic-theme-styles-inline-css' type='text/css'>
+        /*! This file is auto-generated */
+        .wp-block-button__link {
+            color: #fff;
+            background-color: #32373c;
+            border-radius: 9999px;
+            box-shadow: none;
+            text-decoration: none;
+            padding: calc(.667em + 2px) calc(1.333em + 2px);
+            font-size: 1.125em
+        }
+
+        .wp-block-file__button {
+            background: #32373c;
+            color: #fff;
+            text-decoration: none
+        }
+    </style>
+    <style id='global-styles-inline-css' type='text/css'>
+        :root {
+            --wp--preset--aspect-ratio--square: 1;
+            --wp--preset--aspect-ratio--4-3: 4/3;
+            --wp--preset--aspect-ratio--3-4: 3/4;
+            --wp--preset--aspect-ratio--3-2: 3/2;
+            --wp--preset--aspect-ratio--2-3: 2/3;
+            --wp--preset--aspect-ratio--16-9: 16/9;
+            --wp--preset--aspect-ratio--9-16: 9/16;
+            --wp--preset--color--black: #000000;
+            --wp--preset--color--cyan-bluish-gray: #abb8c3;
+            --wp--preset--color--white: #ffffff;
+            --wp--preset--color--pale-pink: #f78da7;
+            --wp--preset--color--vivid-red: #cf2e2e;
+            --wp--preset--color--luminous-vivid-orange: #ff6900;
+            --wp--preset--color--luminous-vivid-amber: #fcb900;
+            --wp--preset--color--light-green-cyan: #7bdcb5;
+            --wp--preset--color--vivid-green-cyan: #00d084;
+            --wp--preset--color--pale-cyan-blue: #8ed1fc;
+            --wp--preset--color--vivid-cyan-blue: #0693e3;
+            --wp--preset--color--vivid-purple: #9b51e0;
+            --wp--preset--color--accent: #e91e63;
+            --wp--preset--color--background-color: #E5E5E5;
+            --wp--preset--color--header-gradient: #43b1ff;
+            --wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);
+            --wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);
+            --wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);
+            --wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);
+            --wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);
+            --wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);
+            --wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);
+            --wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);
+            --wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);
+            --wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);
+            --wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);
+            --wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);
+            --wp--preset--font-size--small: 13px;
+            --wp--preset--font-size--medium: 20px;
+            --wp--preset--font-size--large: 36px;
+            --wp--preset--font-size--x-large: 42px;
+            --wp--preset--spacing--20: 0.44rem;
+            --wp--preset--spacing--30: 0.67rem;
+            --wp--preset--spacing--40: 1rem;
+            --wp--preset--spacing--50: 1.5rem;
+            --wp--preset--spacing--60: 2.25rem;
+            --wp--preset--spacing--70: 3.38rem;
+            --wp--preset--spacing--80: 5.06rem;
+            --wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);
+            --wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);
+            --wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);
+            --wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);
+            --wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);
+        }
+
+            :root :where(.is-layout-flow) > :first-child {
+                margin-block-start: 0;
+            }
+
+            :root :where(.is-layout-flow) > :last-child {
+                margin-block-end: 0;
+            }
+
+            :root :where(.is-layout-flow) > * {
+                margin-block-start: 24px;
+                margin-block-end: 0;
+            }
+
+            :root :where(.is-layout-constrained) > :first-child {
+                margin-block-start: 0;
+            }
+
+            :root :where(.is-layout-constrained) > :last-child {
+                margin-block-end: 0;
+            }
+
+            :root :where(.is-layout-constrained) > * {
+                margin-block-start: 24px;
+                margin-block-end: 0;
+            }
+
+            :root :where(.is-layout-flex) {
+                gap: 24px;
+            }
+
+            :root :where(.is-layout-grid) {
+                gap: 24px;
+            }
+
+        body .is-layout-flex {
+            display: flex;
+        }
+
+        .is-layout-flex {
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+            .is-layout-flex > :is(*, div) {
+                margin: 0;
+            }
+
+        body .is-layout-grid {
+            display: grid;
+        }
+
+        .is-layout-grid > :is(*, div) {
+            margin: 0;
+        }
+
+        .has-black-color {
+            color: var(--wp--preset--color--black) !important;
+        }
+
+        .has-cyan-bluish-gray-color {
+            color: var(--wp--preset--color--cyan-bluish-gray) !important;
+        }
+
+        .has-white-color {
+            color: var(--wp--preset--color--white) !important;
+        }
+
+        .has-pale-pink-color {
+            color: var(--wp--preset--color--pale-pink) !important;
+        }
+
+        .has-vivid-red-color {
+            color: var(--wp--preset--color--vivid-red) !important;
+        }
+
+        .has-luminous-vivid-orange-color {
+            color: var(--wp--preset--color--luminous-vivid-orange) !important;
+        }
+
+        .has-luminous-vivid-amber-color {
+            color: var(--wp--preset--color--luminous-vivid-amber) !important;
+        }
+
+        .has-light-green-cyan-color {
+            color: var(--wp--preset--color--light-green-cyan) !important;
+        }
+
+        .has-vivid-green-cyan-color {
+            color: var(--wp--preset--color--vivid-green-cyan) !important;
+        }
+
+        .has-pale-cyan-blue-color {
+            color: var(--wp--preset--color--pale-cyan-blue) !important;
+        }
+
+        .has-vivid-cyan-blue-color {
+            color: var(--wp--preset--color--vivid-cyan-blue) !important;
+        }
+
+        .has-vivid-purple-color {
+            color: var(--wp--preset--color--vivid-purple) !important;
+        }
+
+        .has-accent-color {
+            color: var(--wp--preset--color--accent) !important;
+        }
+
+        .has-background-color-color {
+            color: var(--wp--preset--color--background-color) !important;
+        }
+
+        .has-header-gradient-color {
+            color: var(--wp--preset--color--header-gradient) !important;
+        }
+
+        .has-black-background-color {
+            background-color: var(--wp--preset--color--black) !important;
+        }
+
+        .has-cyan-bluish-gray-background-color {
+            background-color: var(--wp--preset--color--cyan-bluish-gray) !important;
+        }
+
+        .has-white-background-color {
+            background-color: var(--wp--preset--color--white) !important;
+        }
+
+        .has-pale-pink-background-color {
+            background-color: var(--wp--preset--color--pale-pink) !important;
+        }
+
+        .has-vivid-red-background-color {
+            background-color: var(--wp--preset--color--vivid-red) !important;
+        }
+
+        .has-luminous-vivid-orange-background-color {
+            background-color: var(--wp--preset--color--luminous-vivid-orange) !important;
+        }
+
+        .has-luminous-vivid-amber-background-color {
+            background-color: var(--wp--preset--color--luminous-vivid-amber) !important;
+        }
+
+        .has-light-green-cyan-background-color {
+            background-color: var(--wp--preset--color--light-green-cyan) !important;
+        }
+
+        .has-vivid-green-cyan-background-color {
+            background-color: var(--wp--preset--color--vivid-green-cyan) !important;
+        }
+
+        .has-pale-cyan-blue-background-color {
+            background-color: var(--wp--preset--color--pale-cyan-blue) !important;
+        }
+
+        .has-vivid-cyan-blue-background-color {
+            background-color: var(--wp--preset--color--vivid-cyan-blue) !important;
+        }
+
+        .has-vivid-purple-background-color {
+            background-color: var(--wp--preset--color--vivid-purple) !important;
+        }
+
+        .has-accent-background-color {
+            background-color: var(--wp--preset--color--accent) !important;
+        }
+
+        .has-background-color-background-color {
+            background-color: var(--wp--preset--color--background-color) !important;
+        }
+
+        .has-header-gradient-background-color {
+            background-color: var(--wp--preset--color--header-gradient) !important;
+        }
+
+        .has-black-border-color {
+            border-color: var(--wp--preset--color--black) !important;
+        }
+
+        .has-cyan-bluish-gray-border-color {
+            border-color: var(--wp--preset--color--cyan-bluish-gray) !important;
+        }
+
+        .has-white-border-color {
+            border-color: var(--wp--preset--color--white) !important;
+        }
+
+        .has-pale-pink-border-color {
+            border-color: var(--wp--preset--color--pale-pink) !important;
+        }
+
+        .has-vivid-red-border-color {
+            border-color: var(--wp--preset--color--vivid-red) !important;
+        }
+
+        .has-luminous-vivid-orange-border-color {
+            border-color: var(--wp--preset--color--luminous-vivid-orange) !important;
+        }
+
+        .has-luminous-vivid-amber-border-color {
+            border-color: var(--wp--preset--color--luminous-vivid-amber) !important;
+        }
+
+        .has-light-green-cyan-border-color {
+            border-color: var(--wp--preset--color--light-green-cyan) !important;
+        }
+
+        .has-vivid-green-cyan-border-color {
+            border-color: var(--wp--preset--color--vivid-green-cyan) !important;
+        }
+
+        .has-pale-cyan-blue-border-color {
+            border-color: var(--wp--preset--color--pale-cyan-blue) !important;
+        }
+
+        .has-vivid-cyan-blue-border-color {
+            border-color: var(--wp--preset--color--vivid-cyan-blue) !important;
+        }
+
+        .has-vivid-purple-border-color {
+            border-color: var(--wp--preset--color--vivid-purple) !important;
+        }
+
+        .has-accent-border-color {
+            border-color: var(--wp--preset--color--accent) !important;
+        }
+
+        .has-background-color-border-color {
+            border-color: var(--wp--preset--color--background-color) !important;
+        }
+
+        .has-header-gradient-border-color {
+            border-color: var(--wp--preset--color--header-gradient) !important;
+        }
+
+        .has-vivid-cyan-blue-to-vivid-purple-gradient-background {
+            background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;
+        }
+
+        .has-light-green-cyan-to-vivid-green-cyan-gradient-background {
+            background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;
+        }
+
+        .has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background {
+            background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;
+        }
+
+        .has-luminous-vivid-orange-to-vivid-red-gradient-background {
+            background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;
+        }
+
+        .has-very-light-gray-to-cyan-bluish-gray-gradient-background {
+            background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;
+        }
+
+        .has-cool-to-warm-spectrum-gradient-background {
+            background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;
+        }
+
+        .has-blush-light-purple-gradient-background {
+            background: var(--wp--preset--gradient--blush-light-purple) !important;
+        }
+
+        .has-blush-bordeaux-gradient-background {
+            background: var(--wp--preset--gradient--blush-bordeaux) !important;
+        }
+
+        .has-luminous-dusk-gradient-background {
+            background: var(--wp--preset--gradient--luminous-dusk) !important;
+        }
+
+        .has-pale-ocean-gradient-background {
+            background: var(--wp--preset--gradient--pale-ocean) !important;
+        }
+
+        .has-electric-grass-gradient-background {
+            background: var(--wp--preset--gradient--electric-grass) !important;
+        }
+
+        .has-midnight-gradient-background {
+            background: var(--wp--preset--gradient--midnight) !important;
+        }
+
+        .has-small-font-size {
+            font-size: var(--wp--preset--font-size--small) !important;
+        }
+
+        .has-medium-font-size {
+            font-size: var(--wp--preset--font-size--medium) !important;
+        }
+
+        .has-large-font-size {
+            font-size: var(--wp--preset--font-size--large) !important;
+        }
+
+        .has-x-large-font-size {
+            font-size: var(--wp--preset--font-size--x-large) !important;
+        }
+
+        :root :where(.wp-block-pullquote) {
+            font-size: 1.5em;
+            line-height: 1.6;
+        }
+    </style>
+    <link rel='stylesheet' id='hestia-clients-bar-css' href='https://mikaberglund.com/wp-content/plugins/themeisle-companion/obfx_modules/companion-legacy/assets/css/hestia/clients-bar.css?ver=6.8.3' type='text/css' media='all' />
+    <link rel='stylesheet' id='dashicons-css' href='https://mikaberglund.com/wp-includes/css/dashicons.min.css?ver=6.8.3' type='text/css' media='all' />
+    <link rel='stylesheet' id='obfx-module-pub-css-menu-icons-0-css' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css?ver=3.0.1' type='text/css' media='all' />
+    <link rel='stylesheet' id='obfx-module-pub-css-menu-icons-1-css' href='https://mikaberglund.com/wp-content/plugins/themeisle-companion/obfx_modules/menu-icons/css/public.css?ver=3.0.1' type='text/css' media='all' />
+    <link rel='stylesheet' id='bootstrap-css' href='https://mikaberglund.com/wp-content/themes/hestia/assets/bootstrap/css/bootstrap.min.css?ver=1.0.2' type='text/css' media='all' />
+    <link rel='stylesheet' id='fagri_parent-css' href='https://mikaberglund.com/wp-content/themes/hestia/style.css?ver=1.0.6' type='text/css' media='all' />
+    <style id='fagri_parent-inline-css' type='text/css'>
+        .hestia-features-content .feature-box:nth-of-type(1) .hestia-info > a .icon {
+            box-shadow: 0 9px 30px -6px rgba(233,30,99,0.3);
+        }
+
+        .hestia-features-content .feature-box:nth-of-type(1) .hestia-info > a:hover .icon {
+            box-shadow: 0 15px 35px 0 rgba(233,30,99,0.35);
+        }
+
+        .hestia-features-content .feature-box:nth-of-type(1) .hestia-info > a:hover .info-title {
+            color: #e91e63;
+        }
+
+        .hestia-features-content .feature-box:nth-of-type(2) .hestia-info > a .icon {
+            box-shadow: 0 9px 30px -6px rgba(0,188,212,0.3);
+        }
+
+        .hestia-features-content .feature-box:nth-of-type(2) .hestia-info > a:hover .icon {
+            box-shadow: 0 15px 35px 0 rgba(0,188,212,0.35);
+        }
+
+        .hestia-features-content .feature-box:nth-of-type(2) .hestia-info > a:hover .info-title {
+            color: #00bcd4;
+        }
+
+        .hestia-features-content .feature-box:nth-of-type(3) .hestia-info > a .icon {
+            box-shadow: 0 9px 30px -6px rgba(76,175,80,0.3);
+        }
+
+        .hestia-features-content .feature-box:nth-of-type(3) .hestia-info > a:hover .icon {
+            box-shadow: 0 15px 35px 0 rgba(76,175,80,0.35);
+        }
+
+        .hestia-features-content .feature-box:nth-of-type(3) .hestia-info > a:hover .info-title {
+            color: #4caf50;
+        }
+
+        .btn, .button, button, input[type="submit"] {
+            background-color: #2ca8ff;
+        }
+
+            .btn:hover, .button:hover, button:hover, input[type="submit"]:hover {
+                background-color: #2ca8ff;
+            }
+
+        .fagri-team-wrapper .hestia-team .card-profile .col-md-7 .content .category {
+            color: #2ca8ff
+        }
+
+        .fagri-testimonials-wrapper .hestia-testimonials .hestia-testimonials-content .card-testimonial .content .card-description::before {
+            color: #2ca8ff;
+        }
+
+        .hestia-pricing .card-pricing .content .hestia-pricing-icon-wrapper {
+            box-shadow: 0px 9px 30px -6px #2ca8ff;
+        }
+
+        .hestia-pricing .card-pricing.card-raised {
+            background-color: #2ca8ff;
+        }
+
+            .hestia-pricing .card-pricing.card-raised .content .btn {
+                color: #2ca8ff;
+            }
+
+        .pirate_forms_wrap .form-group.is-focused .form-control:not(textarea):not(select):not([type="file"]):not([type="checkbox"]) {
+            border-color: #2ca8ff;
+        }
+
+        .authors-on-blog .card-profile.card-plain .col-md-7 .content .category {
+            color: #2ca8ff;
+        }
+
+        #respond.comment-respond .col-md-4 > .form-group.is-focused .form-control {
+            border-color: #2ca8ff;
+        }
+
+        .shop-item .card-product .content .footer .stats a i {
+            color: #2ca8ff;
+        }
+
+        .product .card-product .content .footer .stats a i {
+            color: #2ca8ff;
+        }
+
+        .shop-item .card-product .content .footer .price h4 del + .woocommerce-Price-amount {
+            color: #2ca8ff;
+        }
+
+        .product .card-product .content .footer .price h4 del + .woocommerce-Price-amount {
+            color: #2ca8ff;
+        }
+
+        .star-rating span {
+            color: #2ca8ff !important;
+        }
+
+        .woocommerce-page #reviews #review_form_wrapper .form-group.is-focused input#author,
+        .woocommerce-page #reviews #review_form_wrapper .form-group.is-focused input#email {
+            border-color: #2ca8ff;
+        }
+
+        .woocommerce.single-product .main .blog-post .product .woocommerce-tabs #tab-reviews .stars a[class*="star-"]::before {
+            color: #2ca8ff;
+        }
+
+        .woocommerce-cart .shop_table .button {
+            background-color: #2ca8ff !important;
+            border-color: #2ca8ff !important;
+        }
+
+        .woocommerce-account form.woocommerce-form.woocommerce-form-login .form-group.is-focused input {
+            border-color: #2ca8ff;
+        }
+
+        .woocommerce-account .woocommerce-MyAccount-content .woocommerce-EditAccountForm .form-group.is-focused input {
+            border-color: #2ca8ff;
+        }
+
+        .navbar.navbar-default:not(.navbar-transparent) li:not(.btn):hover > a,
+        .navbar.navbar-default.navbar-transparent .dropdown-menu li:not(.btn):hover > a,
+        .navbar.navbar-default:not(.navbar-transparent) li:not(.btn):hover > a i,
+        .navbar.navbar-default:not(.navbar-transparent) .navbar-toggle:hover,
+        .navbar.navbar-default:not(.full-screen-menu) .nav-cart-icon .nav-cart-content a:hover,
+        .navbar.navbar-default:not(.navbar-transparent) .hestia-toggle-search:hover {
+            color: #2ca8ff !important;
+        }
+
+        input:not([type="submit"]):focus-within {
+            border: 1px solid #2ca8ff !important;
+        }
+
+        textarea.form-control:focus-within,
+        input[type="checkbox"]:focus-within,
+        input[type="file"]:focus-within,
+        select:focus-within {
+            border: none !important;
+            border-bottom: 1px solid #2ca8ff !important;
+        }
+    </style>
+    <link rel='stylesheet' id='hestia-font-sizes-css' href='https://mikaberglund.com/wp-content/themes/hestia/assets/css/font-sizes.min.css?ver=3.3.3' type='text/css' media='all' />
+    <link rel='stylesheet' id='hestia_style-css' href='https://mikaberglund.com/wp-content/themes/fagri/style.css?ver=3.3.3' type='text/css' media='all' />
+    <style id='hestia_style-inline-css' type='text/css'>
+        .footer-big .footer-menu li a[href*="facebook.com"], .footer-big .footer-menu li a[href*="twitter.com"], .footer-big .footer-menu li a:is( [href*="://x.com"],[href*="://www.x.com"]), .footer-big .footer-menu li a[href*="pinterest.com"], .footer-big .footer-menu li a[href*="google.com"], .footer-big .footer-menu li a[href*="linkedin.com"], .footer-big .footer-menu li a[href*="dribbble.com"], .footer-big .footer-menu li a[href*="github.com"], .footer-big .footer-menu li a[href*="youtube.com"], .footer-big .footer-menu li a[href*="instagram.com"], .footer-big .footer-menu li a[href*="reddit.com"], .footer-big .footer-menu li a[href*="tumblr.com"], .footer-big .footer-menu li a[href*="behance.com"], .footer-big .footer-menu li a[href*="snapchat.com"], .footer-big .footer-menu li a[href*="deviantart.com"], .footer-big .footer-menu li a[href*="vimeo.com"] {
+            color: transparent;
+            font-size: 0;
+            padding: 10px
+        }
+
+            .footer-big .footer-menu li a[href*="facebook.com"]:hover, .footer-big .footer-menu li a[href*="twitter.com"]:hover, .footer-big .footer-menu li a[href*="pinterest.com"]:hover, .footer-big .footer-menu li a[href*="google.com"]:hover, .footer-big .footer-menu li a[href*="linkedin.com"]:hover, .footer-big .footer-menu li a[href*="dribbble.com"]:hover, .footer-big .footer-menu li a[href*="github.com"]:hover, .footer-big .footer-menu li a[href*="youtube.com"]:hover, .footer-big .footer-menu li a[href*="instagram.com"]:hover, .footer-big .footer-menu li a[href*="reddit.com"]:hover, .footer-big .footer-menu li a[href*="tumblr.com"]:hover, .footer-big .footer-menu li a[href*="behance.com"]:hover, .footer-big .footer-menu li a[href*="snapchat.com"]:hover, .footer-big .footer-menu li a[href*="deviantart.com"]:hover, .footer-big .footer-menu li a[href*="vimeo.com"]:hover, .footer-big .footer-menu li a:is( [href*="://x.com"],[href*="://www.x.com"]):hover {
+                opacity: 1 !important
+            }
+
+                .footer-big .footer-menu li a[href*="facebook.com"]:hover:before {
+                    color: #3b5998
+                }
+
+                .footer-big .footer-menu li a[href*="twitter.com"]:hover:before {
+                    color: #000
+                }
+
+                .footer-big .footer-menu li a[href*="pinterest.com"]:hover:before {
+                    color: #cc2127
+                }
+
+                .footer-big .footer-menu li a[href*="google.com"]:hover:before {
+                    color: #dd4b39
+                }
+
+                .footer-big .footer-menu li a[href*="linkedin.com"]:hover:before {
+                    color: #0976b4
+                }
+
+                .footer-big .footer-menu li a[href*="dribbble.com"]:hover:before {
+                    color: #ea4c89
+                }
+
+                .footer-big .footer-menu li a[href*="github.com"]:hover:before {
+                    color: #000
+                }
+
+                .footer-big .footer-menu li a[href*="youtube.com"]:hover:before {
+                    color: #e52d27
+                }
+
+                .footer-big .footer-menu li a[href*="instagram.com"]:hover:before {
+                    color: #125688
+                }
+
+                .footer-big .footer-menu li a[href*="reddit.com"]:hover:before {
+                    color: #ff4500
+                }
+
+                .footer-big .footer-menu li a[href*="tumblr.com"]:hover:before {
+                    color: #35465c
+                }
+
+                .footer-big .footer-menu li a[href*="behance.com"]:hover:before {
+                    color: #1769ff
+                }
+
+                .footer-big .footer-menu li a[href*="snapchat.com"]:hover:before {
+                    color: #fffc00
+                }
+
+                .footer-big .footer-menu li a[href*="deviantart.com"]:hover:before {
+                    color: #05cc47
+                }
+
+                .footer-big .footer-menu li a[href*="vimeo.com"]:hover:before {
+                    color: #1ab7ea
+                }
+
+                .footer-big .footer-menu li a:is( [href*="://x.com"],[href*="://www.x.com"]):hover:before {
+                    color: #000
+                }
+
+            .footer-big .footer-menu li a[href*="facebook.com"]:before, .footer-big .footer-menu li a[href*="twitter.com"]:before, .footer-big .footer-menu li a[href*="pinterest.com"]:before, .footer-big .footer-menu li a[href*="google.com"]:before, .footer-big .footer-menu li a[href*="linkedin.com"]:before, .footer-big .footer-menu li a[href*="dribbble.com"]:before, .footer-big .footer-menu li a[href*="github.com"]:before, .footer-big .footer-menu li a[href*="youtube.com"]:before, .footer-big .footer-menu li a[href*="instagram.com"]:before, .footer-big .footer-menu li a[href*="reddit.com"]:before, .footer-big .footer-menu li a[href*="tumblr.com"]:before, .footer-big .footer-menu li a[href*="behance.com"]:before, .footer-big .footer-menu li a[href*="snapchat.com"]:before, .footer-big .footer-menu li a[href*="deviantart.com"]:before, .footer-big .footer-menu li a[href*="vimeo.com"]:before, .footer-big .footer-menu li a:is( [href*="://x.com"],[href*="://www.x.com"]):before {
+                font-family: "Font Awesome 5 Brands";
+                font-weight: 900;
+                color: #3c4858;
+                font-size: 16px
+            }
+
+            .footer-black .footer-menu li a[href*="facebook.com"]:before, .footer-black .footer-menu li a[href*="twitter.com"]:before, .footer-black .footer-menu li a[href*="pinterest.com"]:before, .footer-black .footer-menu li a[href*="google.com"]:before, .footer-black .footer-menu li a[href*="linkedin.com"]:before, .footer-black .footer-menu li a[href*="dribbble.com"]:before, .footer-black .footer-menu li a[href*="github.com"]:before, .footer-black .footer-menu li a[href*="youtube.com"]:before, .footer-black .footer-menu li a[href*="instagram.com"]:before, .footer-black .footer-menu li a[href*="reddit.com"]:before, .footer-black .footer-menu li a[href*="tumblr.com"]:before, .footer-black .footer-menu li a[href*="behance.com"]:before, .footer-black .footer-menu li a[href*="snapchat.com"]:before, .footer-black .footer-menu li a[href*="deviantart.com"]:before, .footer-black .footer-menu li a[href*="vimeo.com"]:before, .footer-big .footer-menu li a:is( [href*="://x.com"],[href*="://www.x.com"]):before {
+                color: #fff
+            }
+
+            .footer-big .footer-menu li a[href*="facebook.com"]:before {
+                content: "\f39e"
+            }
+
+            .footer-big .footer-menu li a[href*="twitter.com"]:before {
+                content: "\f099"
+            }
+
+            .footer-big .footer-menu li a[href*="pinterest.com"]:before {
+                content: "\f231"
+            }
+
+            .footer-big .footer-menu li a[href*="google.com"]:before {
+                content: "\f1a0"
+            }
+
+            .footer-big .footer-menu li a[href*="linkedin.com"]:before {
+                content: "\f0e1"
+            }
+
+            .footer-big .footer-menu li a[href*="dribbble.com"]:before {
+                content: "\f17d"
+            }
+
+            .footer-big .footer-menu li a[href*="github.com"]:before {
+                content: "\f09b"
+            }
+
+            .footer-big .footer-menu li a[href*="youtube.com"]:before {
+                content: "\f167"
+            }
+
+            .footer-big .footer-menu li a[href*="instagram.com"]:before {
+                content: "\f16d"
+            }
+
+            .footer-big .footer-menu li a[href*="reddit.com"]:before {
+                content: "\f281"
+            }
+
+            .footer-big .footer-menu li a[href*="tumblr.com"]:before {
+                content: "\f173"
+            }
+
+            .footer-big .footer-menu li a[href*="behance.com"]:before {
+                content: "\f1b4"
+            }
+
+            .footer-big .footer-menu li a[href*="snapchat.com"]:before {
+                content: "\f2ab"
+            }
+
+            .footer-big .footer-menu li a[href*="deviantart.com"]:before {
+                content: "\f1bd"
+            }
+
+            .footer-big .footer-menu li a[href*="vimeo.com"]:before {
+                content: "\f27d"
+            }
+
+            .footer-big .footer-menu li a:is( [href*="://x.com"],[href*="://www.x.com"]):before {
+                content: "\e61b"
+            }
+
+        .hestia-top-bar, .hestia-top-bar .widget.widget_shopping_cart .cart_list {
+            background-color: #363537
+        }
+
+            .hestia-top-bar .widget .label-floating input[type=search]:-webkit-autofill {
+                -webkit-box-shadow: inset 0 0 0 9999px #363537
+            }
+
+            .hestia-top-bar, .hestia-top-bar .widget .label-floating input[type=search], .hestia-top-bar .widget.widget_search form.form-group:before, .hestia-top-bar .widget.widget_product_search form.form-group:before, .hestia-top-bar .widget.widget_shopping_cart:before {
+                color: #fff
+            }
+
+                .hestia-top-bar .widget .label-floating input[type=search] {
+                    -webkit-text-fill-color: #fff !important
+                }
+
+                .hestia-top-bar div.widget.widget_shopping_cart:before, .hestia-top-bar .widget.widget_product_search form.form-group:before, .hestia-top-bar .widget.widget_search form.form-group:before {
+                    background-color: #fff
+                }
+
+                .hestia-top-bar a, .hestia-top-bar .top-bar-nav li a {
+                    color: #fff
+                }
+
+                .hestia-top-bar ul li a[href*="mailto:"]:before, .hestia-top-bar ul li a[href*="tel:"]:before {
+                    background-color: #fff
+                }
+
+                .hestia-top-bar a:hover, .hestia-top-bar .top-bar-nav li a:hover {
+                    color: #eee
+                }
+
+                .hestia-top-bar ul li:hover a[href*="mailto:"]:before, .hestia-top-bar ul li:hover a[href*="tel:"]:before {
+                    background-color: #eee
+                }
+
+        footer.footer.footer-black {
+            background: #323437
+        }
+
+            footer.footer.footer-black.footer-big {
+                color: #fff
+            }
+
+            footer.footer.footer-black a {
+                color: #fff
+            }
+
+            footer.footer.footer-black hr {
+                border-color: #5e5e5e
+            }
+
+        .footer-big p, .widget, .widget code, .widget pre {
+            color: #5e5e5e
+        }
+
+        :root {
+            --hestia-primary-color: #2ca8ff
+        }
+
+        a, .navbar .dropdown-menu li:hover > a, .navbar .dropdown-menu li:focus > a, .navbar .dropdown-menu li:active > a, .navbar .navbar-nav > li .dropdown-menu li:hover > a, body:not(.home) .navbar-default .navbar-nav > .active:not(.btn) > a, body:not(.home) .navbar-default .navbar-nav > .active:not(.btn) > a:hover, body:not(.home) .navbar-default .navbar-nav > .active:not(.btn) > a:focus, a:hover, .card-blog a.moretag:hover, .card-blog a.more-link:hover, .widget a:hover, .has-text-color.has-accent-color, p.has-text-color a {
+            color: #2ca8ff
+        }
+
+        .svg-text-color {
+            fill: #2ca8ff
+        }
+
+        .pagination span.current, .pagination span.current:focus, .pagination span.current:hover {
+            border-color: #2ca8ff
+        }
+
+            button, button:hover, .woocommerce .track_order button[type="submit"], .woocommerce .track_order button[type="submit"]:hover, div.wpforms-container .wpforms-form button[type=submit].wpforms-submit, div.wpforms-container .wpforms-form button[type=submit].wpforms-submit:hover, input[type="button"], input[type="button"]:hover, input[type="submit"], input[type="submit"]:hover, input#searchsubmit, .pagination span.current, .pagination span.current:focus, .pagination span.current:hover, .btn.btn-primary, .btn.btn-primary:link, .btn.btn-primary:hover, .btn.btn-primary:focus, .btn.btn-primary:active, .btn.btn-primary.active, .btn.btn-primary.active:focus, .btn.btn-primary.active:hover, .btn.btn-primary:active:hover, .btn.btn-primary:active:focus, .btn.btn-primary:active:hover, .hestia-sidebar-open.btn.btn-rose, .hestia-sidebar-close.btn.btn-rose, .hestia-sidebar-open.btn.btn-rose:hover, .hestia-sidebar-close.btn.btn-rose:hover, .hestia-sidebar-open.btn.btn-rose:focus, .hestia-sidebar-close.btn.btn-rose:focus, .label.label-primary, .hestia-work .portfolio-item:nth-child(6n+1) .label, .nav-cart .nav-cart-content .widget .buttons .button, .has-accent-background-color[class*="has-background"] {
+                background-color: #2ca8ff
+            }
+
+        @media(max-width:768px) {
+            .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus, .navbar .navbar-nav .dropdown .dropdown-menu li a:hover, .navbar .navbar-nav .dropdown .dropdown-menu li a:focus, .navbar button.navbar-toggle:hover, .navbar .navbar-nav li:hover > a i {
+                color: #2ca8ff
+            }
+        }
+
+        body:not(.woocommerce-page) button:not([class^="fl-"]):not(.hestia-scroll-to-top):not(.navbar-toggle):not(.close), body:not(.woocommerce-page) .button:not([class^="fl-"]):not(hestia-scroll-to-top):not(.navbar-toggle):not(.add_to_cart_button):not(.product_type_grouped):not(.product_type_external), div.wpforms-container .wpforms-form button[type=submit].wpforms-submit, input[type="submit"], input[type="button"], .btn.btn-primary, .widget_product_search button[type="submit"], .hestia-sidebar-open.btn.btn-rose, .hestia-sidebar-close.btn.btn-rose, .everest-forms button[type=submit].everest-forms-submit-button {
+            -webkit-box-shadow: 0 2px 2px 0 rgba(44,168,255,0.14),0 3px 1px -2px rgba(44,168,255,0.2),0 1px 5px 0 rgba(44,168,255,0.12);
+            box-shadow: 0 2px 2px 0 rgba(44,168,255,0.14),0 3px 1px -2px rgba(44,168,255,0.2),0 1px 5px 0 rgba(44,168,255,0.12)
+        }
+
+        .card .header-primary, .card .content-primary, .everest-forms button[type=submit].everest-forms-submit-button {
+            background: #2ca8ff
+        }
+
+            body:not(.woocommerce-page) .button:not([class^="fl-"]):not(.hestia-scroll-to-top):not(.navbar-toggle):not(.add_to_cart_button):hover, body:not(.woocommerce-page) button:not([class^="fl-"]):not(.hestia-scroll-to-top):not(.navbar-toggle):not(.close):hover, div.wpforms-container .wpforms-form button[type=submit].wpforms-submit:hover, input[type="submit"]:hover, input[type="button"]:hover, input#searchsubmit:hover, .widget_product_search button[type="submit"]:hover, .pagination span.current, .btn.btn-primary:hover, .btn.btn-primary:focus, .btn.btn-primary:active, .btn.btn-primary.active, .btn.btn-primary:active:focus, .btn.btn-primary:active:hover, .hestia-sidebar-open.btn.btn-rose:hover, .hestia-sidebar-close.btn.btn-rose:hover, .pagination span.current:hover, .everest-forms button[type=submit].everest-forms-submit-button:hover, .everest-forms button[type=submit].everest-forms-submit-button:focus, .everest-forms button[type=submit].everest-forms-submit-button:active {
+                -webkit-box-shadow: 0 14px 26px -12px rgba(44,168,255,0.42),0 4px 23px 0 rgba(0,0,0,0.12),0 8px 10px -5px rgba(44,168,255,0.2);
+                box-shadow: 0 14px 26px -12px rgba(44,168,255,0.42),0 4px 23px 0 rgba(0,0,0,0.12),0 8px 10px -5px rgba(44,168,255,0.2);
+                color: #fff
+            }
+
+        .form-group.is-focused .form-control {
+            background-image: -webkit-gradient(linear,left top,left bottom,from(#2ca8ff),to(#2ca8ff)),-webkit-gradient(linear,left top,left bottom,from(#d2d2d2),to(#d2d2d2));
+            background-image: -webkit-linear-gradient(linear,left top,left bottom,from(#2ca8ff),to(#2ca8ff)),-webkit-linear-gradient(linear,left top,left bottom,from(#d2d2d2),to(#d2d2d2));
+            background-image: linear-gradient(linear,left top,left bottom,from(#2ca8ff),to(#2ca8ff)),linear-gradient(linear,left top,left bottom,from(#d2d2d2),to(#d2d2d2))
+        }
+
+        .navbar:not(.navbar-transparent) li:not(.btn):hover > a, .navbar li.on-section:not(.btn) > a, .navbar.full-screen-menu.navbar-transparent li:not(.btn):hover > a, .navbar.full-screen-menu .navbar-toggle:hover, .navbar:not(.navbar-transparent) .nav-cart:hover, .navbar:not(.navbar-transparent) .hestia-toggle-search:hover {
+            color: #2ca8ff
+        }
+
+        .header-filter-gradient {
+            background: linear-gradient(45deg,rgba(67,177,255,1) 0,rgb(133,205,234) 100%)
+        }
+
+        .has-text-color.has-header-gradient-color {
+            color: #43b1ff
+        }
+
+        .has-header-gradient-background-color[class*="has-background"] {
+            background-color: #43b1ff
+        }
+
+        .has-text-color.has-background-color-color {
+            color: #E5E5E5
+        }
+
+        .has-background-color-background-color[class*="has-background"] {
+            background-color: #E5E5E5
+        }
+
+        .btn.btn-primary:not(.colored-button):not(.btn-left):not(.btn-right):not(.btn-just-icon):not(.menu-item), input[type="submit"]:not(.search-submit), body:not(.woocommerce-account) .woocommerce .button.woocommerce-Button, .woocommerce .product button.button, .woocommerce .product button.button.alt, .woocommerce .product #respond input#submit, .woocommerce-cart .blog-post .woocommerce .cart-collaterals .cart_totals .checkout-button, .woocommerce-checkout #payment #place_order, .woocommerce-account.woocommerce-page button.button, .woocommerce .track_order button[type="submit"], .nav-cart .nav-cart-content .widget .buttons .button, .woocommerce a.button.wc-backward, body.woocommerce .wccm-catalog-item a.button, body.woocommerce a.wccm-button.button, form.woocommerce-form-coupon button.button, div.wpforms-container .wpforms-form button[type=submit].wpforms-submit, div.woocommerce a.button.alt, div.woocommerce table.my_account_orders .button, .btn.colored-button, .btn.btn-left, .btn.btn-right, .btn:not(.colored-button):not(.btn-left):not(.btn-right):not(.btn-just-icon):not(.menu-item):not(.hestia-sidebar-open):not(.hestia-sidebar-close) {
+            padding-top: 15px;
+            padding-bottom: 15px;
+            padding-left: 33px;
+            padding-right: 33px
+        }
+
+        :root {
+            --hestia-button-border-radius: 3px
+        }
+
+        .btn.btn-primary:not(.colored-button):not(.btn-left):not(.btn-right):not(.btn-just-icon):not(.menu-item), input[type="submit"]:not(.search-submit), body:not(.woocommerce-account) .woocommerce .button.woocommerce-Button, .woocommerce .product button.button, .woocommerce .product button.button.alt, .woocommerce .product #respond input#submit, .woocommerce-cart .blog-post .woocommerce .cart-collaterals .cart_totals .checkout-button, .woocommerce-checkout #payment #place_order, .woocommerce-account.woocommerce-page button.button, .woocommerce .track_order button[type="submit"], .nav-cart .nav-cart-content .widget .buttons .button, .woocommerce a.button.wc-backward, body.woocommerce .wccm-catalog-item a.button, body.woocommerce a.wccm-button.button, form.woocommerce-form-coupon button.button, div.wpforms-container .wpforms-form button[type=submit].wpforms-submit, div.woocommerce a.button.alt, div.woocommerce table.my_account_orders .button, input[type="submit"].search-submit, .hestia-view-cart-wrapper .added_to_cart.wc-forward, .woocommerce-product-search button, .woocommerce-cart .actions .button, #secondary div[id^=woocommerce_price_filter] .button, .woocommerce div[id^=woocommerce_widget_cart].widget .buttons .button, .searchform input[type=submit], .searchform button, .search-form:not(.media-toolbar-primary) input[type=submit], .search-form:not(.media-toolbar-primary) button, .woocommerce-product-search input[type=submit], .btn.colored-button, .btn.btn-left, .btn.btn-right, .btn:not(.colored-button):not(.btn-left):not(.btn-right):not(.btn-just-icon):not(.menu-item):not(.hestia-sidebar-open):not(.hestia-sidebar-close) {
+            border-radius: 3px
+        }
+
+        h1, h2, h3, h4, h5, h6, .hestia-title, .hestia-title.title-in-content, p.meta-in-content, .info-title, .card-title, .page-header.header-small .hestia-title, .page-header.header-small .title, .widget h5, .hestia-title, .title, .footer-brand, .footer-big h4, .footer-big h5, .media .media-heading, .carousel h1.hestia-title, .carousel h2.title, .carousel span.sub-title, .hestia-about h1, .hestia-about h2, .hestia-about h3, .hestia-about h4, .hestia-about h5 {
+            font-family: Montserrat
+        }
+
+        body, ul, .tooltip-inner {
+            font-family: Montserrat
+        }
+
+        @media(min-width:769px) {
+            .page-header.header-small .hestia-title, .page-header.header-small .title, h1.hestia-title.title-in-content, .main article.section .has-title-font-size {
+                font-size: 42px
+            }
+        }
+
+        @media( min-width:480px) {
+        }
+
+        @media( min-width:768px) {
+        }
+
+        .hestia-scroll-to-top {
+            border-radius: 50%;
+            background-color: #999
+        }
+
+            .hestia-scroll-to-top:hover {
+                background-color: #999
+            }
+
+                .hestia-scroll-to-top:hover svg, .hestia-scroll-to-top:hover p {
+                    color: #fff
+                }
+
+            .hestia-scroll-to-top svg, .hestia-scroll-to-top p {
+                color: #fff
+            }
+
+        .hestia-contact .pirate_forms_wrap .contact_name_wrap .form-group::before, .hestia-contact .pirate_forms_wrap .contact_email_wrap .form-group::before, .hestia-contact .pirate_forms_wrap .contact_subject_wrap .form-group::before {
+            top: 6px
+        }
+
+        .woocommerce.single-product .related.products {
+            margin-top: 0
+        }
+
+        .woocommerce.single-product .upsells.products {
+            padding-bottom: 0
+        }
+
+        .carousel .hestia-title {
+            line-height: 1.1
+        }
+    </style>
+    <link rel='stylesheet' id='hestia_fonts-css' href='https://fonts.googleapis.com/css?family=Roboto%3A300%2C400%2C500%2C700%7CRoboto+Slab%3A400%2C700&#038;subset=latin%2Clatin-ext&#038;ver=3.3.3' type='text/css' media='all' />
+    <link rel='stylesheet' id='hestia-google-font-montserrat-css' href='//fonts.googleapis.com/css?family=Montserrat%3A300%2C400%2C500%2C700&#038;subset=latin&#038;ver=6.8.3' type='text/css' media='all' />
+    <link rel='stylesheet' id='enlighterjs-css' href='https://mikaberglund.com/wp-content/plugins/enlighter/cache/enlighterjs.min.css?ver=QIw7gIFGmTen8O0' type='text/css' media='all' />
+    <script type="text/javascript" src="https://mikaberglund.com/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jquery-core-js"></script>
+    <script type="text/javascript" src="https://mikaberglund.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1" id="jquery-migrate-js"></script>
+
+    <!-- Google tag (gtag.js) snippet added by Site Kit -->
+    <!-- Google Analytics snippet added by Site Kit -->
+    <script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=GT-MR295WH" id="google_gtagjs-js" async></script>
+    <script type="text/javascript" id="google_gtagjs-js-after">
+/* <![CDATA[ */
+window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}
+gtag("set","linker",{"domains":["mikaberglund.com"]});
+gtag("js", new Date());
+gtag("set", "developer_id.dZTNiMT", true);
+gtag("config", "GT-MR295WH");
+/* ]]> */
+    </script>
+    <link rel="https://api.w.org/" href="https://mikaberglund.com/wp-json/" />
+    <link rel="alternate" title="JSON" type="application/json" href="https://mikaberglund.com/wp-json/wp/v2/posts/2423" />
+    <link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://mikaberglund.com/xmlrpc.php?rsd" />
+    <meta name="generator" content="WordPress 6.8.3" />
+    <link rel='shortlink' href='https://mikaberglund.com/?p=2423' />
+    <link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://mikaberglund.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fmikaberglund.com%2Fcosmos-db-vector-search-an-introduction%2F" />
+    <link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://mikaberglund.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fmikaberglund.com%2Fcosmos-db-vector-search-an-introduction%2F&#038;format=xml" />
+    <meta name="generator" content="Site Kit by Google 1.164.0" />
+    <script type="text/javascript">
+//<![CDATA[
+  function external_links_in_new_windows_loop() {
+    if (!document.links) {
+      document.links = document.getElementsByTagName('a');
+    }
+    var change_link = false;
+    var force = '';
+    var ignore = '';
+
+    for (var t=0; t<document.links.length; t++) {
+      var all_links = document.links[t];
+      change_link = false;
+
+      if(document.links[t].hasAttribute('onClick') == false) {
+        // forced if the address starts with http (or also https), but does not link to the current domain
+        if(all_links.href.search(/^http/) != -1 && all_links.href.search('mikaberglund.com') == -1 && all_links.href.search(/^#/) == -1) {
+          // console.log('Changed ' + all_links.href);
+          change_link = true;
+        }
+
+        if(force != '' && all_links.href.search(force) != -1) {
+          // forced
+          // console.log('force ' + all_links.href);
+          change_link = true;
+        }
+
+        if(ignore != '' && all_links.href.search(ignore) != -1) {
+          // console.log('ignore ' + all_links.href);
+          // ignored
+          change_link = false;
+        }
+
+        if(change_link == true) {
+          // console.log('Changed ' + all_links.href);
+          document.links[t].setAttribute('onClick', 'javascript:window.open(\'' + all_links.href.replace(/'/g, '') + '\', \'_blank\', \'noopener\'); return false;');
+          document.links[t].removeAttribute('target');
+        }
+      }
+    }
+  }
+
+  // Load
+  function external_links_in_new_windows_load(func)
+  {
+    var oldonload = window.onload;
+    if (typeof window.onload != 'function'){
+      window.onload = func;
+    } else {
+      window.onload = function(){
+        oldonload();
+        func();
+      }
+    }
+  }
+
+  external_links_in_new_windows_load(external_links_in_new_windows_loop);
+  //]]></script>
+
+    <!-- Enter your scripts here -->
+    <!-- Google AdSense meta tags added by Site Kit -->
+    <meta name="google-adsense-platform-account" content="ca-host-pub-2644536267352236">
+    <meta name="google-adsense-platform-domain" content="sitekit.withgoogle.com">
+    <!-- End Google AdSense meta tags added by Site Kit -->
+    <!-- Google AdSense snippet added by Site Kit -->
+    <script type="text/javascript" async="async" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8612464078671252&amp;host=ca-host-pub-2644536267352236" crossorigin="anonymous"></script>
+
+    <!-- End Google AdSense snippet added by Site Kit -->
+</head>
+
+<body class="wp-singular post-template-default single single-post postid-2423 single-format-standard wp-theme-hestia wp-child-theme-fagri blog-post header-layout-classic-blog">
+    <div class="wrapper post-2423 post type-post status-publish format-standard has-post-thumbnail hentry category-ai category-azure-ai category-cosmos-db category-vector-embeddings tag-azure-ai-foundry tag-azure-cosmos-db tag-cosmos-db tag-embedding-models tag-rag tag-similarity-search tag-vector-embeddings tag-vector-search classic-blog ">
+        <header class="header header-with-topbar">
+            <div style="display: none"></div><div class="hestia-top-bar">
+                <div class="container">
+                    <div class="row">
+                        <div class="pull-left col-md-12">
+                            <div id="top-bar-navigation" class="menu-footer-menu-container">
+                                <ul id="menu-footer-menu" class="nav top-bar-nav">
+                                    <li id="menu-item-1166" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1166"><a title="Earnings Disclaimer" href="https://mikaberglund.com/earnings-disclaimer/">Earnings Disclaimer</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div><!-- /.row -->
+                </div><!-- /.container -->
+            </div>		<nav class="navbar navbar-default  hestia_left header-with-topbar navbar-not-transparent navbar-fixed-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <div class="title-logo-wrapper">
+                            <a class="navbar-brand" href="https://mikaberglund.com/"
+                               title="MikaBerglund.com">
+                                <p>MikaBerglund.com</p>
+                            </a>
+                        </div>
+                        <div class="navbar-toggle-wrapper">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navigation">
+                                <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>				<span class="sr-only">Toggle Navigation</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div id="main-navigation" class="collapse navbar-collapse">
+                        <ul id="menu-main-menu" class="nav navbar-nav">
+                            <li id="menu-item-782" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-782"><a title="About Me" href="https://mikaberglund.com/about/">About Me</a></li>
+                            <li id="menu-item-783" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-783"><a title="Work" href="https://mikaberglund.com/work/">Work</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <div class="main ">
+            <div class="blog-post blog-post-wrapper">
+                <div class="container">
+                    <article id="post-2423" class="section section-text">
+                        <div class="row">
+                            <div class="col-md-8 single-post-container" data-layout="sidebar-right">
+
+                                <div class="single-post-wrap entry-content">
+                                    <div class="row"><div class="col-md-12"><h1 class="hestia-title title-in-content entry-title">Cosmos DB Vector Search &#8211; An Introduction</h1><p class="author meta-in-content">Published by <a href="https://mikaberglund.com/author/mikaberglund/" class="vcard author"><strong class="fn">Mika Berglund</strong></a> on <time class="entry-date published" datetime="2025-02-22T13:55:31+02:00" content="2025-02-22">February 22, 2025</time><time class="updated hestia-hidden" datetime="2025-04-01T07:47:47+03:00">February 22, 2025</time></p><img class="wp-post-image image-in-page" src="https://mikaberglund.com/wp-content/uploads/2025/02/cosmos-db-vector-search.jpg" alt=""></div></div>
+                                    <p>Applications powered by <a href="https://en.wikipedia.org/wiki/Generative_artificial_intelligence">Generative AI</a> are becoming more and more popular. Often these applications employ some kind of <a href="https://en.wikipedia.org/wiki/Retrieval-augmented_generation">RAG</a> (Retrieval-Augmented Generation) solution patterns. For RAG powered applications, the <strong><a href="https://learn.microsoft.com/en-us/azure/cosmos-db/nosql/vector-search">Cosmos DB Vector Search</a></strong> feature can be very useful. In this article I’ll describe this feature in more detail. This will give you better information to base your decisions on when deciding whether you could leverage this in your applications.</p>
+
+
+                                    <div class="lwptoc lwptoc-autoWidth lwptoc-baseItems lwptoc-light lwptoc-notInherit" data-smooth-scroll="1" data-smooth-scroll-offset="24">
+                                        <div class="lwptoc_i">
+                                            <div class="lwptoc_header">
+                                                <b class="lwptoc_title">Contents</b>                    <span class="lwptoc_toggle">
+                                                    <a href="#" class="lwptoc_toggle_label" data-label="show">hide</a>
+                                                </span>
+                                            </div>
+                                            <div class="lwptoc_items lwptoc_items-visible">
+                                                <div class="lwptoc_itemWrap">
+                                                    <div class="lwptoc_item">
+                                                        <a href="#Understanding_Vector_Embeddings">
+                                                            <span class="lwptoc_item_number">1</span>
+                                                            <span class="lwptoc_item_label">Understanding Vector Embeddings</span>
+                                                        </a>
+                                                        <div class="lwptoc_itemWrap">
+                                                            <div class="lwptoc_item">
+                                                                <a href="#Vector_Embeddings_Can_Be_Language_Agnostic">
+                                                                    <span class="lwptoc_item_number">1.1</span>
+                                                                    <span class="lwptoc_item_label">Vector Embeddings Can Be Language Agnostic</span>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div><div class="lwptoc_item">
+                                                        <a href="#Setting_up_Cosmos_DB_Vector_Search">
+                                                            <span class="lwptoc_item_number">2</span>
+                                                            <span class="lwptoc_item_label">Setting up Cosmos DB Vector Search</span>
+                                                        </a>
+                                                    </div><div class="lwptoc_item">
+                                                        <a href="#Generating_Vectors_with_Embedding_Models_in_Azure_AI_Foundry">
+                                                            <span class="lwptoc_item_number">3</span>
+                                                            <span class="lwptoc_item_label">Generating Vectors with Embedding Models in Azure AI Foundry</span>
+                                                        </a>
+                                                        <div class="lwptoc_itemWrap">
+                                                            <div class="lwptoc_item">
+                                                                <a href="#Provisioning_the_Required_Azure_Resources">
+                                                                    <span class="lwptoc_item_number">3.1</span>
+                                                                    <span class="lwptoc_item_label">Provisioning the Required Azure Resources</span>
+                                                                </a>
+                                                            </div><div class="lwptoc_item">
+                                                                <a href="#Creating_the_HTTP_Requests">
+                                                                    <span class="lwptoc_item_number">3.2</span>
+                                                                    <span class="lwptoc_item_label">Creating the HTTP Requests</span>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div><div class="lwptoc_item">
+                                                        <a href="#Storing_the_Generated_Vector_for_Cosmos_DB_Vector_Search">
+                                                            <span class="lwptoc_item_number">4</span>
+                                                            <span class="lwptoc_item_label">Storing the Generated Vector for Cosmos DB Vector Search</span>
+                                                        </a>
+                                                    </div><div class="lwptoc_item">
+                                                        <a href="#Querying_Data_in_Cosmos_DB_Vector_Search">
+                                                            <span class="lwptoc_item_number">5</span>
+                                                            <span class="lwptoc_item_label">Querying Data in Cosmos DB Vector Search</span>
+                                                        </a>
+                                                        <div class="lwptoc_itemWrap">
+                                                            <div class="lwptoc_item">
+                                                                <a href="#Filtering_on_Similarity">
+                                                                    <span class="lwptoc_item_number">5.1</span>
+                                                                    <span class="lwptoc_item_label">Filtering on Similarity</span>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div><div class="lwptoc_item">
+                                                        <a href="#Practical_Examples_of_Using_Cosmos_DB_Vector_Search">
+                                                            <span class="lwptoc_item_number">6</span>
+                                                            <span class="lwptoc_item_label">Practical Examples of Using Cosmos DB Vector Search</span>
+                                                        </a>
+                                                        <div class="lwptoc_itemWrap">
+                                                            <div class="lwptoc_item">
+                                                                <a href="#Customer_Knowledge_Base">
+                                                                    <span class="lwptoc_item_number">6.1</span>
+                                                                    <span class="lwptoc_item_label">Customer Knowledge Base</span>
+                                                                </a>
+                                                            </div><div class="lwptoc_item">
+                                                                <a href="#Suggest_Similar_Products_or_Content">
+                                                                    <span class="lwptoc_item_number">6.2</span>
+                                                                    <span class="lwptoc_item_label">Suggest Similar Products or Content</span>
+                                                                </a>
+                                                            </div><div class="lwptoc_item">
+                                                                <a href="#Process_Survey_Responses">
+                                                                    <span class="lwptoc_item_number">6.3</span>
+                                                                    <span class="lwptoc_item_label">Process Survey Responses</span>
+                                                                </a>
+                                                            </div><div class="lwptoc_item">
+                                                                <a href="#Document_Classification">
+                                                                    <span class="lwptoc_item_number">6.4</span>
+                                                                    <span class="lwptoc_item_label">Document Classification</span>
+                                                                </a>
+                                                            </div><div class="lwptoc_item">
+                                                                <a href="#Multi-lingual_Services">
+                                                                    <span class="lwptoc_item_number">6.5</span>
+                                                                    <span class="lwptoc_item_label">Multi-lingual Services</span>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div><div class="lwptoc_item">
+                                                        <a href="#How_Much_Does_It_Cost">
+                                                            <span class="lwptoc_item_number">7</span>
+                                                            <span class="lwptoc_item_label">How Much Does It Cost</span>
+                                                        </a>
+                                                    </div><div class="lwptoc_item">
+                                                        <a href="#Conclusion_and_Further_Reading">
+                                                            <span class="lwptoc_item_number">8</span>
+                                                            <span class="lwptoc_item_label">Conclusion and Further Reading</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <h2 class="wp-block-heading"><span id="Understanding_Vector_Embeddings">Understanding Vector Embeddings</span></h2>
+
+
+
+                                    <p>A vector embedding is basically an array of floating-point numbers. What is also characteristic for embeddings is that they are fixed-sized. It does not matter how long or complex the input is. The vector embedding generated by one model always has the same number of dimensions. However, some models allow you to specify the number of dimensions you want in the vector embedding.</p>
+
+
+
+                                    <p>But what makes vector embeddings so useful is that they encapsulate the semantic context of the input. The closer a vector is to another vector, the more similar the inputs represented by the vectors are. You can think of a vector as a path. If your input talks about bananas, the resulting vector or “path” passes close to the “area” where fruits are discussed. If your input talks about cars, then the path goes by the “area” where vehicles are discussed. This analogy helped me to get my mind around the concept of vector embeddings. <a href="https://learn.microsoft.com/en-us/azure/cosmos-db/gen-ai/vector-embeddings">This document</a> can also give you a better idea of how vector embeddings are designed to work.</p>
+
+
+
+                                    <p>You use Cosmos DB Vector Search to find content similar to something else. To find similar content you first <a href="#Generating_Vectors_with_Models_in_Azure_AI_Foundry">generate a vector</a> (“query vector”) for the data you want to find similar content to. Then you search for content with vectors that are closest to your query vector. You must generate the query vector in the same way as you generated the vectors for your content. This includes also using the same embedding model. If you decide to switch model, you need to regenerate the vectors that you have stored.</p>
+
+
+
+                                    <h3 class="wp-block-heading"><span id="Vector_Embeddings_Can_Be_Language_Agnostic">Vector Embeddings Can Be Language Agnostic</span></h3>
+
+
+
+                                    <p>Since embedding models capture the semantic context of the input rather than the actual content, they can also be language agnostic. However, this is not always the case. Some models might be better on capturing semantics regardless of the language than others. If you have an embedding model that is truly language agnostic, the vectors they produce for input with the same meaning but in different languages, should be very similar. This can be helpful if your content is in another language that you use when creating your query vectors. If this is an important requirement for you, you need to do your due diligence and make sure that you pick an embedding model that can properly handle different languages.</p>
+
+
+
+                                    <h2 class="wp-block-heading"><span id="Setting_up_Cosmos_DB_Vector_Search">Setting up Cosmos DB Vector Search</span></h2>
+
+
+
+                                    <p>The first thing you have to do to turn on Cosmos DB Vector Search is to enable that feature on your Cosmos DB account. There are two steps to enable Cosmos DB Vector Search:</p>
+
+
+
+                                    <ol class="wp-block-list">
+                                        <li>Turn on the feature for your Cosmos DB Account</li>
+
+
+
+                                        <li>Create a container with a vector policy</li>
+                                    </ol>
+
+
+
+                                    <blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow">
+                                        <p><strong>Note!</strong> Once you have turned that feature on, you cannot turn it off again. It is a one-way street, so remember this before you go on turning on this feature on all your Cosmos DB accounts.</p>
+                                    </blockquote>
+
+
+
+                                    <p>You can turn this feature on in the Azure portal. Navigate to your Cosmos DB account and select <strong>Settings/Features</strong> from the menu. Then turn on the <strong>Vector Search for NoSQL API</strong> feature.</p>
+
+
+
+                                    <figure class="wp-block-image size-full"><img fetchpriority="high" decoding="async" width="975" height="426" src="https://mikaberglund.com/wp-content/uploads/2025/02/image.png" alt="Cosmos DB Vector Search is a feature that needs to be turned on." class="wp-image-2435" srcset="https://mikaberglund.com/wp-content/uploads/2025/02/image.png 975w, https://mikaberglund.com/wp-content/uploads/2025/02/image-300x131.png 300w, https://mikaberglund.com/wp-content/uploads/2025/02/image-768x336.png 768w" sizes="(max-width: 975px) 100vw, 975px"></figure>
+
+
+
+                                    <p>Next you need to create a container with a vector policy.</p>
+
+
+
+                                    <blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow">
+                                        <p>Note! Currently, vector policies in Cosmos DB are immutable, meaning that you can’t change the policy after the container has been created. If you need to change it, you must create a new container with a new vector policy, and migrate your data to the new container.</p>
+                                    </blockquote>
+
+
+
+                                    <p>You define the vector policy on the same dialog where you create your container.</p>
+
+
+
+                                    <figure class="wp-block-image size-full"><img decoding="async" width="365" height="452" src="https://mikaberglund.com/wp-content/uploads/2025/02/image-1.png" alt="Configuring policy for Cosmos DB Vector Search." class="wp-image-2436" srcset="https://mikaberglund.com/wp-content/uploads/2025/02/image-1.png 365w, https://mikaberglund.com/wp-content/uploads/2025/02/image-1-242x300.png 242w" sizes="(max-width: 365px) 100vw, 365px"></figure>
+
+
+
+                                    <ul class="wp-block-list">
+                                        <li><strong>Path</strong>: This is the path to the attribute on your JSON documents that contains the vector.</li>
+
+
+
+                                        <li><strong>Data type</strong>: The data type for the values in your vector. This value needs to match the data type your embedding model supports. Typically, embedding models create vectors containing floating-point numbers.</li>
+
+
+
+                                        <li><strong>Distance function</strong>: The function to use for calculating vector distance. A cosine function returns a value between -1 and +1 representing the similarity. A score of -1 is least similar and +1 is most similar.</li>
+
+
+
+                                        <li><strong>Dimensions</strong>: The number of dimensions of your vectors, i.e. items in the floating-point number array. You need to check the number of dimensions supported by the embedding model you plan to use. </li>
+
+
+
+                                        <li><strong>Index type</strong>: The index type to use. Read more about <a href="https://learn.microsoft.com/en-us/azure/cosmos-db/index-policy#vector-indexes">index types for Cosmos DB</a>. With the index type, you can potentially decrease the the amount of Request Units (RUs) your vector queries consume, so be sure to check this out.</li>
+                                    </ul>
+
+
+
+                                    <h2 class="wp-block-heading"><span id="Generating_Vectors_with_Embedding_Models_in_Azure_AI_Foundry">Generating Vectors with Embedding Models in Azure AI Foundry</span></h2>
+
+
+
+                                    <p>There are many ways to generate vector embeddings. However, in this article I focus on generating them with the help of models deployed in <a href="https://learn.microsoft.com/en-us/azure/ai-studio/what-is-ai-studio">Azure AI Foundry</a>. You can use different kinds of SDKs to communicate with model deployments in Azure AI Foundry. I will not use any of those, but use simple REST calls to demonstrate how to communicate. I believe that this will give you the best understanding of how things actually work. It will then make it much easier for you to use an SDK or write your own, when you know how stuff works under the hood.</p>
+
+
+
+                                    <h3 class="wp-block-heading"><span id="Provisioning_the_Required_Azure_Resources">Provisioning the Required Azure Resources</span></h3>
+
+
+
+                                    <p>To generate a vector, you need to provision an Azure OpenAI resource.</p>
+
+
+
+                                    <figure class="wp-block-image size-full"><img decoding="async" width="490" height="201" src="https://mikaberglund.com/wp-content/uploads/2025/02/image-2.png" alt="" class="wp-image-2444" srcset="https://mikaberglund.com/wp-content/uploads/2025/02/image-2.png 490w, https://mikaberglund.com/wp-content/uploads/2025/02/image-2-300x123.png 300w" sizes="(max-width: 490px) 100vw, 490px"></figure>
+
+
+
+                                    <p>Then you need to deploy a model that is designed to be used for embeddings. There are several embedding models available. The <strong>text-embedding-3-small</strong> and <strong>text-embedding-3-large</strong> are probably the most recent models currently, at the time of writing (late Feb 2025).</p>
+
+
+
+                                    <p>I will use the <strong>text-embedding-3-small</strong> model in this example. It is much cheaper than its larger counterpart. However, you can pick any model that is capable of creating vector embeddings from text. Note that there are also embedding models that can create vector embeddings from images. Those models are out of the scope of this article. I’ll have to come back to those in a later article.</p>
+
+
+
+                                    <h3 class="wp-block-heading"><span id="Creating_the_HTTP_Requests">Creating the HTTP Requests</span></h3>
+
+
+
+                                    <p>After you have deployed your embedding model, for instance the <strong>text-embedding-3-small</strong>, select the deployed model to open the <strong>Details</strong> page for the deployment.</p>
+
+
+
+                                    <figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="851" height="201" src="https://mikaberglund.com/wp-content/uploads/2025/02/image-4.png" alt="" class="wp-image-2447" srcset="https://mikaberglund.com/wp-content/uploads/2025/02/image-4.png 851w, https://mikaberglund.com/wp-content/uploads/2025/02/image-4-300x71.png 300w, https://mikaberglund.com/wp-content/uploads/2025/02/image-4-768x181.png 768w" sizes="auto, (max-width: 851px) 100vw, 851px"></figure>
+
+
+
+                                    <p>On the Details page, copy the <strong>Target URI</strong> and <strong>Key</strong> to use when sending requests. All requests to this endpoint are <code>POST</code> requests with the key added to the <code>api-key</code> request header. In <strong><a href="https://www.postman.com/">Postman</a></strong>, you can create one collection and define the authorization settings on the collection level. This way, all requests in that collection will inherit the same settings. The Postman settings are below.</p>
+
+
+
+                                    <figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="753" height="494" src="https://mikaberglund.com/wp-content/uploads/2025/02/image-5.png" alt="" class="wp-image-2448" srcset="https://mikaberglund.com/wp-content/uploads/2025/02/image-5.png 753w, https://mikaberglund.com/wp-content/uploads/2025/02/image-5-300x197.png 300w" sizes="auto, (max-width: 753px) 100vw, 753px"></figure>
+
+
+
+                                    <p>The request body looks like this.</p>
+
+
+
+<pre class="EnlighterJSRAW" data-enlighter-language="json" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group="">{
+    "input": "Your text to generate the vector embedding for."
+}</pre>
+
+
+
+                                    <p>You can also specify specify multiple input strings by setting the <code>input</code> attribute to an array of strings, like this:</p>
+
+
+
+<pre class="EnlighterJSRAW" data-enlighter-language="json" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group="">{
+    "input": [
+        "This is your first string.",
+        "The second string to generate vector embeddings for."
+    ]
+}</pre>
+
+
+
+                                    <p>When you specify multiple input strings, you will also get the same amount of vector embeddings in the response. With embedding models like <strong>text-embedding-3-small</strong> and <strong>text-embedding-3-large</strong>, you can also specify the number of dimensions you want in the resulting vector embedding. The number of dimensions are specified in the request body as shown below.</p>
+
+
+
+<pre class="EnlighterJSRAW" data-enlighter-language="json" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group="">{
+    "input": "My name is Bond. James Bond.",
+    "dimensions": 1024
+}</pre>
+
+
+
+                                    <p>For the <strong>text-embedding-3-small</strong> model, the minimum number of dimensions is <strong>1</strong>, and the maximum number is <strong>1536</strong>. For <strong>text-embedding-3-large</strong>, the minimum number of dimensions is also <strong>1</strong>, but the maximum number is <strong>3072</strong>. The more dimensions you have, the better you can capture different nuances in the input text. On the other hand, larger vectors take up more storage space in Cosmos DB and consume more Request Units when you query for data.</p>
+
+
+
+                                    <blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow">
+                                        <p id="length-limit-note">Note! Currently, there is a limitation for how long the input can be. Unfortunately there is no absolute limit that you could easily check before you send the request. Instead, the limit is expressed in <strong>tokens</strong>. The maximum input tokens for <strong>text-embedding-3-small</strong> and <strong>text-embedding-3-large</strong> are 8191 tokens. How many tokens that are consumed by a given text depends on many factors, such as language, text complexity etc. In general, <strong>a fair estimate for standard English text is that around 4 characters consume 1 token</strong>. This means that in theory, you should be able to generate vector embeddings as described above for a text containing 32 764 characters. Some text can be longer and some text can be shorter.</p>
+                                    </blockquote>
+
+
+
+                                    <p>There are various patterns you can employ to generate vectors for larger text. I’ve written about the weighted average pattern <a href="/vector-embeddings-for-long-documents/">in this article</a>.</p>
+
+
+
+                                    <h2 class="wp-block-heading"><span id="Storing_the_Generated_Vector_for_Cosmos_DB_Vector_Search">Storing the Generated Vector for Cosmos DB Vector Search</span></h2>
+
+
+
+                                    <p>When sending the request as described above, you will get a response that looks like this.</p>
+
+
+
+<pre class="EnlighterJSRAW" data-enlighter-language="json" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group=""> {
+    "object": "list",
+    "data": [
+        {
+            "object": "embedding",
+            "index": 0,
+            "embedding": [
+                0.006165823,
+                0.013940725,
+                -0.066804506,
+                0.015688516,
+                // ...
+                0.056068067,
+                0.036370724,
+                -0.0026667705,
+                -0.008225721
+            ]
+        }
+    ],
+    "model": "text-embedding-3-small",
+    "usage": {
+        "prompt_tokens": 8,
+        "total_tokens": 8
+    }
+}</pre>
+
+
+
+                                    <p>This response message is pretty self-explanatory. If you created your Cosmos DB container and vector policy as above, then you would probably store this vector in your container using a JSON document similar to the following.</p>
+
+
+
+<pre class="EnlighterJSRAW" data-enlighter-language="json" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group="">{
+    "id": "5b39d118-65b6-46f4-a402-95c54b9e2648",
+    "partition": "partition-1",
+    "content": {
+        "text": "My name is Bond. James Bond."
+    },
+    "embedding": {
+        "vector": [
+            0.006165823,
+            0.013940725,
+            -0.066804506,
+            0.015688516,
+            // ...
+            0.056068067,
+            0.036370724,
+            -0.0026667705,
+            -0.008225721
+        ],
+        "totalTokens": 8
+    }
+}</pre>
+
+
+
+                                    <p>Since this is a completely normal JSON document stored in a completely normal Cosmos DB container, you can of course add whatever data you think you need to store in this document. This can be anything you need to be able to effectively query the data later on.</p>
+
+
+
+                                    <h2 class="wp-block-heading"><span id="Querying_Data_in_Cosmos_DB_Vector_Search">Querying Data in Cosmos DB Vector Search</span></h2>
+
+
+
+                                    <p>When querying your data using Cosmos DB Vector Search, you pretty much build your SQL query just as you normally would, with a few distinct differences.</p>
+
+
+
+                                    <ol class="wp-block-list">
+                                        <li>You use the built-in <code>VectorDistance</code> function to order your results</li>
+
+
+
+                                        <li>You must always specify <code>SELECT TOP n</code> to limit the number of items returned in the result</li>
+                                    </ol>
+
+
+
+                                    <p>The <code>VectorDistance</code> function compares a given vector to the vector of each document matching the filters of the query. The result is then ordered so that the documents with the vectors closest to the vector specified in the query are listed first. The sample SQL query below uses the <code>@queryVector</code> parameter as placeholder for the vector.</p>
+
+
+
+<pre class="EnlighterJSRAW" data-enlighter-language="sql" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group="">SELECT TOP 5 c.id,c.partition,c.content, VectorDistance(c.embedding.vector, @queryVector) AS distance
+FROM c
+WHERE c.distance &gt;= 0.8
+order by VectorDistance(c.embedding.vector, @queryVector)</pre>
+
+
+
+                                    <p>This query would return 5 JSON documents where the embedding vector is closest to your query vector. This means that the content in the resulting JSON documents is semantically most similar to the text that you used to generate the query vector.</p>
+
+
+
+                                    <p>The <code>WHERE</code> clause will further filter out the result to include only those documents that are actually similar to the query vector. This is to make sure that the result actually contains content similar to the query and not just something that is most similar even though not even close to what you are looking for.</p>
+
+
+
+                                    <p>Imagine that you have a container only containing documents describing various car models. Now, if you would query the container for recipes on deserts with bananas, you would get 5 documents describing car models. They are not similar at all to what you were looking for, but are the closest ones when there are no desert recipes in your container.</p>
+
+
+
+                                    <h3 class="wp-block-heading"><span id="Filtering_on_Similarity">Filtering on Similarity</span></h3>
+
+
+
+                                    <p>There is no exact description for what the values returned by the <code>VectorDistance</code> function actually mean, but you can use the following for some kind of basis for your decisions. If you are using the <code>Cosine</code> function as your distance function, the <code>VectorDistance</code> function returns a floating-point number between -1 and +1. -1 means no similarity at all, and +1 means very similar, if not even identical.</p>
+
+
+
+                                    <ul class="wp-block-list">
+                                        <li><strong>+0.80 to +1</strong>: Very similar. These results are highly relevant and closely match your query.</li>
+
+
+
+                                        <li><strong>+0.50 to +0.79</strong>: Moderately similar. These results are somewhat relevant but may not be exact matches.</li>
+
+
+
+                                        <li><strong>0 to +0.49</strong>: Low similarity. These results are not very relevant to your query.</li>
+
+
+
+                                        <li><strong>Below 0</strong>: Not similar. These results are quite dissimilar to your query.</li>
+                                    </ul>
+
+
+
+                                    <p>Remember that what is considered “similar enough” can vary depending on your specific use case and context. Setting the similarity filter to +0.80 or above ensures that the result contains only highly relevant documents. I would suggest that you would run some tests with your content vectors and match them to expected query vectors to get the similarity filter to best suit your needs.</p>
+
+
+
+                                    <h2 class="wp-block-heading"><span id="Practical_Examples_of_Using_Cosmos_DB_Vector_Search">Practical Examples of Using Cosmos DB Vector Search</span></h2>
+
+
+
+                                    <p>So what would you use the Cosmos DB Vector Search for? Why bother? Why not just use the vector indexes provided in Azure AI Search or Azure AI Foundry? Well, one thing for sure is that you have more control over what content is included in your query results. You also have control over how you generate vector embeddings for your content. If you have long documents, you could also split the documents into smaller parts like paragraphs or chapters, and generate vector embeddings for each part separately.</p>
+
+
+
+                                    <p>And you don’t have to settle for just searching for content similar to your query vector. You can add whatever filters you need to find the right content. Remember, that you are executing normal Cosmos DB SQL queries. In the chapters below I outline a few practical examples where you can leverage Cosmos DB Vector Search, some of which I have been working on, or will be working on myself.</p>
+
+
+
+                                    <h3 class="wp-block-heading"><span id="Customer_Knowledge_Base">Customer Knowledge Base</span></h3>
+
+
+
+                                    <p>Let’s say you have a customer extranet that your customers log in to. On this extranet you have a lot of guidance and instructions related to the services that you offer your customers. But not all of your customers subscribe to the same services. Some of the instructions you publish are irrelevant to many of your customers. You might even have customer specific instructions that are relevant only to one customer and its representants.</p>
+
+
+
+                                    <p>With Cosmos DB Vector Search you could easily create vector embeddings for your instructions as shown in this article. You would then store these vectors in your Cosmos DB container along with information about what or which services each document is related to, or it it is related to just one particular customer. Then when your customers want to find something, you create a query vector from the customer’s search prompt and use that to find the most relevant instructions. You would also add more filters to include only instructions that are relevant to the customer and the services it subscribes to.</p>
+
+
+
+                                    <h3 class="wp-block-heading"><span id="Suggest_Similar_Products_or_Content">Suggest Similar Products or Content</span></h3>
+
+
+
+                                    <p>Imagine you have an online store with a bunch of products. Your product information along with the product description is stored in a Cosmos DB container. You would also store the vector embedding for the product description with the rest of the product information.</p>
+
+
+
+                                    <p>Now when a visitor views a product, you could take the vector embedding for that product and find other products in your Cosmos DB container that are similar to the viewed product. The product being viewed would of course be the most similar, so you would need to filter out that particular product from the query results. Since you are running a standard Cosmos DB SQL query, that would be quite simple.</p>
+
+
+
+                                    <p>This same approach can be useful also for suggesting any type of content that is similar to for instance what is currently being viewed in an application. Take the previous example of a Customer Knowledge Base. When you display one instruction document, you could also offer other similar instructions, again filtering on the services the logged in customer is subscribed to.</p>
+
+
+
+                                    <h3 class="wp-block-heading"><span id="Process_Survey_Responses">Process Survey Responses</span></h3>
+
+
+
+                                    <p>If you are in the business of doing surveys, you might find yourself in a situation where you are overwhelmed with the amount of responses. You might struggle with properly processing each response separately.</p>
+
+
+
+                                    <p>In some cases, you might be able to process responses in groups. To find these groups you might want to try to find similar responses, and then process the most similar responses in batches.</p>
+
+
+
+                                    <h3 class="wp-block-heading"><span id="Document_Classification">Document Classification</span></h3>
+
+
+
+                                    <p>Some times you might have systems that store a lot of documents, and you need to categorize and classify these. Then you could pick one uncategorized document and categorize it manually. With the help of Cosmos DB Vector Search you find similar documents with the document that you categorized manually, and then categorize the most similar documents the same way you categorized the first document manually.</p>
+
+
+
+                                    <h3 class="wp-block-heading"><span id="Multi-lingual_Services">Multi-lingual Services</span></h3>
+
+
+
+                                    <p>Since vector embeddings can be <a href="#Vector_Embeddings_are_Language_Agnostic">language agnostic</a>, you could offer multi-language <a href="https://en.wikipedia.org/wiki/Retrieval-augmented_generation">RAG</a> solutions, without having to publish content in multiple languages. You could allow your users to give their prompts in whatever language they want, and create a vector embedding (query vector) from that. Then query the most similar documents using the query vector, and use the resulting documents as input to a chat completion model that would use the given documents to provide a response to the original prompt, and in the same language as that prompt. Of course, you would have to make sure that the embedding model you choose properly handles and supports multiple languages.</p>
+
+
+
+                                    <p>If you would like to display the documents returned by the similarity query, you could use a translation service to translate the original document into the language that the original user prompt was written in. You could also try to use a chat completion model to do the translation. Optionally, you could store that translation for future use so that you would not have to use a translation service every time.</p>
+
+
+
+                                    <h2 class="wp-block-heading"><span id="How_Much_Does_It_Cost">How Much Does It Cost</span></h2>
+
+
+
+                                    <p>So what does it cost to generate vector embeddings? That depends on the embedding model you use. I will use the <strong>text-embedding-3-small</strong> and <strong>text-embedding-3-large</strong> embedding models as example.</p>
+
+
+
+                                    <p>Remember that I talked about tokens above. The pricing for generating vector embeddings is also based on how many tokens you consume. The prices below (at the time of writing on late Feb 2025) are for 1000 tokens.</p>
+
+
+
+                                    <ul class="wp-block-list">
+                                        <li><strong>text-embedding-3-small</strong>: 0.000020 EUR/1000 tokens</li>
+
+
+
+                                        <li><strong>text-embedding-3-large</strong>: 0.000125 EUR/1000 tokens</li>
+                                    </ul>
+
+
+
+                                    <p>If we take the maximum number of tokens both of these embedding models support, 8191 tokens, and estimate that to a text of the length of 32 764 characters, it would incur the following costs with both of these models.</p>
+
+
+
+                                    <ul class="wp-block-list">
+                                        <li><strong>text-embedding-3-small</strong>: 0.000164 EUR -&gt; 0.0164 cents</li>
+
+
+
+                                        <li><strong>text-embedding-3-large</strong>: 0.00102 EUR -&gt; 0.102 cents</li>
+                                    </ul>
+
+
+
+                                    <p>Both of these costs are clearly peanuts, so we need to add more volume to the sample. Let’s assume that you have 10 000 documents that are all the maximum size supported by the embedding models, the cost for generating vector embeddings for all of those documents with each of the models would then be.</p>
+
+
+
+                                    <ul class="wp-block-list">
+                                        <li><strong>text-embedding-3-small</strong>: 1,64 EUR</li>
+
+
+
+                                        <li><strong>text-embedding-3-large</strong>: 10,24 EUR</li>
+                                    </ul>
+
+
+
+                                    <p>Still a pretty manageable cost, even for personal use I would say.</p>
+
+
+
+                                    <h2 class="wp-block-heading"><span id="Conclusion_and_Further_Reading">Conclusion and Further Reading</span></h2>
+
+
+
+                                    <p>I hope that this article has given you at least some new information about what Cosmos DB Vector Search is, and what you might use it for. I believe that it is good to have options to choose from when designing solutions to tackle various problems. Of course, the more options you have, the more likely you are also to pick an option that is perhaps not the optimal for a particular case. The more you know and understand about the options you have, the better decisions you can make.</p>
+
+
+
+                                    <p>The following links provide you with further reading to get more information for even better decisions.</p>
+
+
+
+                                    <ul class="wp-block-list">
+                                        <li><a href="/category/cosmos-db/">My other Cosmos DB articles</a></li>
+
+
+
+                                        <li><a href="https://learn.microsoft.com/en-us/azure/cosmos-db/vector-database">What is a Vector Database</a></li>
+
+
+
+                                        <li><a href="https://learn.microsoft.com/en-us/azure/cosmos-db/nosql/vector-search">Vector Search in Azure Cosmos DB for NoSQL</a></li>
+
+
+
+                                        <li><a href="https://learn.microsoft.com/en-us/azure/cosmos-db/index-policy#vector-indexes">Vector indexes in Cosmos DB</a></li>
+
+
+
+                                        <li><a href="https://learn.microsoft.com/en-us/azure/cosmos-db/nosql/query/vectordistance">VectorDistance function</a></li>
+
+
+
+                                        <li><a href="https://learn.microsoft.com/en-us/azure/cosmos-db/gen-ai/vector-embeddings">Vector Embeddings in Azure Cosmos DB</a></li>
+
+
+
+                                        <li><a href="https://openai.com/index/introducing-text-and-code-embeddings/">Introducing Text and Code Embeddings</a></li>
+                                    </ul>
+                                </div>
+                                <div class="section section-blog-info">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="entry-categories">Categories:								<span class="label label-primary"><a href="https://mikaberglund.com/category/ai/">AI</a></span><span class="label label-primary"><a href="https://mikaberglund.com/category/azure-ai/">Azure AI</a></span><span class="label label-primary"><a href="https://mikaberglund.com/category/cosmos-db/">Cosmos DB</a></span><span class="label label-primary"><a href="https://mikaberglund.com/category/vector-embeddings/">Vector Embeddings</a></span>							</div>
+                                            <div class="entry-tags">Tags: <span class="entry-tag"><a href="https://mikaberglund.com/tag/azure-ai-foundry/" rel="tag">Azure AI Foundry</a></span><span class="entry-tag"><a href="https://mikaberglund.com/tag/azure-cosmos-db/" rel="tag">Azure Cosmos DB</a></span><span class="entry-tag"><a href="https://mikaberglund.com/tag/cosmos-db/" rel="tag">Cosmos DB</a></span><span class="entry-tag"><a href="https://mikaberglund.com/tag/embedding-models/" rel="tag">Embedding Models</a></span><span class="entry-tag"><a href="https://mikaberglund.com/tag/rag/" rel="tag">RAG</a></span><span class="entry-tag"><a href="https://mikaberglund.com/tag/similarity-search/" rel="tag">Similarity Search</a></span><span class="entry-tag"><a href="https://mikaberglund.com/tag/vector-embeddings/" rel="tag">Vector Embeddings</a></span><span class="entry-tag"><a href="https://mikaberglund.com/tag/vector-search/" rel="tag">Vector Search</a></span></div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <div class="entry-social">
+                                                <a target="_blank" rel="tooltip"
+                                                   data-original-title="Share on Facebook"
+                                                   class="btn btn-just-icon btn-round btn-facebook"
+                                                   href="https://www.facebook.com/sharer.php?u=https://mikaberglund.com/cosmos-db-vector-search-an-introduction/">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" width="20" height="17"><path fill="currentColor" d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"></path></svg>
+                                                </a>
+
+                                                <a target="_blank" rel="tooltip"
+                                                   data-original-title="Share on X"
+                                                   class="btn btn-just-icon btn-round btn-twitter"
+                                                   href="https://x.com/share?url=https://mikaberglund.com/cosmos-db-vector-search-an-introduction/&#038;text=Cosmos%20DB%20Vector%20Search%20%E2%80%93%20An%20Introduction">
+                                                    <svg width="20" height="17" viewBox="0 0 1200 1227" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M714.163 519.284L1160.89 0H1055.03L667.137 450.887L357.328 0H0L468.492 681.821L0 1226.37H105.866L515.491 750.218L842.672 1226.37H1200L714.137 519.284H714.163ZM569.165 687.828L521.697 619.934L144.011 79.6944H306.615L611.412 515.685L658.88 583.579L1055.08 1150.3H892.476L569.165 687.854V687.828Z" fill="#FFFFFF" />
+                                                    </svg>
+
+                                                </a>
+
+                                                <a rel="tooltip"
+                                                   data-original-title=" Share on E-mail"
+                                                   class="btn btn-just-icon btn-round"
+                                                   href="mailto:?subject=Cosmos%20DB%20Vector%20Search%20%26#8211;%20An%20Introduction&#038;body=https://mikaberglund.com/cosmos-db-vector-search-an-introduction/">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="20" height="17"><path fill="currentColor" d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"></path></svg>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
+
+                                    <div id="comments" class="section section-comments">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="media-area">
+                                                    <h3 class="hestia-title text-center">
+                                                        0 Comments
+                                                    </h3>
+                                                </div>
+                                                <div class="media-body">
+                                                    <div id="respond" class="comment-respond">
+                                                        <h3 class="hestia-title text-center">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="/cosmos-db-vector-search-an-introduction/#respond" style="display:none;">Cancel reply</a></small></h3><span class="pull-left author"><div class="avatar"><img src="https://mikaberglund.com/wp-content/themes/hestia/assets/img/placeholder.jpg" alt="Avatar placeholder" height="64" width="64" /></div></span><form autocomplete="off" action="https://mikaberglund.com/wp-comments-post.php" method="post" id="commentform" class="form media-body">
+                                                            <p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> <span class="required-field-message">Required fields are marked <span class="required">*</span></span></p><div class="row">
+                                                                <div class="col-md-4"> <div class="form-group label-floating is-empty"> <label class="control-label">Name <span class="required">*</span></label><input id="author" name="author" class="form-control" type="text" aria-required='true' /> <span class="hestia-input"></span> </div> </div>
+                                                                <div class="col-md-4"> <div class="form-group label-floating is-empty"> <label class="control-label">Email <span class="required">*</span></label><input id="email" name="email" class="form-control" type="email" aria-required='true' /> <span class="hestia-input"></span> </div> </div>
+                                                                <div class="col-md-4"> <div class="form-group label-floating is-empty"> <label class="control-label">Website</label><input id="url" name="url" class="form-control" type="url" aria-required='true' /> <span class="hestia-input"></span> </div> </div>
+                                                            </div>
+                                                            <div class="form-group label-floating is-empty"> <label class="control-label">What&#039;s on your mind?</label><textarea autocomplete="new-password" id="f78bb2740a" name="f78bb2740a" class="form-control" rows="6" aria-required="true"></textarea><textarea id="comment" aria-label="hp-comment" aria-hidden="true" name="comment" autocomplete="new-password" style="padding:0 !important;clip:rect(1px, 1px, 1px, 1px) !important;position:absolute !important;white-space:nowrap !important;height:1px !important;width:1px !important;overflow:hidden !important;" tabindex="-1"></textarea>
+                                                            <script data-noptimize>document.getElementById("comment").setAttribute( "id", "a8b55497864f1aa095256bdc5f4e185d" );document.getElementById("f78bb2740a").setAttribute( "id", "comment" );</script><span class="hestia-input"></span> </div><p class="comment-form-cookies-consent"><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes" /> <label for="wp-comment-cookies-consent">Save my name, email, and website in this browser for the next time I comment.</label></p>
+                                                            <p class="form-submit">
+                                                                <input name="submit" type="submit" id="submit" class="btn btn-primary pull-right" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='2423' id='comment_post_ID' />
+                                                                <input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+                                                            </p>
+                                                        </form>
+                                                    </div><!-- #respond -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>	<div class="col-md-3 blog-sidebar-wrapper col-md-offset-1">
+                                <aside id="secondary" class="blog-sidebar" role="complementary">
+                                    <div id="search-2" class="widget widget_search">
+                                        <form role="search" method="get" class="search-form" action="https://mikaberglund.com/">
+                                            <label>
+                                                <span class="screen-reader-text">Search for:</span>
+                                                <input type="search" class="search-field" placeholder="Search &hellip;" value="" name="s" />
+                                            </label>
+                                            <input type="submit" class="search-submit" value="Search" />
+                                        </form>
+                                    </div>
+                                    <div id="recent-posts-2" class="widget widget_recent_entries">
+                                        <h5>Recent Posts</h5>
+                                        <ul>
+                                            <li>
+                                                <a href="https://mikaberglund.com/keyed-services-not-supported-in-azure-functions/">Keyed Services Not Supported in Azure Functions</a>
+                                                <span class="post-date">September 22, 2025</span>
+                                            </li>
+                                            <li>
+                                                <a href="https://mikaberglund.com/simplify-text-chunking-for-vector-embeddings/">Simplify Text Chunking for Vector Embeddings</a>
+                                                <span class="post-date">August 17, 2025</span>
+                                            </li>
+                                            <li>
+                                                <a href="https://mikaberglund.com/vector-embedding-model-comparison-with-multilingual-text/">Vector Embedding Model Comparison with Multilingual Text</a>
+                                                <span class="post-date">July 8, 2025</span>
+                                            </li>
+                                            <li>
+                                                <a href="https://mikaberglund.com/vector-embeddings-for-long-documents/">Vector Embeddings For Long Documents</a>
+                                                <span class="post-date">March 31, 2025</span>
+                                            </li>
+                                            <li>
+                                                <a href="https://mikaberglund.com/cosmos-db-vector-search-an-introduction/" aria-current="page">Cosmos DB Vector Search &#8211; An Introduction</a>
+                                                <span class="post-date">February 22, 2025</span>
+                                            </li>
+                                        </ul>
+
+                                    </div><div id="archives-2" class="widget widget_archive">
+                                        <h5>Archives</h5>
+                                        <ul>
+                                            <li><a href='https://mikaberglund.com/2025/09/'>September 2025</a>&nbsp;(1)</li>
+                                            <li><a href='https://mikaberglund.com/2025/08/'>August 2025</a>&nbsp;(1)</li>
+                                            <li><a href='https://mikaberglund.com/2025/07/'>July 2025</a>&nbsp;(1)</li>
+                                            <li><a href='https://mikaberglund.com/2025/03/'>March 2025</a>&nbsp;(1)</li>
+                                            <li><a href='https://mikaberglund.com/2025/02/'>February 2025</a>&nbsp;(1)</li>
+                                            <li><a href='https://mikaberglund.com/2024/02/'>February 2024</a>&nbsp;(1)</li>
+                                            <li><a href='https://mikaberglund.com/2024/01/'>January 2024</a>&nbsp;(4)</li>
+                                            <li><a href='https://mikaberglund.com/2023/11/'>November 2023</a>&nbsp;(1)</li>
+                                            <li><a href='https://mikaberglund.com/2023/08/'>August 2023</a>&nbsp;(1)</li>
+                                            <li><a href='https://mikaberglund.com/2022/12/'>December 2022</a>&nbsp;(1)</li>
+                                            <li><a href='https://mikaberglund.com/2022/03/'>March 2022</a>&nbsp;(1)</li>
+                                            <li><a href='https://mikaberglund.com/2022/02/'>February 2022</a>&nbsp;(2)</li>
+                                            <li><a href='https://mikaberglund.com/2022/01/'>January 2022</a>&nbsp;(1)</li>
+                                            <li><a href='https://mikaberglund.com/2021/04/'>April 2021</a>&nbsp;(1)</li>
+                                            <li><a href='https://mikaberglund.com/2021/02/'>February 2021</a>&nbsp;(3)</li>
+                                            <li><a href='https://mikaberglund.com/2021/01/'>January 2021</a>&nbsp;(1)</li>
+                                            <li><a href='https://mikaberglund.com/2020/12/'>December 2020</a>&nbsp;(2)</li>
+                                            <li><a href='https://mikaberglund.com/2020/11/'>November 2020</a>&nbsp;(1)</li>
+                                            <li><a href='https://mikaberglund.com/2020/10/'>October 2020</a>&nbsp;(1)</li>
+                                            <li><a href='https://mikaberglund.com/2020/08/'>August 2020</a>&nbsp;(1)</li>
+                                            <li><a href='https://mikaberglund.com/2020/07/'>July 2020</a>&nbsp;(2)</li>
+                                            <li><a href='https://mikaberglund.com/2020/06/'>June 2020</a>&nbsp;(1)</li>
+                                            <li><a href='https://mikaberglund.com/2020/05/'>May 2020</a>&nbsp;(3)</li>
+                                            <li><a href='https://mikaberglund.com/2020/04/'>April 2020</a>&nbsp;(2)</li>
+                                            <li><a href='https://mikaberglund.com/2020/03/'>March 2020</a>&nbsp;(5)</li>
+                                            <li><a href='https://mikaberglund.com/2020/02/'>February 2020</a>&nbsp;(1)</li>
+                                            <li><a href='https://mikaberglund.com/2020/01/'>January 2020</a>&nbsp;(6)</li>
+                                            <li><a href='https://mikaberglund.com/2019/12/'>December 2019</a>&nbsp;(4)</li>
+                                            <li><a href='https://mikaberglund.com/2019/11/'>November 2019</a>&nbsp;(2)</li>
+                                            <li><a href='https://mikaberglund.com/2019/10/'>October 2019</a>&nbsp;(1)</li>
+                                            <li><a href='https://mikaberglund.com/2019/09/'>September 2019</a>&nbsp;(7)</li>
+                                            <li><a href='https://mikaberglund.com/2019/08/'>August 2019</a>&nbsp;(2)</li>
+                                        </ul>
+
+                                    </div><div id="categories-2" class="widget widget_categories">
+                                        <h5>Categories</h5>
+                                        <ul>
+                                            <li class="cat-item cat-item-332">
+                                                <a href="https://mikaberglund.com/category/ai/">AI</a> (3)
+                                            </li>
+                                            <li class="cat-item cat-item-293">
+                                                <a href="https://mikaberglund.com/category/ai-assisted/">AI Assisted</a> (1)
+                                            </li>
+                                            <li class="cat-item cat-item-2">
+                                                <a href="https://mikaberglund.com/category/app-service/">App Service</a> (1)
+                                            </li>
+                                            <li class="cat-item cat-item-3">
+                                                <a href="https://mikaberglund.com/category/asp-net-core/">ASP.NET Core</a> (1)
+                                            </li>
+                                            <li class="cat-item cat-item-233">
+                                                <a href="https://mikaberglund.com/category/authentication/">Authentication</a> (5)
+                                            </li>
+                                            <li class="cat-item cat-item-4">
+                                                <a href="https://mikaberglund.com/category/azure/">Azure</a> (15)
+                                            </li>
+                                            <li class="cat-item cat-item-5">
+                                                <a href="https://mikaberglund.com/category/azure-ad/">Azure AD</a> (5)
+                                            </li>
+                                            <li class="cat-item cat-item-6">
+                                                <a href="https://mikaberglund.com/category/azure-ad-b2c/">Azure AD B2C</a> (6)
+                                            </li>
+                                            <li class="cat-item cat-item-324">
+                                                <a href="https://mikaberglund.com/category/azure-ai/">Azure AI</a> (4)
+                                            </li>
+                                            <li class="cat-item cat-item-237">
+                                                <a href="https://mikaberglund.com/category/azure-devops/">Azure DevOps</a> (1)
+                                            </li>
+                                            <li class="cat-item cat-item-7">
+                                                <a href="https://mikaberglund.com/category/azure-functions/">Azure Functions</a> (8)
+                                            </li>
+                                            <li class="cat-item cat-item-8">
+                                                <a href="https://mikaberglund.com/category/blazor/">Blazor</a> (19)
+                                            </li>
+                                            <li class="cat-item cat-item-9">
+                                                <a href="https://mikaberglund.com/category/blazor-server/">Blazor Server</a> (2)
+                                            </li>
+                                            <li class="cat-item cat-item-189">
+                                                <a href="https://mikaberglund.com/category/blazor-webassembly/">Blazor WebAssembly</a> (1)
+                                            </li>
+                                            <li class="cat-item cat-item-10">
+                                                <a href="https://mikaberglund.com/category/blazorade/">Blazorade</a> (9)
+                                            </li>
+                                            <li class="cat-item cat-item-11">
+                                                <a href="https://mikaberglund.com/category/blogging/">Blogging</a> (1)
+                                            </li>
+                                            <li class="cat-item cat-item-12">
+                                                <a href="https://mikaberglund.com/category/bootstrap/">Bootstrap</a> (5)
+                                            </li>
+                                            <li class="cat-item cat-item-172">
+                                                <a href="https://mikaberglund.com/category/cloud-casuals/">Cloud Casuals</a> (1)
+                                            </li>
+                                            <li class="cat-item cat-item-13">
+                                                <a href="https://mikaberglund.com/category/community/">Community</a> (1)
+                                            </li>
+                                            <li class="cat-item cat-item-14">
+                                                <a href="https://mikaberglund.com/category/configuration/">Configuration</a> (1)
+                                            </li>
+                                            <li class="cat-item cat-item-299">
+                                                <a href="https://mikaberglund.com/category/content-creation/">Content Creation</a> (1)
+                                            </li>
+                                            <li class="cat-item cat-item-15">
+                                                <a href="https://mikaberglund.com/category/cosmos-db/">Cosmos DB</a> (5)
+                                            </li>
+                                            <li class="cat-item cat-item-16">
+                                                <a href="https://mikaberglund.com/category/data-factory/">Data Factory</a> (1)
+                                            </li>
+                                            <li class="cat-item cat-item-17">
+                                                <a href="https://mikaberglund.com/category/development/">Development</a> (6)
+                                            </li>
+                                            <li class="cat-item cat-item-300">
+                                                <a href="https://mikaberglund.com/category/diagram/">Diagram</a> (1)
+                                            </li>
+                                            <li class="cat-item cat-item-202">
+                                                <a href="https://mikaberglund.com/category/documentation/">Documentation</a> (1)
+                                            </li>
+                                            <li class="cat-item cat-item-224">
+                                                <a href="https://mikaberglund.com/category/durable-entities/">Durable Entities</a> (1)
+                                            </li>
+                                            <li class="cat-item cat-item-18">
+                                                <a href="https://mikaberglund.com/category/durable-functions/">Durable Functions</a> (3)
+                                            </li>
+                                            <li class="cat-item cat-item-148">
+                                                <a href="https://mikaberglund.com/category/github/">GitHub</a> (1)
+                                            </li>
+                                            <li class="cat-item cat-item-19">
+                                                <a href="https://mikaberglund.com/category/github-pages/">GitHub Pages</a> (1)
+                                            </li>
+                                            <li class="cat-item cat-item-20">
+                                                <a href="https://mikaberglund.com/category/key-vault/">Key Vault</a> (1)
+                                            </li>
+                                            <li class="cat-item cat-item-301">
+                                                <a href="https://mikaberglund.com/category/mermaid/">Mermaid</a> (1)
+                                            </li>
+                                            <li class="cat-item cat-item-286">
+                                                <a href="https://mikaberglund.com/category/mfa/">MFA</a> (1)
+                                            </li>
+                                            <li class="cat-item cat-item-279">
+                                                <a href="https://mikaberglund.com/category/microsoft-entra-external-id/">Microsoft Entra External ID</a> (3)
+                                            </li>
+                                            <li class="cat-item cat-item-278">
+                                                <a href="https://mikaberglund.com/category/microsoft-entra-id/">Microsoft Entra ID</a> (3)
+                                            </li>
+                                            <li class="cat-item cat-item-194">
+                                                <a href="https://mikaberglund.com/category/microsoft-graph/">Microsoft Graph</a> (1)
+                                            </li>
+                                            <li class="cat-item cat-item-21">
+                                                <a href="https://mikaberglund.com/category/microsoft-teams/">Microsoft Teams</a> (4)
+                                            </li>
+                                            <li class="cat-item cat-item-22">
+                                                <a href="https://mikaberglund.com/category/office-365/">Office 365</a> (2)
+                                            </li>
+                                            <li class="cat-item cat-item-23">
+                                                <a href="https://mikaberglund.com/category/open-id-connect/">Open ID Connect</a> (1)
+                                            </li>
+                                            <li class="cat-item cat-item-284">
+                                                <a href="https://mikaberglund.com/category/playwright/">Playwright</a> (1)
+                                            </li>
+                                            <li class="cat-item cat-item-252">
+                                                <a href="https://mikaberglund.com/category/project-lifecycle/">Project Lifecycle</a> (1)
+                                            </li>
+                                            <li class="cat-item cat-item-238">
+                                                <a href="https://mikaberglund.com/category/project-management/">Project Management</a> (1)
+                                            </li>
+                                            <li class="cat-item cat-item-245">
+                                                <a href="https://mikaberglund.com/category/pulumi/">Pulumi</a> (1)
+                                            </li>
+                                            <li class="cat-item cat-item-190">
+                                                <a href="https://mikaberglund.com/category/pwa/">PWA</a> (1)
+                                            </li>
+                                            <li class="cat-item cat-item-24">
+                                                <a href="https://mikaberglund.com/category/review/">Review</a> (3)
+                                            </li>
+                                            <li class="cat-item cat-item-200">
+                                                <a href="https://mikaberglund.com/category/security/">Security</a> (3)
+                                            </li>
+                                            <li class="cat-item cat-item-179">
+                                                <a href="https://mikaberglund.com/category/seminar/">Seminar</a> (2)
+                                            </li>
+                                            <li class="cat-item cat-item-155">
+                                                <a href="https://mikaberglund.com/category/sendgrid/">SendGrid</a> (1)
+                                            </li>
+                                            <li class="cat-item cat-item-25">
+                                                <a href="https://mikaberglund.com/category/serverless/">Serverless</a> (1)
+                                            </li>
+                                            <li class="cat-item cat-item-26">
+                                                <a href="https://mikaberglund.com/category/spa/">SPA</a> (1)
+                                            </li>
+                                            <li class="cat-item cat-item-176">
+                                                <a href="https://mikaberglund.com/category/speaker/">Speaker</a> (2)
+                                            </li>
+                                            <li class="cat-item cat-item-161">
+                                                <a href="https://mikaberglund.com/category/storage/">Storage</a> (1)
+                                            </li>
+                                            <li class="cat-item cat-item-207">
+                                                <a href="https://mikaberglund.com/category/storage-explorer/">Storage Explorer</a> (1)
+                                            </li>
+                                            <li class="cat-item cat-item-173">
+                                                <a href="https://mikaberglund.com/category/t-shirts/">T-Shirts</a> (1)
+                                            </li>
+                                            <li class="cat-item cat-item-209">
+                                                <a href="https://mikaberglund.com/category/tools/">Tools</a> (1)
+                                            </li>
+                                            <li class="cat-item cat-item-236">
+                                                <a href="https://mikaberglund.com/category/troubleshooting/">Troubleshooting</a> (4)
+                                            </li>
+                                            <li class="cat-item cat-item-331">
+                                                <a href="https://mikaberglund.com/category/vector-embeddings/">Vector Embeddings</a> (4)
+                                            </li>
+                                            <li class="cat-item cat-item-29">
+                                                <a href="https://mikaberglund.com/category/wordpress/">WordPress</a> (1)
+                                            </li>
+                                        </ul>
+
+                                    </div><div id="nav_menu-3" class="widget widget_nav_menu">
+                                        <h5>Useful Links</h5><div class="menu-side-menu-container">
+                                            <ul id="menu-side-menu" class="menu">
+                                                <li id="menu-item-784" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-784"><a href="/feed/">RSS Feed</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </aside><!-- .sidebar .widget-area -->
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="section related-posts">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2 class="hestia-title text-center">Related Posts</h2>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="card card-blog">
+                                    <div class="card-image">
+                                        <a href="https://mikaberglund.com/why-i-love-cosmos-db/" title="Why I Love Cosmos DB">
+                                            <img width="360" height="240" src="https://mikaberglund.com/wp-content/uploads/2019/09/I-love-CosmosDB-360x240.jpg" class="attachment-hestia-blog size-hestia-blog wp-post-image" alt="" decoding="async" loading="lazy" />
+                                        </a>
+                                    </div>
+                                    <div class="content">
+                                        <span class="category text-info"><a href="https://mikaberglund.com/category/azure/" title="View all posts in Azure">Azure</a> </span>
+                                        <h4 class="card-title">
+                                            <a class="blog-item-title-link" href="https://mikaberglund.com/why-i-love-cosmos-db/" title="Why I Love Cosmos DB" rel="bookmark">
+                                                Why I Love Cosmos DB
+                                            </a>
+                                        </h4>
+                                        <p class="card-description">Cosmos DB is an increasingly popular no-sql database provided by Microsoft Azure. In this article I outline the things that make me love Cosmos DB.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card card-blog">
+                                    <div class="card-image">
+                                        <a href="https://mikaberglund.com/free-tier-now-available-for-azure-cosmos-db/" title="Free Tier Now Available for Azure Cosmos DB">
+                                            <img width="360" height="240" src="https://mikaberglund.com/wp-content/uploads/2020/03/william-white-cF6fz9QwfrY-1920-360x240.jpg" class="attachment-hestia-blog size-hestia-blog wp-post-image" alt="" decoding="async" loading="lazy" />
+                                        </a>
+                                    </div>
+                                    <div class="content">
+                                        <span class="category text-info"><a href="https://mikaberglund.com/category/azure/" title="View all posts in Azure">Azure</a> </span>
+                                        <h4 class="card-title">
+                                            <a class="blog-item-title-link" href="https://mikaberglund.com/free-tier-now-available-for-azure-cosmos-db/" title="Free Tier Now Available for Azure Cosmos DB" rel="bookmark">
+                                                Free Tier Now Available for Azure Cosmos DB
+                                            </a>
+                                        </h4>
+                                        <p class="card-description">Microsoft announced that Azure Cosmos DB is now also available as a free tier. So I set out to give it a spin to learn more about running Cosmos for free.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card card-blog">
+                                    <div class="card-image">
+                                        <a href="https://mikaberglund.com/things-you-need-to-know-before-building-applications-with-azure-cosmos-db/" title="Things You Need to Know Before Building Applications With Azure Cosmos DB">
+                                            <img width="360" height="240" src="https://mikaberglund.com/wp-content/uploads/2019/09/alexander-andrews-509804-unsplash-1920-360x240.jpg" class="attachment-hestia-blog size-hestia-blog wp-post-image" alt="Space" decoding="async" loading="lazy" />
+                                        </a>
+                                    </div>
+                                    <div class="content">
+                                        <span class="category text-info"><a href="https://mikaberglund.com/category/azure/" title="View all posts in Azure">Azure</a> </span>
+                                        <h4 class="card-title">
+                                            <a class="blog-item-title-link" href="https://mikaberglund.com/things-you-need-to-know-before-building-applications-with-azure-cosmos-db/" title="Things You Need to Know Before Building Applications With Azure Cosmos DB" rel="bookmark">
+                                                Things You Need to Know Before Building Applications With Azure Cosmos DB
+                                            </a>
+                                        </h4>
+                                        <p class="card-description">If you&#8217;ve followed me on Twitter or GitHub, you probably have noticed that I&#8217;m quite a fan of Azure Cosmos DB. Over that last couple of years that I&#8217;ve been building applications with Cosmos DB,<a class="moretag" href="https://mikaberglund.com/things-you-need-to-know-before-building-applications-with-azure-cosmos-db/"> Read more</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="footer footer-black footer-big">
+            <div class="container">
+                <div class="hestia-bottom-footer-content">
+                    <ul id="menu-social-menu" class="footer-menu pull-left">
+                        <li id="menu-item-778" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-778"><a href="https://www.youtube.com/channel/UCfOF1aIOdZskejallCfaqeg"><i class="obfx-menu-icon fa fa-youtube-play"></i>Youtube</a></li>
+                        <li id="menu-item-781" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-781"><a href="https://github.com/MikaBerglund"><i class="obfx-menu-icon fa fa-github"></i>GitHub</a></li>
+                        <li id="menu-item-779" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-779"><a href="https://www.linkedin.com/in/mikaberglund/"><i class="obfx-menu-icon fa fa-linkedin"></i>LinkedIn</a></li>
+                        <li id="menu-item-780" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-780"><a href="https://www.facebook.com/mikaberglund"><i class="obfx-menu-icon fa fa-facebook-f"></i>Facebook</a></li>
+                        <li id="menu-item-2341" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2341"><a href="https://www.instagram.com/mika.berglund/"><i class="obfx-menu-icon fa fa-instagram"></i>Instagram</a></li>
+                        <li id="menu-item-2342" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2342"><a href="https://www.threads.net/@mika.berglund">Threads</a></li>
+                    </ul><div class="copyright pull-right">Hestia | Developed by <a href="https://themeisle.com" rel="nofollow">ThemeIsle</a></div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script type="speculationrules">
+        {"prefetch":[{"source":"document","where":{"and":[{"href_matches":"\/*"},{"not":{"href_matches":["\/wp-*.php","\/wp-admin\/*","\/wp-content\/uploads\/*","\/wp-content\/*","\/wp-content\/plugins\/*","\/wp-content\/themes\/fagri\/*","\/wp-content\/themes\/hestia\/*","\/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+    </script>
+    <!-- Enter your scripts here --><link rel='stylesheet' id='lwptoc-main-css' href='https://mikaberglund.com/wp-content/plugins/luckywp-table-of-contents/front/assets/main.min.css?ver=2.1.14' type='text/css' media='all' />
+    <link rel='stylesheet' id='font-awesome-5-all-css' href='https://mikaberglund.com/wp-content/themes/hestia/assets/font-awesome/css/all.min.css?ver=1.0.2' type='text/css' media='all' />
+    <link rel='stylesheet' id='font-awesome-4-shim-css' href='https://mikaberglund.com/wp-content/themes/hestia/assets/font-awesome/css/v4-shims.min.css?ver=1.0.2' type='text/css' media='all' />
+    <script type="text/javascript" src="https://mikaberglund.com/wp-includes/js/comment-reply.min.js?ver=6.8.3" id="comment-reply-js" async="async" data-wp-strategy="async"></script>
+    <script type="text/javascript" src="https://mikaberglund.com/wp-content/themes/hestia/assets/bootstrap/js/bootstrap.min.js?ver=1.0.2" id="jquery-bootstrap-js"></script>
+    <script type="text/javascript" src="https://mikaberglund.com/wp-includes/js/jquery/ui/core.min.js?ver=1.13.3" id="jquery-ui-core-js"></script>
+    <script type="text/javascript" id="hestia_scripts-js-extra">
+/* <![CDATA[ */
+var requestpost = {"ajaxurl":"https:\/\/mikaberglund.com\/wp-admin\/admin-ajax.php","disable_autoslide":"","masonry":"","scroll_offset":"0"};
+/* ]]> */
+    </script>
+    <script type="text/javascript" src="https://mikaberglund.com/wp-content/themes/hestia/assets/js/script.min.js?ver=3.3.3" id="hestia_scripts-js"></script>
+    <script type="text/javascript" src="https://mikaberglund.com/wp-content/plugins/enlighter/cache/enlighterjs.min.js?ver=QIw7gIFGmTen8O0" id="enlighterjs-js"></script>
+    <script type="text/javascript" id="enlighterjs-js-after">
+/* <![CDATA[ */
+!function(e,n){if("undefined"!=typeof EnlighterJS){var o={"selectors":{"block":"pre.EnlighterJSRAW","inline":"code.EnlighterJSRAW"},"options":{"indent":4,"ampersandCleanup":true,"linehover":true,"rawcodeDbclick":false,"textOverflow":"break","linenumbers":true,"theme":"rowhammer","language":"csharp","retainCssClasses":false,"collapse":false,"toolbarOuter":"","toolbarTop":"{BTN_RAW}{BTN_COPY}{BTN_WINDOW}{BTN_WEBSITE}","toolbarBottom":""}};(e.EnlighterJSINIT=function(){EnlighterJS.init(o.selectors.block,o.selectors.inline,o.options)})()}else{(n&&(n.error||n.log)||function(){})("Error: EnlighterJS resources not loaded yet!")}}(window,console);
+/* ]]> */
+    </script>
+    <script type="text/javascript" src="https://mikaberglund.com/wp-content/plugins/luckywp-table-of-contents/front/assets/main.min.js?ver=2.1.14" id="lwptoc-main-js"></script>
+</body>
+</html>

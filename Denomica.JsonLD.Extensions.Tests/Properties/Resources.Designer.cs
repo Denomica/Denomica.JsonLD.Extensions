@@ -76,6 +76,27 @@ namespace Denomica.JsonLD.Extensions.Tests.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 
+        ///&lt;!DOCTYPE html&gt;
+        ///&lt;html lang=&quot;en-GB&quot;&gt;
+        ///
+        ///&lt;head&gt;
+        ///    &lt;meta charset=&apos;UTF-8&apos;&gt;
+        ///    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+        ///    &lt;link rel=&quot;profile&quot; href=&quot;http://gmpg.org/xfn/11&quot;&gt;
+        ///    &lt;link rel=&quot;pingback&quot; href=&quot;https://mikaberglund.com/xmlrpc.php&quot;&gt;
+        ///    &lt;meta name=&apos;robots&apos; content=&apos;index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1&apos; /&gt;
+        ///    &lt;style&gt;
+        ///        img:is([sizes=&quot;auto&quot; i], [sizes^=&quot;auto,&quot; i]) {
+        ///            contain-intrinsic-size: 3000px 1500px        /// [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string HTMLPage002 {
+            get {
+                return ResourceManager.GetString("HTMLPage002", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to {
         ///  &quot;@context&quot;: &quot;https://schema.org&quot;,
         ///  &quot;@graph&quot;: [
@@ -180,6 +201,27 @@ namespace Denomica.JsonLD.Extensions.Tests.Properties {
         internal static string JSONLD005 {
             get {
                 return ResourceManager.GetString("JSONLD005", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {
+        ///  &quot;@context&quot;: &quot;https://schema.org&quot;,
+        ///  &quot;@graph&quot;: [
+        ///    {
+        ///      &quot;@type&quot;: &quot;Article&quot;,
+        ///      &quot;@id&quot;: &quot;https://mikaberglund.com/cosmos-db-vector-search-an-introduction/#article&quot;,
+        ///      &quot;isPartOf&quot;: { &quot;@id&quot;: &quot;https://mikaberglund.com/cosmos-db-vector-search-an-introduction/&quot; },
+        ///      &quot;author&quot;: {
+        ///        &quot;name&quot;: &quot;Mika Berglund&quot;,
+        ///        &quot;@id&quot;: &quot;https://mikaberglund.com/#/schema/person/0538367110d2e025c20e2faad3c312cb&quot;
+        ///      },
+        ///      &quot;headline&quot;: &quot;Cosmos DB Vector Search &amp;#8211; An Introduction&quot;,
+        ///      &quot;d [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string JSONLD006 {
+            get {
+                return ResourceManager.GetString("JSONLD006", resourceCulture);
             }
         }
     }

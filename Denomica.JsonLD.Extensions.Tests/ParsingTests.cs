@@ -1,4 +1,5 @@
 ﻿using Denomica.JsonLD.Extensions;
+using Denomica.Text.Json;
 using System.Text.Json;
 
 namespace Denomica.JsonLD.Extensions.Tests
@@ -50,6 +51,22 @@ namespace Denomica.JsonLD.Extensions.Tests
 
             var gprs = await jsonElem.GetJsonLDObjectsAsync("ProductGroup").ToListAsync();
             Assert.AreEqual(1, gprs.Count);
+        }
+
+        [TestMethod]
+        public async Task Parse06()
+        {
+            var htmlDoc = Properties.Resources.HTMLPage002.CreateHtmlDocument();
+            var objects = await htmlDoc.GetJsonLDObjectsAsync().ToListAsync();
+
+            Assert.AreNotEqual(0, objects.Count);
+
+            foreach(var obj in objects)
+            {
+                var d = obj.ToJsonDictionary();
+                d.TryGetValue("@context", out var context);
+                Assert.AreEqual("https://schema.org", context);
+            }
         }
     }
 }

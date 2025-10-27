@@ -1,0 +1,120 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://mikaberglund.com/cosmos-db-vector-search-an-introduction/#article",
+      "isPartOf": { "@id": "https://mikaberglund.com/cosmos-db-vector-search-an-introduction/" },
+      "author": {
+        "name": "Mika Berglund",
+        "@id": "https://mikaberglund.com/#/schema/person/0538367110d2e025c20e2faad3c312cb"
+      },
+      "headline": "Cosmos DB Vector Search &#8211; An Introduction",
+      "datePublished": "2025-02-22T11:55:31+00:00",
+      "dateModified": "2025-04-01T04:47:47+00:00",
+      "mainEntityOfPage": { "@id": "https://mikaberglund.com/cosmos-db-vector-search-an-introduction/" },
+      "wordCount": 3189,
+      "commentCount": 0,
+      "publisher": { "@id": "https://mikaberglund.com/#/schema/person/0538367110d2e025c20e2faad3c312cb" },
+      "image": { "@id": "https://mikaberglund.com/cosmos-db-vector-search-an-introduction/#primaryimage" },
+      "thumbnailUrl": "https://mikaberglund.com/wp-content/uploads/2025/02/cosmos-db-vector-search.jpg",
+      "keywords": [ "Azure AI Foundry", "Azure Cosmos DB", "Cosmos DB", "Embedding Models", "RAG", "Similarity Search", "Vector Embeddings", "Vector Search" ],
+      "articleSection": [ "AI", "Azure AI", "Cosmos DB", "Vector Embeddings" ],
+      "inLanguage": "en-GB",
+      "potentialAction": [
+        {
+          "@type": "CommentAction",
+          "name": "Comment",
+          "target": [ "https://mikaberglund.com/cosmos-db-vector-search-an-introduction/#respond" ]
+        }
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://mikaberglund.com/cosmos-db-vector-search-an-introduction/",
+      "url": "https://mikaberglund.com/cosmos-db-vector-search-an-introduction/",
+      "name": "Cosmos DB Vector Search - An Introduction - MikaBerglund.com",
+      "isPartOf": { "@id": "https://mikaberglund.com/#website" },
+      "primaryImageOfPage": { "@id": "https://mikaberglund.com/cosmos-db-vector-search-an-introduction/#primaryimage" },
+      "image": { "@id": "https://mikaberglund.com/cosmos-db-vector-search-an-introduction/#primaryimage" },
+      "thumbnailUrl": "https://mikaberglund.com/wp-content/uploads/2025/02/cosmos-db-vector-search.jpg",
+      "datePublished": "2025-02-22T11:55:31+00:00",
+      "dateModified": "2025-04-01T04:47:47+00:00",
+      "description": "Explore Azure Cosmos DB as a vector database and generate embeddings with Azure AI Foundry's LLMs for powerful text search and analysis.",
+      "breadcrumb": { "@id": "https://mikaberglund.com/cosmos-db-vector-search-an-introduction/#breadcrumb" },
+      "inLanguage": "en-GB",
+      "potentialAction": [
+        {
+          "@type": "ReadAction",
+          "target": [ "https://mikaberglund.com/cosmos-db-vector-search-an-introduction/" ]
+        }
+      ]
+    },
+    {
+      "@type": "ImageObject",
+      "inLanguage": "en-GB",
+      "@id": "https://mikaberglund.com/cosmos-db-vector-search-an-introduction/#primaryimage",
+      "url": "https://mikaberglund.com/wp-content/uploads/2025/02/cosmos-db-vector-search.jpg",
+      "contentUrl": "https://mikaberglund.com/wp-content/uploads/2025/02/cosmos-db-vector-search.jpg",
+      "width": 1792,
+      "height": 1024
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://mikaberglund.com/cosmos-db-vector-search-an-introduction/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://mikaberglund.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Cosmos DB Vector Search &#8211; An Introduction"
+        }
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://mikaberglund.com/#website",
+      "url": "https://mikaberglund.com/",
+      "name": "MikaBerglund.com",
+      "description": "Designing and Developing Solutions for Microsoft Cloud",
+      "publisher": { "@id": "https://mikaberglund.com/#/schema/person/0538367110d2e025c20e2faad3c312cb" },
+      "potentialAction": [
+        {
+          "@type": "SearchAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://mikaberglund.com/?s={search_term_string}"
+          },
+          "query-input": {
+            "@type": "PropertyValueSpecification",
+            "valueRequired": true,
+            "valueName": "search_term_string"
+          }
+        }
+      ],
+      "inLanguage": "en-GB"
+    },
+    {
+      "@type": [ "Person", "Organization" ],
+      "@id": "https://mikaberglund.com/#/schema/person/0538367110d2e025c20e2faad3c312cb",
+      "name": "Mika Berglund",
+      "image": {
+        "@type": "ImageObject",
+        "inLanguage": "en-GB",
+        "@id": "https://mikaberglund.com/#/schema/person/image/",
+        "url": "https://mikaberglund.com/wp-content/uploads/2020/08/Mika14b-1024.jpg",
+        "contentUrl": "https://mikaberglund.com/wp-content/uploads/2020/08/Mika14b-1024.jpg",
+        "width": 1024,
+        "height": 1024,
+        "caption": "Mika Berglund"
+      },
+      "logo": { "@id": "https://mikaberglund.com/#/schema/person/image/" },
+      "sameAs": [ "https://www.facebook.com/mikaberglund", "https://www.linkedin.com/in/mikaberglund/", "https://x.com/MikaBerglund", "https://www.youtube.com/channel/UCfOF1aIOdZskejallCfaqeg" ]
+    }
+  ]
+}

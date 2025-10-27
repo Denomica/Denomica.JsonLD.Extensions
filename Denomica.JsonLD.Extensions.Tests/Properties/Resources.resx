@@ -121,6 +121,9 @@
   <data name="HTMLPage001" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\HTMLPage001.html;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="HTMLPage002" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HTMLPage002.html;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
   <data name="JSONLD001" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\JSONLD001.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
@@ -135,5 +138,8 @@
   </data>
   <data name="JSONLD005" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\JSONLD005.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="JSONLD006" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\JSONLD006.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
 </root>
